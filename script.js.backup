@@ -1,0 +1,996 @@
+/* =========================================================
+   ACADEMIC PORTFOLIO — script.js
+   All interactive features in vanilla JavaScript
+   ========================================================= */
+
+'use strict';
+
+/* ─── PROJECT DATA ───────────────────────────────────── */
+const projectData = [
+  {
+    title: "Sentiment Analysis of Academic Feedback",
+    category: "Machine Learning",
+    problem: "Educational institutions collect large volumes of qualitative student feedback, but lack scalable tools to analyze sentiment trends across thousands of responses efficiently.",
+    description: "Developed an NLP-based sentiment classification pipeline using fine-tuned BERT embeddings to analyze student feedback at scale. The system processes raw text, classifies sentiment (positive / neutral / negative), and produces visual analytics dashboards for faculty.",
+    outcome: "Achieved 91% classification accuracy on a held-out test set of 2,400 feedback entries. Deployed as a lightweight Flask API consumed by a dashboard prototype.",
+    tech: ["Python", "BERT", "HuggingFace Transformers", "Flask", "Pandas", "Matplotlib"],
+    github: "#",
+    demo: "#"
+  },
+  {
+    title: "University Research Portal",
+    category: "Web Development",
+    problem: "Academic researchers within a department lacked a unified digital space for sharing findings, annotating papers collaboratively, or managing literature review workflows.",
+    description: "Built a full-stack collaborative web platform enabling researchers to upload papers, annotate content, leave comments, and coordinate on shared reading lists. Features JWT authentication, role-based access control (student / researcher / admin), and real-time notifications.",
+    outcome: "Successfully piloted with a team of 8 researchers over a 6-week period. Reduced literature management overhead and improved cross-team knowledge sharing.",
+    tech: ["React", "Node.js", "Express", "MongoDB", "JWT Auth", "Socket.io"],
+    github: "#",
+    demo: "#"
+  },
+  {
+    title: "Predictive Analytics for Student Performance",
+    category: "Data Science",
+    problem: "Early identification of at-risk students is critical but often reactive. This project aimed to build a proactive predictive model using historical academic and behavioral data.",
+    description: "Designed and trained a multi-feature regression pipeline combining GPA trends, attendance records, assignment submission patterns, and demographic features. Conducted thorough feature engineering, cross-validation, and model explainability analysis using SHAP values.",
+    outcome: "The model achieved an R² of 0.87 and was presented as a research report to the university's academic support committee as a proof-of-concept for early intervention tooling.",
+    tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib", "SHAP", "Jupyter"],
+    github: "#",
+    demo: "Report"
+  },
+  {
+    title: "Systematic Literature Review: Federated Learning in Healthcare",
+    category: "Research",
+    problem: "The application of federated learning in clinical ML settings is rapidly growing, yet no comprehensive synthesis existed of privacy-preserving approaches, their trade-offs, and research gaps specific to healthcare.",
+    description: "Conducted a structured PRISMA-compliant systematic review of 47 peer-reviewed papers published between 2019–2024. Screened 200+ papers across IEEE, ACM, PubMed, and arXiv. Synthesized findings across five thematic categories: architecture, privacy mechanisms, communication efficiency, clinical domain, and evaluation benchmarks.",
+    outcome: "Produced a 30-page review manuscript identifying key research gaps — currently in revision for conference submission. Presented findings at a departmental research colloquium.",
+    tech: ["LaTeX", "Mendeley", "PRISMA Protocol", "Systematic Review", "Academic Writing"],
+    github: null,
+    demo: "Preprint"
+  },
+  {
+    title: "Medical Image Classification with CNN",
+    category: "Machine Learning",
+    problem: "Pneumonia detection from chest X-rays is time-intensive and subject to human error. Automated deep learning classifiers can assist radiologists in triaging large image volumes.",
+    description: "Trained a custom convolutional neural network and applied transfer learning using pre-trained VGG16 weights for binary classification (pneumonia vs. healthy) on the Kaggle Chest X-Ray Images dataset. Applied class balancing, data augmentation, and learning rate scheduling.",
+    outcome: "Achieved 94.3% test accuracy, 93.1% precision, and 95.8% recall for the pneumonia class. Model artifacts saved for future API integration.",
+    tech: ["TensorFlow", "Keras", "OpenCV", "Python", "NumPy", "Matplotlib"],
+    github: "#",
+    demo: null
+  },
+  {
+    title: "Open-Source Study Planner PWA",
+    category: "Web Development",
+    problem: "Existing study planner apps lack offline capability and accessibility compliance, making them unreliable for students with limited internet access or assistive technology needs.",
+    description: "Built a Progressive Web App (PWA) with full offline support using Service Workers and the Cache API. Features include customizable weekly schedules, pomodoro timers, deadline tracking, and ARIA-compliant accessibility throughout. Published as open-source on GitHub under MIT license.",
+    outcome: "Received 60+ GitHub stars within three months. Fully audited with Lighthouse (PWA score: 98, Accessibility: 95). Featured in a university tech newsletter.",
+    tech: ["HTML5", "CSS3", "Vanilla JS", "Service Workers", "IndexedDB", "Web Manifest"],
+    github: "#",
+    demo: "#"
+  }
+];
+
+window.addEventListener('load', () => {
+  // Trigger reveal for elements in viewport on load
+  observeReveal();
+});
+
+/* =========================================================
+   2. THEME TOGGLE (Dark / Light)
+   ========================================================= */
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+const html = document.documentElement;
+
+function applyTheme(theme) {
+  html.setAttribute('data-theme', theme);
+  themeIcon.textContent = theme === 'dark' ? '☾' : '☀';
+  localStorage.setItem('portfolio-theme', theme);
+}
+
+// Load saved theme
+const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+applyTheme(savedTheme);
+
+themeToggle.addEventListener('click', () => {
+  const current = html.getAttribute('data-theme');
+  applyTheme(current === 'dark' ? 'light' : 'dark');
+});
+
+/* =========================================================
+   3. SCROLL PROGRESS BAR
+   ========================================================= */
+const scrollBar = document.getElementById('scrollProgress');
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  scrollBar.style.width = scrollPercent + '%';
+}, { passive: true });
+
+/* =========================================================
+   4. STICKY NAVBAR — glass effect + active link
+   ========================================================= */
+const navbar = document.getElementById('navbar');
+const navLinks = document.querySelectorAll('.nav__link');
+const sections = document.querySelectorAll('section[id], main[id]');
+
+window.addEventListener('scroll', () => {
+  // Add scrolled class
+  if (window.scrollY > 40) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+
+  // Active link tracking
+  let currentId = '';
+  sections.forEach(section => {
+    const top = section.offsetTop - 100;
+    if (window.scrollY >= top) {
+      currentId = section.id;
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${currentId}`) {
+      link.classList.add('active');
+    }
+  });
+}, { passive: true });
+
+/* =========================================================
+   5. MOBILE HAMBURGER MENU
+   ========================================================= */
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+
+hamburger.addEventListener('click', () => {
+  const isOpen = navMenu.classList.toggle('open');
+  hamburger.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
+});
+
+// Close on link click
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', false);
+  });
+});
+
+/* =========================================================
+   6. TYPING ANIMATION
+   ========================================================= */
+const typingRoles = [
+  'Research Enthusiast',
+  'Frontend Developer',
+  'Problem Solver',
+  'Lifelong Learner',
+  'Data Science Student',
+  'Open Source Contributor'
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingEl = document.getElementById('typingText');
+const typingSpeed = 80;
+const deleteSpeed = 50;
+const pauseTime = 1800;
+
+function typeEffect() {
+  const currentRole = typingRoles[roleIndex];
+
+  if (isDeleting) {
+    typingEl.textContent = currentRole.substring(0, charIndex - 1);
+    charIndex--;
+    if (charIndex === 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % typingRoles.length;
+      setTimeout(typeEffect, 400);
+      return;
+    }
+    setTimeout(typeEffect, deleteSpeed);
+  } else {
+    typingEl.textContent = currentRole.substring(0, charIndex + 1);
+    charIndex++;
+    if (charIndex === currentRole.length) {
+      isDeleting = true;
+      setTimeout(typeEffect, pauseTime);
+      return;
+    }
+    setTimeout(typeEffect, typingSpeed);
+  }
+}
+
+setTimeout(typeEffect, 1200);
+
+/* =========================================================
+   7. SCROLL REVEAL ANIMATION
+   ========================================================= */
+function observeReveal() {
+  const revealEls = document.querySelectorAll('.reveal');
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          // Stagger siblings
+          const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal:not(.visible)'));
+          const delay = siblings.indexOf(entry.target) * 60;
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, Math.min(delay, 300));
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => observer.observe(el));
+  } else {
+    // Fallback
+    revealEls.forEach(el => el.classList.add('visible'));
+  }
+}
+
+/* =========================================================
+   8. ANIMATED COUNTERS
+   ========================================================= */
+function animateCounter(el) {
+  const target = parseFloat(el.dataset.target);
+  const suffix = el.dataset.suffix || '';
+  const decimals = target % 1 !== 0 ? 1 : 0;
+  const duration = 1800;
+  const start = Date.now();
+
+  function update() {
+    const elapsed = Date.now() - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = eased * target;
+    el.textContent = current.toFixed(decimals) + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+  }
+
+  requestAnimationFrame(update);
+}
+
+const counters = document.querySelectorAll('.counter');
+let countersStarted = false;
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !countersStarted) {
+      countersStarted = true;
+      counters.forEach(c => animateCounter(c));
+    }
+  });
+}, { threshold: 0.5 });
+
+counters.forEach(c => counterObserver.observe(c));
+
+/* =========================================================
+   9. SKILL BAR ANIMATION
+   ========================================================= */
+const skillBars = document.querySelectorAll('.dash-progress-fill');
+
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const target = entry.target.dataset.width;
+      entry.target.style.width = target + '%';
+      skillObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+skillBars.forEach(bar => skillObserver.observe(bar));
+
+/* =========================================================
+   10. PROJECT FILTER
+   ========================================================= */
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Update active button
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filter = btn.dataset.filter;
+
+    projectCards.forEach(card => {
+      const category = card.dataset.category;
+      const show = filter === 'all' || category === filter;
+      card.classList.toggle('hidden', !show);
+
+      // Reset & re-animate visible cards
+      if (show) {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 60);
+      }
+    });
+  });
+});
+
+/* =========================================================
+   11. PROJECT MODAL
+   ========================================================= */
+const modalOverlay = document.getElementById('modalOverlay');
+const modalContent = document.getElementById('modalContent');
+const modalClose = document.getElementById('modalClose');
+
+document.querySelectorAll('.project-detail-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const idx = parseInt(btn.dataset.project);
+    const proj = projectData[idx];
+    if (!proj) return;
+
+    modalContent.innerHTML = `
+      <span class="modal-tag">${proj.category}</span>
+      <h2>${proj.title}</h2>
+      <h4>Problem Statement</h4>
+      <p>${proj.problem}</p>
+      <h4>Description</h4>
+      <p>${proj.description}</p>
+      <h4>Key Outcome</h4>
+      <p>${proj.outcome}</p>
+      <h4>Technologies Used</h4>
+      <div class="modal-tech">${proj.tech.map(t => `<span>${t}</span>`).join('')}</div>
+      <div class="modal-actions">
+        ${proj.github ? `<a href="${proj.github}" class="btn btn--primary">⌥ GitHub</a>` : ''}
+        ${proj.demo ? `<a href="${proj.demo}"   class="btn btn--secondary">${proj.demo === 'Preprint' ? '📄 Preprint' : proj.demo === 'Report' ? '📄 Report' : '▶ Live Demo'}</a>` : ''}
+      </div>
+    `;
+
+    modalOverlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    modalClose.focus();
+  });
+});
+
+function closeModal() {
+  modalOverlay.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+modalClose.addEventListener('click', closeModal);
+
+modalOverlay.addEventListener('click', (e) => {
+  if (e.target === modalOverlay) closeModal();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modalOverlay.style.display === 'flex') closeModal();
+});
+
+/* =========================================================
+   12. TESTIMONIAL SLIDER (Real-time Reactive Drag)
+   ========================================================= */
+const track = document.getElementById('testimonialTrack');
+const slides = track ? track.querySelectorAll('.testimonial-slide') : [];
+const dotsContainer = document.getElementById('testimonialDots');
+let currentSlide = 0;
+let autoSlideTimer;
+let isDragging = false;
+let startPos = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
+let animationID;
+
+if (slides.length > 0) {
+  // Create dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'testimonial-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Go to testimonial ${i + 1}`);
+    dot.addEventListener('click', () => {
+      currentSlide = i;
+      updateSliderPosition();
+    });
+    dotsContainer.appendChild(dot);
+
+    // Add touch and mouse drag events
+    const slide = slides[i];
+    slide.addEventListener('mousedown', touchStart(i));
+    slide.addEventListener('touchstart', touchStart(i), { passive: true });
+    slide.addEventListener('mouseup', touchEnd);
+    slide.addEventListener('touchend', touchEnd);
+    slide.addEventListener('mousemove', touchMove);
+    slide.addEventListener('touchmove', touchMove, { passive: true });
+    slide.addEventListener('mouseleave', () => { if (isDragging) touchEnd(); });
+  });
+
+  function touchStart(index) {
+    return function (event) {
+      isDragging = true;
+      startPos = getPositionX(event);
+      animationID = requestAnimationFrame(animation);
+      track.style.transition = 'none'; // remove transition for real-time dragging
+      track.style.cursor = 'grabbing';
+      clearInterval(autoSlideTimer);
+    }
+  }
+
+  function touchEnd() {
+    isDragging = false;
+    cancelAnimationFrame(animationID);
+    track.style.cursor = 'grab';
+
+    const movedBy = currentTranslate - prevTranslate;
+
+    // Threshold to switch slides
+    if (movedBy < -100 && currentSlide < slides.length - 1) currentSlide += 1;
+    if (movedBy > 100 && currentSlide > 0) currentSlide -= 1;
+
+    updateSliderPosition();
+  }
+
+  function touchMove(event) {
+    if (isDragging) {
+      const currentPosition = getPositionX(event);
+      currentTranslate = prevTranslate + currentPosition - startPos;
+    }
+  }
+
+  function getPositionX(event) {
+    return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+  }
+
+  function animation() {
+    setSliderPosition();
+    if (isDragging) requestAnimationFrame(animation);
+  }
+
+  function setSliderPosition() {
+    track.style.transform = `translateX(${currentTranslate}px)`;
+  }
+
+  function updateSliderPosition() {
+    track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+    const slideWidth = slides[0].clientWidth;
+    currentTranslate = currentSlide * -slideWidth;
+    prevTranslate = currentTranslate;
+    setSliderPosition();
+
+    document.querySelectorAll('.testimonial-dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentSlide);
+    });
+    resetAutoSlide();
+  }
+
+  window.addEventListener('resize', updateSliderPosition);
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideTimer);
+    autoSlideTimer = setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateSliderPosition();
+    }, 6000);
+  }
+
+  document.getElementById('prevTestimonial').addEventListener('click', () => {
+    currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
+    updateSliderPosition();
+  });
+  document.getElementById('nextTestimonial').addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateSliderPosition();
+  });
+
+  // Init position
+  track.style.cursor = 'grab';
+  updateSliderPosition();
+}
+
+/* =========================================================
+   13. BibTeX COPY BUTTONS
+   ========================================================= */
+document.querySelectorAll('.bibtex-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const bibtex = btn.dataset.bibtex;
+    if (!bibtex) return;
+
+    navigator.clipboard.writeText(bibtex).then(() => {
+      const original = btn.textContent;
+      btn.textContent = '✅ Copied!';
+      btn.style.color = '#16a34a';
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.style.color = '';
+      }, 2000);
+    }).catch(() => {
+      // Fallback for older browsers
+      const ta = document.createElement('textarea');
+      ta.value = bibtex;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent = '✅ Copied!';
+      setTimeout(() => { btn.textContent = 'Copy BibTeX'; }, 2000);
+    });
+  });
+});
+
+/* =========================================================
+   14. COPY EMAIL BUTTON (HUB VERSION)
+   ========================================================= */
+const copyEmailBtn = document.getElementById('copyEmailBtn');
+const emailDisplay = document.getElementById('emailDisplay');
+
+if (copyEmailBtn && emailDisplay) {
+  copyEmailBtn.addEventListener('click', () => {
+    const email = emailDisplay.textContent.trim();
+    navigator.clipboard.writeText(email).then(() => {
+      // Success feedback
+      const originalIcon = copyEmailBtn.innerHTML;
+      copyEmailBtn.innerHTML = '✓';
+      copyEmailBtn.classList.add('success');
+
+      setTimeout(() => {
+        copyEmailBtn.innerHTML = originalIcon;
+        copyEmailBtn.classList.remove('success');
+      }, 2500);
+    });
+  });
+}
+
+/* =========================================================
+   15. LIVE LOCAL TIME WIDGET
+   ========================================================= */
+const timeDisplay = document.getElementById('localTime');
+const dateDisplay = document.getElementById('localDate');
+
+function updateTime() {
+  const now = new Date();
+  const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  const date = now.toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' });
+  if (timeDisplay) timeDisplay.textContent = time;
+  if (dateDisplay) dateDisplay.textContent = date;
+}
+
+updateTime();
+setInterval(updateTime, 1000);
+
+/* =========================================================
+   16. FAQ ACCORDION (PROFESSIONAL VERSION)
+   ========================================================= */
+const faqCards = document.querySelectorAll('.faq-card');
+
+faqCards.forEach(card => {
+  const trigger = card.querySelector('.faq-trigger');
+
+  trigger.addEventListener('click', () => {
+    const isOpen = card.classList.contains('open');
+
+    // Optional: Close other cards when one is opened (Accordion behavior)
+    faqCards.forEach(c => {
+      if (c !== card) {
+        c.classList.remove('open');
+        c.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Toggle current card
+    card.classList.toggle('open');
+    trigger.setAttribute('aria-expanded', !isOpen);
+  });
+});
+
+/* =========================================================
+   17. CONTACT HUB FORM VALIDATION
+   ========================================================= */
+const contactForm = document.getElementById('contactForm');
+const formSuccess = document.getElementById('formSuccess');
+
+function showError(id, msg) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = msg;
+}
+
+function clearErrors() {
+  ['nameError', 'emailError', 'subjectError', 'messageError'].forEach(id => showError(id, ''));
+  ['formName', 'formEmail', 'formSubject', 'formMessage'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.remove('error');
+  });
+}
+
+function markError(fieldId, errorId, msg) {
+  const field = document.getElementById(fieldId);
+  if (field) field.classList.add('error');
+  showError(errorId, msg);
+}
+
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+if (contactForm) {
+  // Live validation on blur
+  contactForm.addEventListener('focusout', (e) => {
+    const t = e.target;
+    if (t.id === 'formName' && t.value.trim().length < 2) {
+      markError('formName', 'nameError', 'Please enter your identity.');
+    } else if (t.id === 'formName') {
+      showError('nameError', '');
+      t.classList.remove('error');
+    }
+
+    if (t.id === 'formEmail' && !validateEmail(t.value.trim())) {
+      markError('formEmail', 'emailError', 'Please enter a valid return address.');
+    } else if (t.id === 'formEmail') {
+      showError('emailError', '');
+      t.classList.remove('error');
+    }
+  });
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    clearErrors();
+
+    const name = document.getElementById('formName').value.trim();
+    const email = document.getElementById('formEmail').value.trim();
+    const subject = document.getElementById('formSubject').value;
+    const message = document.getElementById('formMessage').value.trim();
+    let valid = true;
+
+    if (name.length < 2) {
+      markError('formName', 'nameError', 'Please enter your full name (at least 2 characters).');
+      valid = false;
+    }
+
+    if (!validateEmail(email)) {
+      markError('formEmail', 'emailError', 'Please enter a valid email address.');
+      valid = false;
+    }
+
+    if (!subject) {
+      markError('formSubject', 'subjectError', 'Please select a subject for your inquiry.');
+      valid = false;
+    }
+
+    if (message.length < 20) {
+      markError('formMessage', 'messageError', 'Please write a message of at least 20 characters.');
+      valid = false;
+    }
+
+    if (valid) {
+      // Simulate sending (replace with actual form submission logic)
+      const submitBtn = contactForm.querySelector('.glass-submit-btn');
+      const btnText = submitBtn.querySelector('.btn-text');
+      const originalText = btnText.textContent;
+      
+      btnText.textContent = 'Connecting...';
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        contactForm.reset();
+        formSuccess.style.display = 'flex';
+        btnText.textContent = originalText;
+        submitBtn.disabled = false;
+
+        setTimeout(() => {
+          formSuccess.style.display = 'none';
+        }, 6000);
+      }, 1500);
+    }
+  });
+}
+
+/* =========================================================
+   18. BACK TO TOP BUTTON
+   ========================================================= */
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 500) {
+    backToTop.classList.add('visible');
+  } else {
+    backToTop.classList.remove('visible');
+  }
+}, { passive: true });
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* =========================================================
+   19. FOOTER YEAR
+   ========================================================= */
+const footerYear = document.getElementById('footerYear');
+if (footerYear) footerYear.textContent = new Date().getFullYear();
+
+/* =========================================================
+   20. SMOOTH SCROLL FOR ANCHOR LINKS
+   ========================================================= */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', (e) => {
+    const targetId = anchor.getAttribute('href').slice(1);
+    const target = document.getElementById(targetId);
+    if (target) {
+      e.preventDefault();
+      const offset = 78; // navbar height
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+
+/* =========================================================
+   21. KEYBOARD TRAP FOR MODAL (Accessibility)
+   ========================================================= */
+document.addEventListener('keydown', (e) => {
+  if (modalOverlay.style.display !== 'flex') return;
+
+  if (e.key === 'Tab') {
+    const focusable = modalOverlay.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.shiftKey) {
+      if (document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      }
+    } else {
+      if (document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  }
+});
+
+
+
+/* =========================================================
+   23. REDUCED MOTION DETECTION
+   ========================================================= */
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (prefersReducedMotion) {
+  // Instantly show all reveal elements
+  document.querySelectorAll('.reveal').forEach(el => {
+    el.classList.add('visible');
+    el.style.transition = 'none';
+  });
+
+  // Stop floating shapes
+  document.querySelectorAll('.shape').forEach(s => {
+    s.style.animation = 'none';
+  });
+}
+
+/* =========================================================
+   24. REAL LIFE ANIMATIONS (3D Tilt & Magnetic Buttons)
+   ========================================================= */
+if (!prefersReducedMotion) {
+  // 3D Tilt Effect on Cards
+  const tiltElements = document.querySelectorAll('.project-card, .research-card, .achieve-card, .timeline__card, .info-card, .value-item, .profile-card, .learning-card, .dash-card, .dc-card, .dc-viewer');
+
+  tiltElements.forEach(el => {
+    el.addEventListener('mousemove', (e) => {
+      if (window.innerWidth <= 768) return; // Disable on mobile
+
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // Calculate tilt limits (max 6 degrees)
+      const tiltX = ((y - centerY) / centerY) * -6;
+      const tiltY = ((x - centerX) / centerX) * 6;
+
+      el.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02, 1.02, 1.02)`;
+      el.style.transition = 'transform 0.1s ease-out, box-shadow 0.1s ease-out';
+
+      // Dynamic light shadow
+      const shadowX = (x - centerX) / 20 * -1;
+      const shadowY = (y - centerY) / 20 * -1;
+      el.style.boxShadow = `${shadowX}px ${shadowY}px 30px rgba(15,36,68,0.12)`;
+      el.style.zIndex = '10';
+    });
+
+    el.addEventListener('mouseleave', () => {
+      el.style.transform = '';
+      el.style.boxShadow = '';
+      el.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+      el.style.zIndex = '1';
+    });
+  });
+
+  // Magnetic Buttons
+  const magneticBtns = document.querySelectorAll('.btn');
+  magneticBtns.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      if (window.innerWidth <= 768) return;
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px) scale(1.05)`;
+      btn.style.transition = 'transform 0.1s ease-out';
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+      btn.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+    });
+  });
+
+  // Real-Time Canvas Particle Network
+  const canvas = document.getElementById('bgCanvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    const mouse = { x: -1000, y: -1000 };
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    let scrollVelocity = 0;
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+      scrollVelocity = currentScrollY - lastScrollY;
+      lastScrollY = currentScrollY;
+    });
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 1.5;
+        this.vy = (Math.random() - 0.5) * 1.5;
+        this.radius = Math.random() * 2 + 1;
+      }
+
+      update() {
+        this.x += this.vx;
+        // Apply scroll velocity for parallax effect (moves particles opposite to scroll direction)
+        this.y += this.vy - (scrollVelocity * 0.4);
+
+        // Wrap around screen edges for an infinite feel
+        if (this.x < 0) this.x = width;
+        if (this.x > width) this.x = 0;
+        if (this.y < 0) this.y = height;
+        if (this.y > height) this.y = 0;
+
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < 150) {
+          this.x -= dx * 0.02;
+          this.y -= dy * 0.02;
+        }
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        // Reduced visibility
+        ctx.fillStyle = isDark ? 'rgba(74, 127, 212, 0.25)' : 'rgba(15, 36, 68, 0.15)';
+        ctx.fill();
+      }
+    }
+
+    // Reduced number of particles from 80 to 50
+    for (let i = 0; i < 50; i++) {
+      particles.push(new Particle());
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 130) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+
+            const alpha = 1 - (distance / 130);
+            // Reduced line visibility
+            ctx.strokeStyle = isDark ? `rgba(74, 127, 212, ${alpha * 0.2})` : `rgba(15, 36, 68, ${alpha * 0.1})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Smoothly decay scroll velocity
+      scrollVelocity *= 0.9;
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  }
+}
+
+/* =========================================================
+   14. DOCUMENT CENTER INTERACTIVITY
+   ========================================================= */
+const dcCards = document.querySelectorAll('.dc-card');
+const docFrame = document.getElementById('documentFrame');
+const viewerLoading = document.getElementById('viewerLoading');
+
+if (dcCards.length > 0 && docFrame) {
+  dcCards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Remove active from all
+      dcCards.forEach(c => c.classList.remove('active'));
+      // Add active to clicked
+      card.classList.add('active');
+
+      const docType = card.dataset.doc;
+      let docUrl = '';
+
+      // Update these URLs to actual documents when available
+      if (docType === 'cv') docUrl = 'RenderCV_sb2nov_Theme.pdf';
+      else if (docType === 'resume') docUrl = 'RenderCV_sb2nov_Theme.pdf';
+      else if (docType === 'transcript') docUrl = 'RenderCV_sb2nov_Theme.pdf';
+
+      if (docUrl) {
+        viewerLoading.style.opacity = '1';
+        viewerLoading.style.visibility = 'visible';
+        docFrame.classList.remove('loaded');
+        docFrame.src = docUrl;
+      }
+    });
+  });
+
+  docFrame.addEventListener('load', () => {
+    viewerLoading.style.opacity = '0';
+    setTimeout(() => {
+      viewerLoading.style.visibility = 'hidden';
+    }, 500);
+    docFrame.classList.add('loaded');
+  });
+}
+
+/* =========================================================
+   END OF SCRIPT
+   ========================================================= */
+console.log(
+  '%cAcademic Portfolio%c\nBuilt with care and academic intent.',
+  'color: #0f2444; font-size: 1.2em; font-weight: bold;',
+  'color: #4b5563; font-size: 0.9em;'
+);
