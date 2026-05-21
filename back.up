@@ -83,7 +83,7 @@
           </div>
           <p class="hero__pretitle">Hello, I'm</p>
           <h1 class="hero__name" id="heroHeading">Tirtho Mondal</h1>
-          <h2 class="hero__title">CSE Student | Software Developer | AI &amp; Research Enthusiast</h2>
+          <h2 class="hero__title">CSE Student | Software Developer | AI &amp; Accessibility Enthusiast</h2>
           <p class="hero__university">📍 Khulna University of Engineering &amp; Technology (KUET) &nbsp;·&nbsp;
             Department of Computer Science and Engineering</p>
           <div class="hero__typing-wrapper" aria-live="polite">
@@ -132,13 +132,13 @@
         <div class="about__grid">
           <div class="about__bio reveal">
             <p class="about__lead">I am a highly motivated undergraduate student in Computer Science, currently pursuing
-              my degree at Khulna University of Engineering &amp; Technology (KUET). My academic journey has been shaped by a deep intellectual curiosity about
-              the intersection of artificial intelligence, machine learning, and optimization theory.</p>
+              my degree at [University Name]. My academic journey has been shaped by a deep intellectual curiosity about
+              the intersection of artificial intelligence, data systems, and human-centered computing.</p>
             <p>Throughout my studies, I have consistently sought opportunities beyond the classroom — engaging in
               self-directed research, collaborative projects, and academic communities that challenge and elevate my
               thinking. I believe that meaningful research begins with asking the right questions and is sustained by
               discipline, rigor, and empathy.</p>
-            <p>My long-term career objective is to contribute to research in Machine Learning, Optimization, Game Theory, and Computer Vision — developing solutions
+            <p>My long-term career objective is to contribute to research in [Your Research Area] — developing solutions
               that are not only technically sound but ethically responsible and socially impactful.</p>
             <div class="about__values">
               <div class="value-item">
@@ -214,7 +214,7 @@
                   <p class="timeline__institution">🏛 Khulna University of Engineering &amp; Technology (KUET)</p>
                   <p class="timeline__dept">Department of Computer Science and Engineering</p>
                 </div>
-                <span class="timeline__date">2022 – Present</span>
+                <span class="timeline__date">2021 – 2025</span>
               </div>
               <div class="timeline__body">
                 <div class="edu-meta">
@@ -223,14 +223,15 @@
                   <span class="edu-tag">Current Status: 4th Year - 2nd Semester</span>
                 </div>
                 <div class="coursework">
-                  <p class="coursework__label">Relevant Coursework</p>
+                  <p class="coursework__label">Relevant Coursework:</p>
                   <div class="coursework__tags">
                     <span>Data Structures & Algorithms</span>
                     <span>Machine Learning</span>
+                    <span>Database Systems</span>
                     <span>Operating Systems</span>
+                    <span>Computer Networks</span>
                     <span>Software Engineering</span>
-                    <span>Computer Architecture</span>
-                    <span>Statistics & Probability</span>
+                    <span>Artificial Intelligence</span>
                   </div>
                 </div>
               </div>
@@ -269,34 +270,46 @@
         </div>
         <div class="research-grid">
           <div class="research-card reveal">
-            <div class="research-card__icon">📈</div>
-            <h3>Optimization Theory</h3>
-            <p>Focusing on mathematical optimization, formulation of efficient algorithms, and enhancing system computational speeds and efficiency.</p>
-          </div>
-          <div class="research-card reveal">
-            <div class="research-card__icon">♟</div>
-            <h3>Game Theory</h3>
-            <p>Exploring strategic decision-making frameworks, multi-agent coordination, and behavioral modeling in complex environments.</p>
-          </div>
-          <div class="research-card reveal">
-            <div class="research-card__icon">👁</div>
-            <h3>Computer Vision</h3>
-            <p>Investigating real-time object detection, image classification, and spatial computing to build robust assistive accessibility systems.</p>
-          </div>
-          <div class="research-card reveal">
-            <div class="research-card__icon">🗣</div>
-            <h3>Natural Language Processing</h3>
-            <p>Studying transformer architectures, sentiment analysis, and semantic understanding to bridge human-computer interactions.</p>
+            <div class="research-card__icon">🤖</div>
+            <h3>Artificial Intelligence</h3>
+            <p>Exploring intelligent agent design, knowledge representation, and AI ethics — with a focus on building
+              systems that reason effectively and responsibly.</p>
           </div>
           <div class="research-card reveal">
             <div class="research-card__icon">📊</div>
             <h3>Machine Learning</h3>
-            <p>Developing deep learning architectures, feature engineering pipelines, and pattern recognition tools to address complex problems.</p>
+            <p>Investigating deep learning architectures, transfer learning, and model interpretability to solve complex
+              classification and prediction problems.</p>
           </div>
           <div class="research-card reveal">
-            <div class="research-card__icon">🤖</div>
-            <h3>Artificial Intelligence</h3>
-            <p>Researching autonomous systems, cognitive agent design, and ethical AI frameworks that are technically sound and socially responsible.</p>
+            <div class="research-card__icon">🗄</div>
+            <h3>Data Science</h3>
+            <p>Applying statistical analysis, data mining, and visualization techniques to extract meaningful insights
+              from large-scale datasets.</p>
+          </div>
+          <div class="research-card reveal">
+            <div class="research-card__icon">⚙</div>
+            <h3>Software Engineering</h3>
+            <p>Studying software architecture, design patterns, and agile methodologies to build scalable, maintainable,
+              and testable software systems.</p>
+          </div>
+          <div class="research-card reveal">
+            <div class="research-card__icon">🌐</div>
+            <h3>Web Technologies</h3>
+            <p>Researching progressive web applications, accessibility, and performance optimization in modern web
+              ecosystems.</p>
+          </div>
+          <div class="research-card reveal">
+            <div class="research-card__icon">🛡</div>
+            <h3>Cybersecurity</h3>
+            <p>Examining threat modeling, cryptographic protocols, and secure system design to address emerging
+              vulnerabilities in digital infrastructure.</p>
+          </div>
+          <div class="research-card reveal">
+            <div class="research-card__icon">🖥</div>
+            <h3>Human-Computer Interaction</h3>
+            <p>Exploring usability engineering, cognitive load, and inclusive design to create interfaces that are
+              intuitive and accessible to all users.</p>
           </div>
         </div>
       </div>
@@ -331,9 +344,9 @@
                   <span class="dash-lang__level">Advanced</span>
                 </div>
                 <div class="dash-progress-track">
-                  <div class="dash-progress-fill" data-width="92" style="--accent: var(--navy);"></div>
+                  <div class="dash-progress-fill" data-width="90" style="--accent: var(--navy);"></div>
                 </div>
-                <p class="dash-lang__usage">Competitive Programming, Systems Logic, OOP</p>
+                <p class="dash-lang__usage">Competitive Programming, Systems Logic</p>
               </div>
               <div class="dash-lang">
                 <div class="dash-lang__meta">
@@ -341,39 +354,29 @@
                   <span class="dash-lang__level">Advanced</span>
                 </div>
                 <div class="dash-progress-track">
-                  <div class="dash-progress-fill" data-width="90" style="--accent: var(--navy);"></div>
+                  <div class="dash-progress-fill" data-width="85" style="--accent: var(--navy);"></div>
                 </div>
-                <p class="dash-lang__usage">ML Research, Data Analysis, Computer Vision</p>
+                <p class="dash-lang__usage">ML Research, Data Analysis, Automation</p>
               </div>
               <div class="dash-lang">
                 <div class="dash-lang__meta">
-                  <span class="dash-lang__name">JavaScript / HTML / CSS</span>
-                  <span class="dash-lang__level">Proficient</span>
-                </div>
-                <div class="dash-progress-track">
-                  <div class="dash-progress-fill" data-width="82" style="--accent: var(--navy);"></div>
-                </div>
-                <p class="dash-lang__usage">Responsive Web Interfaces, Client Interactivity</p>
-              </div>
-              <div class="dash-lang">
-                <div class="dash-lang__meta">
-                  <span class="dash-lang__name">PHP &amp; SQL</span>
+                  <span class="dash-lang__name">JavaScript</span>
                   <span class="dash-lang__level">Proficient</span>
                 </div>
                 <div class="dash-progress-track">
                   <div class="dash-progress-fill" data-width="80" style="--accent: var(--navy);"></div>
                 </div>
-                <p class="dash-lang__usage">Backend Systems, Database Architecture &amp; Query Optimization</p>
+                <p class="dash-lang__usage">Modern Web Interfaces, Interactive Logic</p>
               </div>
               <div class="dash-lang">
                 <div class="dash-lang__meta">
-                  <span class="dash-lang__name">Java &amp; Dart</span>
-                  <span class="dash-lang__level">Proficient</span>
+                  <span class="dash-lang__name">PHP &amp; SQL</span>
+                  <span class="dash-lang__level">Intermediate</span>
                 </div>
                 <div class="dash-progress-track">
-                  <div class="dash-progress-fill" data-width="78" style="--accent: var(--navy);"></div>
+                  <div class="dash-progress-fill" data-width="75" style="--accent: var(--navy);"></div>
                 </div>
-                <p class="dash-lang__usage">Desktop Applications, Android SDK, Flutter Mobile Apps</p>
+                <p class="dash-lang__usage">Backend Systems, Database Architecture</p>
               </div>
             </div>
           </div>
@@ -398,20 +401,20 @@
                 <span class="stack-item__tag">Backend</span>
               </div>
               <div class="stack-item">
-                <span class="stack-item__name">Android SDK</span>
-                <span class="stack-item__tag">Mobile</span>
-              </div>
-              <div class="stack-item">
                 <span class="stack-item__name">Flutter</span>
                 <span class="stack-item__tag">Mobile</span>
               </div>
               <div class="stack-item">
-                <span class="stack-item__name">REST APIs</span>
+                <span class="stack-item__name">React</span>
+                <span class="stack-item__tag">Frontend</span>
+              </div>
+              <div class="stack-item">
+                <span class="stack-item__name">REST API</span>
                 <span class="stack-item__tag">Integration</span>
               </div>
               <div class="stack-item">
-                <span class="stack-item__name">OOP</span>
-                <span class="stack-item__tag">Paradigm</span>
+                <span class="stack-item__name">Node.js</span>
+                <span class="stack-item__tag">Runtime</span>
               </div>
               <div class="stack-item">
                 <span class="stack-item__name">Design Patterns</span>
@@ -435,11 +438,11 @@
             </div>
             <div class="dash-tool-tags">
               <span>Git / GitHub</span>
+              <span>Android Studio</span>
               <span>VS Code</span>
               <span>IntelliJ IDEA</span>
-              <span>Android Studio</span>
-              <span>Jupyter Notebook</span>
-              <span>LaTeX</span>
+              <span>Docker</span>
+              <span>Linux / Bash</span>
             </div>
           </div>
 
@@ -463,7 +466,7 @@
             </ul>
           </div>
 
-          <!-- Research Tools & Concepts -->
+          <!-- Professional Traits -->
           <div class="dash-card reveal" id="skill-traits">
             <div class="dash-card__header">
               <div class="dash-icon-box">
@@ -473,17 +476,13 @@
                   <polyline points="22 4 12 14.01 9 11.01"></polyline>
                 </svg>
               </div>
-              <h3 class="dash-card__title">Research &amp; Concepts</h3>
+              <h3 class="dash-card__title">Professional Qualities</h3>
             </div>
             <div class="dash-traits">
-              <div class="trait-chip">NumPy</div>
-              <div class="trait-chip">Pandas</div>
-              <div class="trait-chip">OpenCV</div>
-              <div class="trait-chip">Sensor Fusion</div>
-              <div class="trait-chip">Machine Learning</div>
-              <div class="trait-chip">Deep Learning</div>
-              <div class="trait-chip">Computer Vision</div>
-              <div class="trait-chip">NLP</div>
+              <div class="trait-chip">Academic Rigor</div>
+              <div class="trait-chip">Analytical Thinking</div>
+              <div class="trait-chip">Technical Writing</div>
+              <div class="trait-chip">Collaborative Research</div>
             </div>
           </div>
         </div>
@@ -501,24 +500,26 @@
         <!-- Filter Buttons -->
         <div class="filter-bar reveal" role="group" aria-label="Project filters">
           <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="research">Research &amp; ML</button>
-          <button class="filter-btn" data-filter="web">Web &amp; App Dev</button>
-          <button class="filter-btn" data-filter="data">Database &amp; Systems</button>
+          <button class="filter-btn" data-filter="ml">Machine Learning</button>
+          <button class="filter-btn" data-filter="web">Web Dev</button>
+          <button class="filter-btn" data-filter="data">Data Science</button>
+          <button class="filter-btn" data-filter="research">Research</button>
         </div>
         <!-- Projects Grid -->
         <div class="projects-grid" id="projectsGrid">
-          <div class="project-card reveal" data-category="research" data-project="0">
+          <div class="project-card reveal" data-category="ml" data-project="0">
             <div class="project-card__header">
-              <span class="project-tag">Research &amp; ML</span>
+              <span class="project-tag">Machine Learning</span>
               <div class="project-card__links">
-                <a href="https://github.com/Tirtho-Mondal/Navigation-Systems-for-the-Visually-Impaired" target="_blank" aria-label="GitHub" class="project-link">⌥ GitHub</a>
-                <a href="https://arxiv.org/abs/2504.20976" target="_blank" aria-label="Preprint" class="project-link">📄 Preprint</a>
+                <a href="#" aria-label="GitHub" class="project-link">⌥ GitHub</a>
+                <a href="#" aria-label="Demo" class="project-link">▶ Demo</a>
               </div>
             </div>
-            <h3 class="project-card__title">Smart Navigation for the Visually Impaired</h3>
-            <p class="project-card__desc">Real-time assistive navigation combining computer vision and sensor fusion for safe, independent mobility. Implemented multimodal audio and haptic feedback.</p>
+            <h3 class="project-card__title">Sentiment Analysis of Academic Feedback</h3>
+            <p class="project-card__desc">Developed an NLP-based sentiment classifier to analyze student feedback data,
+              achieving 91% accuracy using fine-tuned BERT embeddings.</p>
             <div class="project-tech">
-              <span>Python</span><span>Flutter</span><span>OpenCV</span><span>Sensor Fusion</span>
+              <span>Python</span><span>BERT</span><span>HuggingFace</span><span>Flask</span>
             </div>
             <button class="btn btn--sm project-detail-btn" data-project="0">View Details →</button>
           </div>
@@ -527,73 +528,81 @@
             <div class="project-card__header">
               <span class="project-tag">Web Development</span>
               <div class="project-card__links">
-                <a href="https://github.com/Tirtho-Mondal/TutorFinder.git" target="_blank" aria-label="GitHub" class="project-link">⌥ GitHub</a>
+                <a href="#" aria-label="GitHub" class="project-link">⌥ GitHub</a>
+                <a href="#" aria-label="Demo" class="project-link">▶ Live</a>
               </div>
             </div>
-            <h3 class="project-card__title">TutorFinder</h3>
-            <p class="project-card__desc">Web platform connecting students with qualified tutors, featuring intelligent matching algorithms, scheduling tools, and review systems.</p>
+            <h3 class="project-card__title">University Research Portal</h3>
+            <p class="project-card__desc">A collaborative web platform enabling researchers to share findings, annotate
+              papers, and coordinate literature reviews within departments.</p>
             <div class="project-tech">
-              <span>Laravel</span><span>PHP</span><span>MySQL</span><span>JavaScript</span>
+              <span>React</span><span>Node.js</span><span>MongoDB</span><span>JWT Auth</span>
             </div>
             <button class="btn btn--sm project-detail-btn" data-project="1">View Details →</button>
           </div>
 
-          <div class="project-card reveal" data-category="web" data-project="2">
+          <div class="project-card reveal" data-category="data" data-project="2">
             <div class="project-card__header">
-              <span class="project-tag">Android Development</span>
+              <span class="project-tag">Data Science</span>
               <div class="project-card__links">
-                <a href="https://github.com/azhar2007112/HouseHold_Services" target="_blank" aria-label="GitHub" class="project-link">⌥ GitHub</a>
+                <a href="#" aria-label="GitHub" class="project-link">⌥ GitHub</a>
+                <a href="#" aria-label="Report" class="project-link">📄 Report</a>
               </div>
             </div>
-            <h3 class="project-card__title">HouseHold Services</h3>
-            <p class="project-card__desc">Android application for booking and managing household services with real-time status tracking, order administration, and local caching.</p>
+            <h3 class="project-card__title">Predictive Analytics for Student Performance</h3>
+            <p class="project-card__desc">Built a multi-feature regression model to predict academic performance from
+              behavioral and demographic data, assisting early academic intervention.</p>
             <div class="project-tech">
-              <span>Android SDK</span><span>Java</span><span>SQLite</span><span>Git</span>
+              <span>Python</span><span>Scikit-learn</span><span>Pandas</span><span>Matplotlib</span>
             </div>
             <button class="btn btn--sm project-detail-btn" data-project="2">View Details →</button>
           </div>
 
-          <div class="project-card reveal" data-category="web" data-project="3">
+          <div class="project-card reveal" data-category="research" data-project="3">
             <div class="project-card__header">
-              <span class="project-tag">Desktop Application</span>
+              <span class="project-tag">Research</span>
               <div class="project-card__links">
-                <a href="https://github.com/Tirtho-Mondal/CSE-Family/tree/master" target="_blank" aria-label="GitHub" class="project-link">⌥ GitHub</a>
+                <a href="#" aria-label="Paper" class="project-link">📄 Preprint</a>
               </div>
             </div>
-            <h3 class="project-card__title">CSE Family</h3>
-            <p class="project-card__desc">Desktop platform for Computer Science &amp; Engineering students to share educational resources, participate in forums, and collaborate.</p>
+            <h3 class="project-card__title">Systematic Literature Review: Federated Learning in Healthcare</h3>
+            <p class="project-card__desc">Conducted a structured review of 45+ papers on privacy-preserving ML in
+              clinical settings, identifying key trends and research gaps.</p>
             <div class="project-tech">
-              <span>JavaFX</span><span>Java</span><span>OOP</span><span>CSS</span>
+              <span>LaTeX</span><span>Mendeley</span><span>PRISMA</span><span>Systematic Review</span>
             </div>
             <button class="btn btn--sm project-detail-btn" data-project="3">View Details →</button>
           </div>
 
-          <div class="project-card reveal" data-category="data" data-project="4">
+          <div class="project-card reveal" data-category="ml" data-project="4">
             <div class="project-card__header">
-              <span class="project-tag">Systems Simulation</span>
+              <span class="project-tag">Machine Learning</span>
               <div class="project-card__links">
-                <a href="https://github.com/Tirtho-Mondal/MobiCash" target="_blank" aria-label="GitHub" class="project-link">⌥ GitHub</a>
+                <a href="#" aria-label="GitHub" class="project-link">⌥ GitHub</a>
               </div>
             </div>
-            <h3 class="project-card__title">MobiCash</h3>
-            <p class="project-card__desc">Console-based mobile banking simulation supporting cash-in, cash-out, mobile recharge, and secure balance management using OOP paradigms.</p>
+            <h3 class="project-card__title">Medical Image Classification with CNN</h3>
+            <p class="project-card__desc">Trained a convolutional neural network for binary classification of chest
+              X-ray images (pneumonia vs. healthy), reaching 94.3% test accuracy.</p>
             <div class="project-tech">
-              <span>C++</span><span>OOP</span><span>Systems Logic</span>
+              <span>TensorFlow</span><span>Keras</span><span>OpenCV</span><span>Python</span>
             </div>
             <button class="btn btn--sm project-detail-btn" data-project="4">View Details →</button>
           </div>
 
-          <div class="project-card reveal" data-category="data" data-project="5">
+          <div class="project-card reveal" data-category="web" data-project="5">
             <div class="project-card__header">
-              <span class="project-tag">Database Management</span>
+              <span class="project-tag">Web Development</span>
               <div class="project-card__links">
-                <a href="https://github.com/Tirtho-Mondal/Laundry-Shop-Management.git" target="_blank" aria-label="GitHub" class="project-link">⌥ GitHub</a>
+                <a href="#" aria-label="GitHub" class="project-link">⌥ GitHub</a>
+                <a href="#" aria-label="Live" class="project-link">▶ Live</a>
               </div>
             </div>
-            <h3 class="project-card__title">Laundry Shop Management</h3>
-            <p class="project-card__desc">Relational database system designed to streamline laundry shop operations, customer tracking, and automated invoice calculation.</p>
+            <h3 class="project-card__title">Open-Source Study Planner PWA</h3>
+            <p class="project-card__desc">A Progressive Web App with offline capabilities for academic scheduling, built
+              with accessibility standards and published as open-source.</p>
             <div class="project-tech">
-              <span>SQL</span><span>MySQL</span><span>Database Design</span>
+              <span>HTML5</span><span>CSS3</span><span>JS</span><span>Service Workers</span>
             </div>
             <button class="btn btn--sm project-detail-btn" data-project="5">View Details →</button>
           </div>
@@ -605,102 +614,55 @@
     <section class="section section--alt" id="publications" aria-labelledby="pubHeading">
       <div class="container">
         <div class="section__header reveal">
-          <span class="section__tag">Scholarly Contributions</span>
-          <h2 class="section__title" id="pubHeading">Research <span class="text-accent">&amp; Publications</span></h2>
+          <span class="section__tag">Scholarly Work</span>
+          <h2 class="section__title" id="pubHeading">Research &amp; Publications</h2>
           <div class="section__divider"></div>
-          <p class="section__subtitle">Peer-reviewed and preprint research focusing on computer vision, accessibility, and AI for social impact.</p>
         </div>
-
-        <!-- Publication Stats Header -->
-        <div class="pub-stats reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 60px; text-align: center;">
-          <div class="pub-stat">
-            <div class="pub-stat__number">1</div>
-            <div class="pub-stat__label">Active Publication</div>
-          </div>
-          <div class="pub-stat">
-            <div class="pub-stat__number">5</div>
-            <div class="pub-stat__label">Co-authors</div>
-          </div>
-          <div class="pub-stat">
-            <div class="pub-stat__number">2025</div>
-            <div class="pub-stat__label">Latest Year</div>
-          </div>
+        <div class="pub-status reveal">
+          <div class="pub-status__badge">🔬 Research Work in Progress</div>
+          <p>Currently conducting research with the goal of submitting to peer-reviewed conferences and journals in the
+            near future.</p>
         </div>
-
-        <!-- Featured Publication -->
         <div class="pub-grid">
-          <div class="pub-card pub-card--featured reveal">
-            <!-- Header with type and status -->
-            <div class="pub-card__header">
-              <div class="pub-card__type-badge">
-                <span class="pub-type pub-type--preprint">📄 arXiv Preprint</span>
-                <span class="pub-status-badge pub-status-badge--active">
-                  <span class="status-dot"></span> In Review
-                </span>
-              </div>
+          <div class="pub-card reveal">
+            <span class="pub-type">Preprint</span>
+            <h3 class="pub-title">[Working Title: Federated Learning Privacy in Healthcare Systems]</h3>
+            <p class="pub-authors">[Your Name], [Supervisor Name] — <em>Manuscript in preparation, 2025</em></p>
+            <p class="pub-abstract">This study examines privacy-preserving approaches in federated machine learning
+              applied to clinical data, with emphasis on differential privacy and secure aggregation techniques.</p>
+            <div class="pub-actions">
+              <button class="btn btn--sm" disabled>In Preparation</button>
+              <button class="btn btn--sm btn--outline bibtex-btn"
+                data-bibtex="@misc{yourname2025federated, title={Federated Learning Privacy in Healthcare}, author={Your Name}, year={2025}, note={Manuscript in preparation}}">Copy
+                BibTeX</button>
             </div>
-
-            <!-- Main content -->
-            <div class="pub-card__content">
-              <h3 class="pub-title">Real Time Assistive Navigation for the Visually Impaired: A Scalable Approach for Indoor and Outdoor Mobility</h3>
-              
-              <div class="pub-meta">
-                <div class="pub-authors">
-                  <span class="pub-meta-label">Authors:</span>
-                  <span>Dabbrata Das, Argho Deb Das, Farhan Sadaf, Azhar Uddin, <strong>Tirtho Mondal</strong> <span class="author-highlight" title="Your contribution">(Contributor)</span></span>
-                </div>
-                <div class="pub-venue">
-                  <span class="pub-meta-label">Published:</span>
-                  <span><em>arXiv preprint</em> arXiv:2504.20976 | April 2025</span>
-                </div>
-              </div>
-
-              <!-- Research Keywords -->
-              <div class="pub-keywords">
-                <span class="keyword-label">Research Areas:</span>
-                <div class="keyword-tags">
-                  <span class="keyword-tag">Computer Vision</span>
-                  <span class="keyword-tag">Accessibility</span>
-                  <span class="keyword-tag">Deep Learning</span>
-                  <span class="keyword-tag">Assistive Technology</span>
-                  <span class="keyword-tag">Sensor Fusion</span>
-                </div>
-              </div>
-
-              <!-- Abstract -->
-              <div class="pub-abstract">
-                <p><strong>Abstract:</strong> This work presents a scalable and cost-effective navigation framework that integrates deep learning-based object detection with sensor fusion. The system provides haptic and auditory feedback to enable safe, independent indoor and outdoor mobility for visually impaired individuals.</p>
-              </div>
-
-              <!-- Actions -->
-              <div class="pub-actions">
-                <a href="https://arxiv.org/abs/2504.20976" target="_blank" class="btn btn--sm btn--primary">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px; display: inline;">
-                    <path d="M9 19c-5 1.5-5-2.5-7-4m14 6v-3.87a3.37 3.37 0 0 0-5.7-2.27m0 0a3.35 3.35 0 0 0-1.94 3.6v5.54"></path>
-                  </svg>
-                  View on arXiv
-                </a>
-                <button class="btn btn--sm btn--outline bibtex-btn" data-bibtex="@article{das2025real,&#10;  title={Real Time Assistive Navigation for the Visually Impaired: A Scalable Approach for Indoor and Outdoor Mobility},&#10;  author={Das, Dabbrata and Das, Argho Deb and Sadaf, Farhan and Uddin, Azhar and Mondal, Tirtho},&#10;  journal={arXiv preprint arXiv:2504.20976},&#10;  year={2025}&#10;}">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px; display: inline;">
-                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
-                  </svg>
-                  Copy BibTeX
-                </button>
-              </div>
-            </div>
-
-            <!-- Decorative accent -->
-            <div class="pub-card__accent"></div>
           </div>
-        </div>
-
-        <!-- Contribution Summary -->
-        <div class="pub-summary reveal" style="margin-top: 50px; padding: 32px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); border-radius: var(--radius); text-align: center;">
-          <p style="margin: 0; color: var(--text-secondary); font-size: 0.95rem;">
-            <strong>Open to collaboration</strong> on research projects in Computer Vision, Accessibility, AI, and Machine Learning. 
-            <a href="#contact" style="color: var(--accent-gold); text-decoration: none; font-weight: 500;">Get in touch →</a>
-          </p>
+          <div class="pub-card reveal">
+            <span class="pub-type pub-type--review">Literature Review</span>
+            <h3 class="pub-title">Systematic Review: Sentiment Analysis in Educational Technology</h3>
+            <p class="pub-authors">[Your Name] — <em>Class Research Paper, 2024</em></p>
+            <p class="pub-abstract">A structured review of sentiment analysis applications in EdTech, synthesizing
+              methodological trends across 40+ published studies from 2018–2024.</p>
+            <div class="pub-actions">
+              <a href="#" class="btn btn--sm">View PDF</a>
+              <button class="btn btn--sm btn--outline bibtex-btn"
+                data-bibtex="@misc{yourname2024sentiment, title={Systematic Review: Sentiment Analysis in EdTech}, author={Your Name}, year={2024}}">Copy
+                BibTeX</button>
+            </div>
+          </div>
+          <div class="pub-card reveal">
+            <span class="pub-type pub-type--poster">Academic Poster</span>
+            <h3 class="pub-title">Explainability in Medical AI Systems — AAAI Student Workshop Submission</h3>
+            <p class="pub-authors">[Your Name], [Co-Author] — <em>Conference Submission, 2025</em></p>
+            <p class="pub-abstract">Poster exploring XAI (Explainable AI) methodologies, their clinical applicability,
+              and design guidelines for interpretable healthcare ML systems.</p>
+            <div class="pub-actions">
+              <a href="#" class="btn btn--sm">View Poster</a>
+              <button class="btn btn--sm btn--outline bibtex-btn"
+                data-bibtex="@misc{yourname2025xai, title={Explainability in Medical AI}, author={Your Name}, year={2025}}">Copy
+                BibTeX</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -745,7 +707,7 @@
               <g class="graph-point highlight" style="--delay: 1.5s;">
                 <circle cx="1000" cy="40" r="8" />
                 <circle cx="1000" cy="40" r="16" class="point-pulse" />
-                <text x="980" y="195" text-anchor="end">Present (2026)</text>
+                <text x="980" y="195" text-anchor="end">Present (2024)</text>
               </g>
             </svg>
             <div class="graph-narrative">
@@ -755,8 +717,8 @@
         </div>
 
         <!-- Achievement Matrix Grid -->
-        <div class="achieve-matrix-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-          <!-- Item 1: Dean's List 2021-2022 -->
+        <div class="achieve-matrix-grid">
+          <!-- Item 1: Dean's List -->
           <div class="achieve-matrix-card reveal">
             <div class="achieve-matrix-card__top">
               <div class="achieve-matrix-icon">
@@ -765,38 +727,20 @@
                   <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
                 </svg>
               </div>
-              <span class="achieve-matrix-tag">Dean's List Standing</span>
+              <span class="achieve-matrix-tag">Institutional Honor</span>
             </div>
             <div class="achieve-matrix-card__body">
-              <h3>Dean's List (A.Y. 2021 – 2022)</h3>
-              <p>Recognized for outstanding academic achievements and sustained performance in the undergraduate engineering curriculum.</p>
+              <h3>Dean's List Standing</h3>
+              <p>Recognized for sustained academic excellence, placing within the top 3% of the engineering cohort at
+                KUET.</p>
               <div class="achieve-matrix-footer">
-                <span class="achieve-matrix-date">A.Y. 2021 – 2022</span>
+                <span class="achieve-matrix-date">2022 – 2024</span>
+                <a href="#" class="achieve-matrix-verify">Verify Award →</a>
               </div>
             </div>
           </div>
 
-          <!-- Item 2: Dean's List 2022-2023 -->
-          <div class="achieve-matrix-card reveal">
-            <div class="achieve-matrix-card__top">
-              <div class="achieve-matrix-icon">
-                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
-                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                </svg>
-              </div>
-              <span class="achieve-matrix-tag">Dean's List Standing</span>
-            </div>
-            <div class="achieve-matrix-card__body">
-              <h3>Dean's List (A.Y. 2022 – 2023)</h3>
-              <p>Recognized for outstanding academic achievements and sustained performance in the undergraduate engineering curriculum.</p>
-              <div class="achieve-matrix-footer">
-                <span class="achieve-matrix-date">A.Y. 2022 – 2023</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 3: Board Merit Scholarship -->
+          <!-- Item 2: Hackathon -->
           <div class="achieve-matrix-card reveal">
             <div class="achieve-matrix-card__top">
               <div class="achieve-matrix-icon">
@@ -805,13 +749,106 @@
                   <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
                 </svg>
               </div>
-              <span class="achieve-matrix-tag">HSC Excellence</span>
+              <span class="achieve-matrix-tag">Competition Gold</span>
             </div>
             <div class="achieve-matrix-card__body">
-              <h3>Board Merit Scholar</h3>
-              <p>Awarded by Jashore Education Board for achieving outstanding academic results in the Higher Secondary Certificate (HSC) examination.</p>
+              <h3>1st Place: Uni-Hack 2024</h3>
+              <p>Secured the top position with 'VisionAid', an AI-driven assistive technology for visually impaired
+                users.</p>
               <div class="achieve-matrix-footer">
-                <span class="achieve-matrix-date">HSC 2020</span>
+                <span class="achieve-matrix-date">Spring 2024</span>
+                <a href="#" class="achieve-matrix-verify">Case Study →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Deep Learning -->
+          <div class="achieve-matrix-card reveal">
+            <div class="achieve-matrix-card__top">
+              <div class="achieve-matrix-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <span class="achieve-matrix-tag">Professional Cert</span>
+            </div>
+            <div class="achieve-matrix-card__body">
+              <h3>Deep Learning Specialization</h3>
+              <p>Validated mastery of CNNs, RNNs, and Neural Network optimization via deeplearning.ai.</p>
+              <div class="achieve-matrix-footer">
+                <span class="achieve-matrix-date">Oct 2024</span>
+                <a href="#" class="achieve-matrix-verify">Verify Credential →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Merit Scholarship -->
+          <div class="achieve-matrix-card reveal">
+            <div class="achieve-matrix-card__top">
+              <div class="achieve-matrix-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </div>
+              <span class="achieve-matrix-tag">Merit Grant</span>
+            </div>
+            <div class="achieve-matrix-card__body">
+              <h3>University Merit Scholarship</h3>
+              <p>Awarded for outstanding academic performance during the first two years of the undergraduate program.
+              </p>
+              <div class="achieve-matrix-footer">
+                <span class="achieve-matrix-date">2022 – 2023</span>
+                <a href="#" class="achieve-matrix-verify">Details →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: Data Analytics -->
+          <div class="achieve-matrix-card reveal">
+            <div class="achieve-matrix-card__top">
+              <div class="achieve-matrix-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                  <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                </svg>
+              </div>
+              <span class="achieve-matrix-tag">Google Certified</span>
+            </div>
+            <div class="achieve-matrix-card__body">
+              <h3>Google Data Analytics</h3>
+              <p>Comprehensive training in data processing, SQL, and analytical storytelling with R.</p>
+              <div class="achieve-matrix-footer">
+                <span class="achieve-matrix-date">Dec 2023</span>
+                <a href="#" class="achieve-matrix-verify">Verify Cert →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6: CS President -->
+          <div class="achieve-matrix-card reveal">
+            <div class="achieve-matrix-card__top">
+              <div class="achieve-matrix-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="8.5" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <span class="achieve-matrix-tag">Elected Leadership</span>
+            </div>
+            <div class="achieve-matrix-card__body">
+              <h3>CS Student Society President</h3>
+              <p>Leading a community of 500+ students, coordinating technical seminars and department-wide initiatives.
+              </p>
+              <div class="achieve-matrix-footer">
+                <span class="achieve-matrix-date">2023 – Present</span>
+                <a href="#" class="achieve-matrix-verify">Impact Report →</a>
               </div>
             </div>
           </div>
@@ -824,7 +861,60 @@
       </div>
     </section>
 
-
+    <!-- ===== EXPERIENCE SECTION ===== -->
+    <section class="section section--alt" id="experience" aria-labelledby="expHeading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Professional Background</span>
+          <h2 class="section__title" id="expHeading">Experience</h2>
+          <div class="section__divider"></div>
+        </div>
+        <div class="timeline">
+          <div class="timeline__item reveal">
+            <div class="timeline__marker"></div>
+            <div class="timeline__card">
+              <div class="timeline__header">
+                <div>
+                  <h3 class="timeline__degree">Research Assistant (Volunteer)</h3>
+                  <p class="timeline__institution">🏛 [Lab / Department Name], [University]</p>
+                </div>
+                <span class="timeline__date">Jan 2024 – Present</span>
+              </div>
+              <p>Assisted with data collection, preprocessing, and literature review for an ongoing research project on
+                federated learning. Contributed to writing sections of a manuscript submitted for conference review.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal">
+            <div class="timeline__marker"></div>
+            <div class="timeline__card">
+              <div class="timeline__header">
+                <div>
+                  <h3 class="timeline__degree">Frontend Developer Intern</h3>
+                  <p class="timeline__institution">💼 [Company / Organization Name]</p>
+                </div>
+                <span class="timeline__date">Jun – Aug 2023</span>
+              </div>
+              <p>Developed and maintained responsive web interfaces for a client-facing dashboard. Collaborated with a
+                team of 5 using Agile methodology, improving page load speed by 35%.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal">
+            <div class="timeline__marker"></div>
+            <div class="timeline__card">
+              <div class="timeline__header">
+                <div>
+                  <h3 class="timeline__degree">Teaching Assistant — Data Structures</h3>
+                  <p class="timeline__institution">🎓 [University Name]</p>
+                </div>
+                <span class="timeline__date">Fall 2023</span>
+              </div>
+              <p>Conducted weekly lab sessions, graded assignments, and provided academic support to a cohort of 60
+                students, contributing to a 15% improvement in average exam scores.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ===== CV SECTION ===== -->
     <section class="section section--document-center" id="cv" aria-labelledby="cvHeading">
@@ -856,9 +946,9 @@
               <div class="dc-card__info">
                 <h3>Academic Curriculum Vitae</h3>
                 <div class="dc-card__meta">
-                  <span>v1.0</span>
+                  <span>v2.4</span>
                   <span class="dot"></span>
-                  <span>160 KB</span>
+                  <span>185 KB</span>
                 </div>
               </div>
               <div class="dc-card__actions">
@@ -883,7 +973,7 @@
               </div>
               <div class="dc-card__info">
                 <h3>Industry Resume</h3>
-                <div class="dc-card__meta">Available on Request</div>
+                <div class="dc-card__meta">Condensed Format</div>
               </div>
             </div>
 
@@ -895,7 +985,7 @@
               </div>
               <div class="dc-card__info">
                 <h3>Academic Transcript</h3>
-                <div class="dc-card__meta">Available on Request</div>
+                <div class="dc-card__meta">Verified KUET Official</div>
               </div>
             </div>
 
@@ -932,33 +1022,23 @@
                 <span class="dc-dot yellow"></span>
                 <span class="dc-dot green"></span>
               </div>
-              <div class="dc-viewer__tab" id="dcViewerTabTitle">
+              <div class="dc-viewer__tab">
                 <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"
                   style="margin-right: 8px;">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                   <polyline points="14 2 14 8 20 8"></polyline>
                 </svg>
-                Tirtho_Mondal_CV.pdf
+                Academic_CV_v2.4.pdf
               </div>
               <div class="dc-viewer__actions">
                 <!-- Actions removed for a cleaner digital-first experience -->
               </div>
             </div>
-            <div class="dc-viewer__body" style="position: relative;">
+            <div class="dc-viewer__body">
               <!-- Immersive Overlay -->
               <div class="dc-viewer__loading" id="viewerLoading">
                 <div class="dc-spinner"></div>
                 <p>Establishing Secure Stream...</p>
-              </div>
-              <!-- Available on Request Overlay -->
-              <div id="requestOverlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #0f2444; display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; z-index: 5;">
-                <svg viewBox="0 0 24 24" width="64" height="64" stroke="var(--accent-gold)" stroke-width="1.5" fill="none" style="margin-bottom: 20px;">
-                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                </svg>
-                <h3 style="color: var(--white); margin-bottom: 10px; font-size: 1.4rem;">Confidential Document</h3>
-                <p style="color: var(--grey-300); max-width: 320px; margin-bottom: 24px; font-size: 0.95rem; line-height: 1.5;">This document is available upon request for verification purposes.</p>
-                <a href="mailto:tirthomondal.2001@gmail.com?subject=Request for Document" class="btn btn--primary">Request Access</a>
               </div>
               <iframe src="Tirtho Mondal.pdf" id="documentFrame" class="dc-iframe"
                 title="CV Document Viewer"></iframe>
@@ -968,7 +1048,66 @@
       </div>
     </section>
 
-
+    <!-- ===== TESTIMONIALS SECTION ===== -->
+    <section class="section section--alt" id="testimonials" aria-labelledby="testHeading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">References</span>
+          <h2 class="section__title" id="testHeading">Testimonials</h2>
+          <div class="section__divider"></div>
+        </div>
+        <div class="testimonial-slider reveal" id="testimonialSlider">
+          <div class="testimonial-track" id="testimonialTrack">
+            <div class="testimonial-slide">
+              <blockquote class="testimonial__quote">"Tirtho Mondal demonstrates exceptional intellectual curiosity and
+                a
+                remarkable ability to grasp complex technical concepts. Their dedication to academic excellence and
+                research integrity makes them an outstanding candidate for graduate-level study."</blockquote>
+              <div class="testimonial__author">
+                <div class="testimonial__avatar">Prof</div>
+                <div>
+                  <strong>Prof. [Name Placeholder]</strong>
+                  <p>Associate Professor, Dept. of Computer Science</p>
+                  <p>KUET</p>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide">
+              <blockquote class="testimonial__quote">"During the internship, Tirtho Mondal showed remarkable
+                professionalism, technical skill, and an ability to contribute meaningfully to the team from day one. I
+                would highly recommend them for any research or development role."</blockquote>
+              <div class="testimonial__author">
+                <div class="testimonial__avatar">Mgr</div>
+                <div>
+                  <strong>[Manager Name]</strong>
+                  <p>Engineering Team Lead</p>
+                  <p>[Company Name]</p>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide">
+              <blockquote class="testimonial__quote">"As a Teaching Assistant, Tirtho Mondal was thoughtful, patient,
+                and
+                highly effective. Students consistently praised their clarity of explanation and approachability —
+                qualities that will serve them well throughout any academic career."</blockquote>
+              <div class="testimonial__author">
+                <div class="testimonial__avatar">Dr</div>
+                <div>
+                  <strong>Dr. [Name Placeholder]</strong>
+                  <p>Course Coordinator, Data Structures</p>
+                  <p>KUET</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial__nav">
+            <button class="testimonial-btn" id="prevTestimonial" aria-label="Previous testimonial">←</button>
+            <div class="testimonial-dots" id="testimonialDots"></div>
+            <button class="testimonial-btn" id="nextTestimonial" aria-label="Next testimonial">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ===== WHY CONSIDER ME ===== -->
     <section class="section" id="why" aria-labelledby="whyHeading">
@@ -1028,36 +1167,6 @@
           <h2 class="section__title" id="learnHeading">Learning &amp; Reading</h2>
           <div class="section__divider"></div>
         </div>
-        <div class="folder-panel learning-folders reveal">
-          <div class="folder-card folder-card--interactive" data-track-target="courseworkTracker" tabindex="0" role="button" aria-label="Open Coursework Tracker">
-            <span class="folder-card__icon">📁</span>
-            <div>
-              <h3>Coursework Tracker</h3>
-              <p>Active courses that strengthen both theory and practical research skills.</p>
-            </div>
-          </div>
-          <div class="folder-card">
-            <span class="folder-card__icon">📝</span>
-            <div>
-              <h3>Paper Review List</h3>
-              <p>Selected research papers that guide my current study and project direction.</p>
-            </div>
-          </div>
-          <div class="folder-card">
-            <span class="folder-card__icon">📚</span>
-            <div>
-              <h3>Knowledge Library</h3>
-              <p>Books and resources I rely on to deepen understanding of AI, systems, and software design.</p>
-            </div>
-          </div>
-          <div class="folder-card">
-            <span class="folder-card__icon">🔎</span>
-            <div>
-              <h3>Research Topics</h3>
-              <p>Current themes under study, from privacy-safe ML to transformer-based models.</p>
-            </div>
-          </div>
-        </div>
         <div class="learning-grid">
           <div class="learning-card reveal">
             <h3>📚 Current Courses</h3>
@@ -1068,7 +1177,15 @@
               <li>Research Methodology</li>
             </ul>
           </div>
-       
+          <div class="learning-card reveal">
+            <h3>📄 Papers Being Studied</h3>
+            <ul>
+              <li><em>Attention Is All You Need</em> — Vaswani et al.</li>
+              <li><em>BERT: Pre-training of Deep Bidirectional Transformers</em> — Devlin et al.</li>
+              <li><em>Deep Residual Learning for Image Recognition</em> — He et al.</li>
+              <li><em>Federated Learning at Scale</em> — Bonawitz et al.</li>
+            </ul>
+          </div>
           <div class="learning-card reveal">
             <h3>📖 Books &amp; Resources</h3>
             <ul>
@@ -1091,7 +1208,6 @@
       </div>
     </section>
 
-
     <!-- ===== FAQ SECTION (PROFESSIONAL ACCORDION) ===== -->
     <section class="section faq-section" id="faq" aria-labelledby="faqHeading">
       <div class="container">
@@ -1101,7 +1217,7 @@
           <div class="section__divider"></div>
           <p class="section__subtitle">Direct answers to common professional and academic inquiries</p>
         </div>
-       
+
         <div class="faq-container">
           <div class="faq-grid">
             <!-- Left Column: FAQ List -->
@@ -1125,13 +1241,18 @@
                   </button>
                   <div class="faq-content" id="faq-ans-0" role="region">
                     <div class="faq-content__inner">
-                      <p>My core research interests are situated in optimization, strategic modeling, and machine learning. I am particularly focused on:</p>
+                      <p>My core research interests are situated at the intersection of <strong>Machine
+                          Learning</strong> and <strong>Responsible AI</strong>. I am particularly focused on:</p>
                       <ul class="faq-sublist">
-                        <li><strong>Optimization &amp; Game Theory:</strong> Formulating mathematical frameworks for strategic decision-making and multi-agent coordination.</li>
-                        <li><strong>Computer Vision &amp; NLP:</strong> Investigating deep learning models for image classification, object detection, and semantic language processing.</li>
-                        <li><strong>Accessibility Systems:</strong> Applying CV and machine learning to build assistive systems like indoor/outdoor navigation for the visually impaired.</li>
+                        <li><strong>Federated Learning:</strong> Developing privacy-preserving ML architectures for
+                          decentralized data.</li>
+                        <li><strong>Explainable AI (XAI):</strong> Creating interpretable models for high-stakes domains
+                          like healthcare.</li>
+                        <li><strong>NLP & Accessibility:</strong> Leveraging LLMs to build assistive tools for
+                          neurodivergent individuals.</li>
                       </ul>
-                      <p>I aim to pursue a Ph.D. where I can contribute to making AI systems more transparent, robust, and computationally efficient.</p>
+                      <p>I aim to pursue a Ph.D. where I can contribute to making AI more transparent, equitable, and
+                        computationally efficient.</p>
                     </div>
                   </div>
                 </div>
@@ -1191,12 +1312,11 @@
                     <div class="faq-content__inner">
                       <p>My toolkit is optimized for both research and production-grade development:</p>
                       <div class="faq-tech-pills">
-                        <span>Python (NumPy, Pandas, OpenCV)</span>
-                        <span>C / C++ (OOP, Systems Logic)</span>
-                        <span>JavaScript (Web Interfaces)</span>
-                        <span>PHP &amp; SQL (Backend &amp; DB)</span>
-                        <span>Java &amp; Dart (Desktop, Android, Flutter)</span>
+                        <span>Python (NumPy, PyTorch)</span>
+                        <span>C++ (Algorithms)</span>
+                        <span>JavaScript (React, Node)</span>
                         <span>LaTeX (Publishing)</span>
+                        <span>Docker & Git</span>
                       </div>
                       <p>I prioritize writing <strong>clean, documented, and reproducible code</strong>, whether I'm
                         training a transformer model or building a responsive dashboard.</p>
@@ -1223,9 +1343,9 @@
                       <p>My academic documents are centrally managed in the <strong><a href="#cv">Document Intelligence
                             Center</a></strong>. You can:</p>
                       <ul class="faq-sublist">
-                        <li>Download/View my full <strong>Academic CV</strong> (PDF).</li>
-                        <li>Request my <strong>Industry-focused Resume</strong> (Available on request).</li>
-                        <li>Request my official <strong>KUET Transcripts</strong> (Available on request).</li>
+                        <li>Download the full <strong>Academic CV</strong> (PDF).</li>
+                        <li>View my <strong>Industry-focused Resume</strong>.</li>
+                        <li>Request official <strong>KUET Transcripts</strong> via email.</li>
                       </ul>
                     </div>
                   </div>
@@ -1299,7 +1419,7 @@
           <h4 class="footer__label">Academic Hub</h4>
           <ul class="footer__list footer__list--social">
             <li>
-              <a href="https://www.linkedin.com/in/tirtho-mondal-319a863ba/" target="_blank" rel="noopener" title="LinkedIn">
+              <a href="#" target="_blank" rel="noopener" title="LinkedIn">
                 <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                   <rect x="2" y="9" width="4" height="12"></rect>
@@ -1309,7 +1429,7 @@
               </a>
             </li>
             <li>
-              <a href="https://github.com/Tirtho-Mondal" target="_blank" rel="noopener" title="GitHub">
+              <a href="#" target="_blank" rel="noopener" title="GitHub">
                 <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
                   <path
                     d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
@@ -1319,7 +1439,7 @@
               </a>
             </li>
             <li>
-              <a href="https://scholar.google.com/citations?user=XfMDZ18AAAAJ&hl=en&authuser=2" target="_blank" rel="noopener" title="Google Scholar">
+              <a href="#" target="_blank" rel="noopener" title="Google Scholar">
                 <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
                   <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
                   <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
@@ -1328,7 +1448,7 @@
               </a>
             </li>
             <li>
-              <a href="https://orcid.org/0009-0003-3314-9100" target="_blank" rel="noopener" title="ORCID">
+              <a href="#" target="_blank" rel="noopener" title="ORCID">
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
                   <path
                     d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 18.232H5.631V5.768h1.738v12.464zm-.869-13.332c-.54 0-.979-.438-.979-.979s.439-.979.979-.979.979.438.979.979-.439.979-.979.979zm11.869 13.332h-1.631v-5.631c0-1.407-.54-2.156-1.631-2.156-1.091 0-1.631.749-1.631 2.156v5.631h-1.631V5.768h1.631v1.631c.36-.614 1.107-1.121 2.231-1.121 2.231 0 3.264 1.503 3.264 3.744v8.21z" />
@@ -1337,13 +1457,12 @@
               </a>
             </li>
             <li>
-              <a href="https://tirtho-mondal.github.io/tirtho_mondal_117/" target="_blank" rel="noopener" title="Website">
-                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="2" y1="12" x2="22" y2="12"></line>
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              <a href="#" target="_blank" rel="noopener" title="ResearchGate">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path
+                    d="M21.2 0H2.8C1.25 0 0 1.25 0 2.8v18.4C0 22.75 1.25 24 2.8 24h18.4c1.55 0 2.8-1.25 2.8-2.8V2.8C24 1.25 22.75 0 21.2 0zM8.8 17.6H6.4V6.4h2.4v11.2zm6.4 0H12.8V6.4h2.4c2.21 0 4 1.79 4 4s-1.79 4-4 4z" />
                 </svg>
-                Website
+                ResearchGate
               </a>
             </li>
           </ul>

@@ -21,70 +21,253 @@ function debounce(fn, ms) {
 /* ─── PROJECT DATA ───────────────────────────────────── */
 const projectData = [
   {
-    title: "Sentiment Analysis of Academic Feedback",
-    category: "Machine Learning",
-    problem: "Educational institutions collect large volumes of qualitative student feedback, but lack scalable tools to analyze sentiment trends across thousands of responses efficiently.",
-    description: "Developed an NLP-based sentiment classification pipeline using fine-tuned BERT embeddings to analyze student feedback at scale. The system processes raw text, classifies sentiment (positive / neutral / negative), and produces visual analytics dashboards for faculty.",
-    outcome: "Achieved 91% classification accuracy on a held-out test set of 2,400 feedback entries. Deployed as a lightweight Flask API consumed by a dashboard prototype.",
-    tech: ["Python", "BERT", "HuggingFace Transformers", "Flask", "Pandas", "Matplotlib"],
-    github: "#",
-    demo: "#"
+    title: "Smart Navigation for the Visually Impaired",
+    category: "Research & ML",
+    problem: "Visually impaired individuals face high barriers to safe, independent indoor and outdoor mobility due to the cost and complexity of existing assistive technologies.",
+    description: "Co-authored research and designed a portable navigation system that combines real-time computer vision object detection and sensor fusion. Developed multimodal output pipelines using custom audio alerts and haptic vibration feedback patterns to guide users safely.",
+    outcome: "Published as an arXiv preprint. The prototype successfully demonstrated high accuracy in obstacle detection and low latency in generating tactile warnings.",
+    tech: ["Python", "Flutter", "OpenCV", "Sensor Fusion", "Deep Learning"],
+    github: "https://github.com/Tirtho-Mondal/Navigation-Systems-for-the-Visually-Impaired",
+    demo: "https://arxiv.org/abs/2504.20976"
   },
   {
-    title: "University Research Portal",
-    category: "Web Development",
-    problem: "Academic researchers within a department lacked a unified digital space for sharing findings, annotating papers collaboratively, or managing literature review workflows.",
-    description: "Built a full-stack collaborative web platform enabling researchers to upload papers, annotate content, leave comments, and coordinate on shared reading lists. Features JWT authentication, role-based access control (student / researcher / admin), and real-time notifications.",
-    outcome: "Successfully piloted with a team of 8 researchers over a 6-week period. Reduced literature management overhead and improved cross-team knowledge sharing.",
-    tech: ["React", "Node.js", "Express", "MongoDB", "JWT Auth", "Socket.io"],
-    github: "#",
-    demo: "#"
-  },
-  {
-    title: "Predictive Analytics for Student Performance",
-    category: "Data Science",
-    problem: "Early identification of at-risk students is critical but often reactive. This project aimed to build a proactive predictive model using historical academic and behavioral data.",
-    description: "Designed and trained a multi-feature regression pipeline combining GPA trends, attendance records, assignment submission patterns, and demographic features. Conducted thorough feature engineering, cross-validation, and model explainability analysis using SHAP values.",
-    outcome: "The model achieved an R² of 0.87 and was presented as a research report to the university's academic support committee as a proof-of-concept for early intervention tooling.",
-    tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib", "SHAP", "Jupyter"],
-    github: "#",
-    demo: "Report"
-  },
-  {
-    title: "Systematic Literature Review: Federated Learning in Healthcare",
-    category: "Research",
-    problem: "The application of federated learning in clinical ML settings is rapidly growing, yet no comprehensive synthesis existed of privacy-preserving approaches, their trade-offs, and research gaps specific to healthcare.",
-    description: "Conducted a structured PRISMA-compliant systematic review of 47 peer-reviewed papers published between 2019–2024. Screened 200+ papers across IEEE, ACM, PubMed, and arXiv. Synthesized findings across five thematic categories: architecture, privacy mechanisms, communication efficiency, clinical domain, and evaluation benchmarks.",
-    outcome: "Produced a 30-page review manuscript identifying key research gaps — currently in revision for conference submission. Presented findings at a departmental research colloquium.",
-    tech: ["LaTeX", "Mendeley", "PRISMA Protocol", "Systematic Review", "Academic Writing"],
-    github: null,
-    demo: "Preprint"
-  },
-  {
-    title: "Medical Image Classification with CNN",
-    category: "Machine Learning",
-    problem: "Pneumonia detection from chest X-rays is time-intensive and subject to human error. Automated deep learning classifiers can assist radiologists in triaging large image volumes.",
-    description: "Trained a custom convolutional neural network and applied transfer learning using pre-trained VGG16 weights for binary classification (pneumonia vs. healthy) on the Kaggle Chest X-Ray Images dataset. Applied class balancing, data augmentation, and learning rate scheduling.",
-    outcome: "Achieved 94.3% test accuracy, 93.1% precision, and 95.8% recall for the pneumonia class. Model artifacts saved for future API integration.",
-    tech: ["TensorFlow", "Keras", "OpenCV", "Python", "NumPy", "Matplotlib"],
-    github: "#",
+    title: "TutorFinder",
+    category: "Web & App Dev",
+    problem: "Students and guardians struggle to find verified, qualified local tutors matching specific subjects, budget ranges, and academic boards.",
+    description: "Developed a comprehensive web portal connecting students with qualified tutors. Built secure user authentication, tutor profiles with qualifications review, search/filtering options based on location/subject, and an administrative dashboard to manage verification statuses.",
+    outcome: "Fully functional platform with optimized database querying, reducing search times and streamlining tutoring coordination.",
+    tech: ["Laravel", "PHP", "MySQL", "JavaScript", "HTML/CSS"],
+    github: "https://github.com/Tirtho-Mondal/TutorFinder.git",
     demo: null
   },
   {
-    title: "Open-Source Study Planner PWA",
-    category: "Web Development",
-    problem: "Existing study planner apps lack offline capability and accessibility compliance, making them unreliable for students with limited internet access or assistive technology needs.",
-    description: "Built a Progressive Web App (PWA) with full offline support using Service Workers and the Cache API. Features include customizable weekly schedules, pomodoro timers, deadline tracking, and ARIA-compliant accessibility throughout. Published as open-source on GitHub under MIT license.",
-    outcome: "Received 60+ GitHub stars within three months. Fully audited with Lighthouse (PWA score: 98, Accessibility: 95). Featured in a university tech newsletter.",
-    tech: ["HTML5", "CSS3", "Vanilla JS", "Service Workers", "IndexedDB", "Web Manifest"],
-    github: "#",
-    demo: "#"
+    title: "HouseHold Services",
+    category: "Web & App Dev",
+    problem: "Hiring reliable local service providers (plumbing, cleaning, electrical) is offline-heavy and lacks transparent scheduling or pricing.",
+    description: "Co-designed and developed a robust Android app for booking domestic services. Features a smooth customer ordering interface, service provider admin panels, database integrations with SQLite, and local caching for offline browsing.",
+    outcome: "Completed as part of a software project coursework, demonstrating strong understanding of mobile app development lifecycles and offline database management.",
+    tech: ["Android SDK", "Java", "SQLite", "Git", "XML"],
+    github: "https://github.com/azhar2007112/HouseHold_Services",
+    demo: null
+  },
+  {
+    title: "CSE Family",
+    category: "Web & App Dev",
+    problem: "A lack of a centralized, user-friendly desktop application for students in the CSE department to share files, review past papers, and communicate.",
+    description: "Designed a modular JavaFX desktop app utilizing object-oriented principles. Implemented an interactive dashboard for category-wise academic resource distribution, dynamic discussion boards, and styled interface themes.",
+    outcome: "Successfully completed class project that serves as a desktop-native hub for collaborative student resources.",
+    tech: ["JavaFX", "Java", "CSS", "OOP Layouts"],
+    github: "https://github.com/Tirtho-Mondal/CSE-Family/tree/master",
+    demo: null
+  },
+  {
+    title: "MobiCash",
+    category: "Database & Systems",
+    problem: "Simulating high-stakes financial ledger systems requires robust OOP structure to handle transaction safety, balance check limits, and user authentication.",
+    description: "Created a command-line mobile banking simulation demonstrating advanced C++ object-oriented design. Modeled cash transactions, mobile recharges, agent transfers, and administrative verification logs with clean, decoupled logic.",
+    outcome: "Created a bug-free, terminal-based simulation showing robust handling of edge cases in banking workflows.",
+    tech: ["C++", "OOP Paradigms", "Systems Simulation"],
+    github: "https://github.com/Tirtho-Mondal/MobiCash",
+    demo: null
+  },
+  {
+    title: "Laundry Shop Management",
+    category: "Database & Systems",
+    problem: "Manual tracking of customer orders, item processing states, delivery statuses, and billing creates operational friction and invoicing errors.",
+    description: "Designed and normalized a relational database system for laundry shop operations. Created tables for client tracking, staff duties, processing steps, and pricing configurations, writing optimized SQL queries for daily revenue reporting.",
+    outcome: "Demonstrated database design proficiency by establishing an optimized database schema that prevents redundant records and calculates invoices dynamically.",
+    tech: ["SQL", "MySQL", "Relational Database Design"],
+    github: "https://github.com/Tirtho-Mondal/Laundry-Shop-Management.git",
+    demo: null
   }
 ];
+
+const courseworkData = {
+  programming: {
+    title: 'Programming & Software Development',
+    description: 'Completed core software engineering and programming modules, with practical project work and seminar-based technical communication.',
+    items: [
+      { label: 'Structured Programming', status: 'Completed' },
+      { label: 'Object Oriented Programming', status: 'Completed' },
+      { label: 'Advanced Programming', status: 'Completed' },
+      { label: 'Web Programming', status: 'Completed' },
+      { label: 'System Development Project', status: 'Completed' },
+      { label: 'Software Engineering and Information Systems', status: 'Completed' },
+      { label: 'Technical Writing and Seminar', status: 'Completed' }
+    ]
+  },
+  algorithms: {
+    title: 'Algorithms & Theory',
+    description: 'Strong theoretical foundation in algorithms, computation, and statistical methods supporting advanced problem solving.',
+    items: [
+      { label: 'Discrete Mathematics', status: 'Completed' },
+      { label: 'Data Structures and Algorithms', status: 'Completed' },
+      { label: 'Algorithm Analysis and Design', status: 'Completed' },
+      { label: 'Theory of Computation', status: 'Completed' },
+      { label: 'Compiler Design', status: 'Completed' },
+      { label: 'Numerical Methods', status: 'Completed' },
+      { label: 'Applied Statistics and Queuing Theory', status: 'Completed' }
+    ]
+  },
+  systems: {
+    title: 'Computer Systems & Architecture',
+    description: 'Completed practical system and architecture coursework, including processor design and operating system fundamentals.',
+    items: [
+      { label: 'Introduction to Computer Systems', status: 'Completed' },
+      { label: 'Computer Architecture', status: 'Completed' },
+      { label: 'Operating Systems', status: 'Completed' },
+      { label: 'Microprocessors and Microcontrollers', status: 'Completed' },
+      { label: 'Embedded Systems', status: 'Ongoing' },
+      { label: 'Digital System Design', status: 'Ongoing' }
+    ]
+  },
+  networking: {
+    title: 'Networking & Communication',
+    description: 'Explored modern communication systems, network protocols, and mobile connectivity as part of core CSE training.',
+    items: [
+      { label: 'Data Communication', status: 'Completed' },
+      { label: 'Computer Networks', status: 'Completed' },
+      { label: 'Mobile Computing', status: 'Completed' }
+    ]
+  },
+  database: {
+    title: 'Database & Information Systems',
+    description: 'Database design and implementation experience with both theory and laboratory-backed system builds.',
+    items: [
+      { label: 'Database Systems', status: 'Completed' }
+    ]
+  },
+  ai: {
+    title: 'Artificial Intelligence & Data Science',
+    description: 'Applied AI and data science coursework with a focus on learning algorithms, vision, and NLP systems.',
+    items: [
+      { label: 'Artificial Intelligence', status: 'Completed' },
+      { label: 'Machine Learning', status: 'Completed' },
+      { label: 'Image Processing and Computer Vision', status: 'Completed' },
+      { label: 'Natural Language Processing', status: 'Ongoing' }
+    ]
+  },
+  hardware: {
+    title: 'Hardware & Electronics',
+    description: 'Foundational hardware and electronics coursework supporting embedded and digital systems work.',
+    items: [
+      { label: 'Digital Logic Design', status: 'Completed' },
+      { label: 'Digital Electronics', status: 'Completed' },
+      { label: 'Analog Electronics', status: 'Completed' },
+      { label: 'Peripherals and Interfacing', status: 'Completed' }
+    ]
+  },
+  graphics: {
+    title: 'Graphics & Vision',
+    description: 'Core visual computing coursework with strong emphasis on image processing and computer graphics.',
+    items: [
+      { label: 'Computer Graphics', status: 'Ongoing' },
+      { label: 'Image Processing and Computer Vision', status: 'Completed' }
+    ]
+  },
+  mathematics: {
+    title: 'Mathematics & Foundations',
+    description: 'Deep mathematical backing for computer science, from calculus and linear algebra to complex analysis.',
+    items: [
+      { label: 'Differential and Integral Calculus', status: 'Completed' },
+      { label: 'Coordinate Geometry and Differential Equations', status: 'Completed' },
+      { label: 'Fourier Analysis and Linear Algebra', status: 'Completed' },
+      { label: 'Complex Variable, Vector Analysis and Statistics', status: 'Completed' }
+    ]
+  },
+  labs: {
+    title: 'Labs & Practical Courses',
+    description: 'Hands-on laboratory experience across the most important core CSE subjects.',
+    items: [
+      { label: 'Structured Programming Laboratory', status: 'Completed' },
+      { label: 'OOP Laboratory', status: 'Completed' },
+      { label: 'DSA Laboratory', status: 'Completed' },
+      { label: 'Database Laboratory', status: 'Completed' },
+      { label: 'Operating Systems Laboratory', status: 'Completed' },
+      { label: 'Compiler Design Laboratory', status: 'Completed' },
+      { label: 'AI Laboratory', status: 'Completed' },
+      { label: 'Machine Learning Laboratory', status: 'Completed' },
+      { label: 'Computer Networks Laboratory', status: 'Completed' },
+      { label: 'Image Processing Laboratory', status: 'Completed' },
+      { label: 'Digital Logic Design Laboratory', status: 'Completed' },
+      { label: 'Microprocessor Laboratory', status: 'Completed' },
+      { label: 'Mobile Computing Laboratory', status: 'Completed' }
+    ]
+  },
+  strengths: {
+    title: 'Strongest Areas Based on Grades',
+    description: 'Highlighted academic strengths based on highest performance in core CSE courses.',
+    items: [
+      { label: 'Algorithms & Theory', status: 'Strength' },
+      { label: 'Computer Architecture', status: 'Strength' },
+      { label: 'Database Systems', status: 'Strength' },
+      { label: 'Software Engineering', status: 'Strength' },
+      { label: 'Networks & Data Communication', status: 'Strength' },
+      { label: 'Compiler Design', status: 'Strength' },
+      { label: 'Digital Electronics', status: 'Strength' },
+      { label: 'Image Processing & Vision', status: 'Strength' }
+    ]
+  }
+};
+
+function renderCourseworkDetail(key) {
+  const data = courseworkData[key];
+  if (!data) return;
+
+  const titleEl = document.getElementById('courseworkDetailTitle');
+  const descEl = document.getElementById('courseworkDetailDescription');
+  const completedEl = document.getElementById('courseworkDetailCompleted');
+  const ongoingEl = document.getElementById('courseworkDetailOngoing');
+  const listEl = document.getElementById('courseworkDetailList');
+
+  if (!titleEl || !descEl || !completedEl || !ongoingEl || !listEl) return;
+
+  titleEl.textContent = data.title;
+  descEl.textContent = data.description;
+
+  const completedCount = data.items.filter(item => item.status && item.status.toLowerCase() !== 'ongoing' && item.status.toLowerCase() !== 'strength').length;
+  const ongoingCount = data.items.filter(item => item.status && item.status.toLowerCase() === 'ongoing').length;
+
+  completedEl.innerHTML = `<strong>Completed courses:</strong> ${completedCount}`;
+  ongoingEl.innerHTML = `<strong>Ongoing:</strong> ${ongoingCount}`;
+  listEl.innerHTML = data.items.map(item => {
+    const statusLabel = item.status ? `<span class="coursework-detail__status">${item.status}</span>` : '';
+    return `<li>${item.label}${statusLabel}</li>`;
+  }).join('');
+
+  document.querySelectorAll('.tracker-item').forEach(item => {
+    item.classList.toggle('active', item.dataset.course === key);
+  });
+}
 
 window.addEventListener('load', () => {
   // Trigger reveal for elements in viewport on load
   observeReveal();
+  renderCourseworkDetail('programming');
+
+  const trackerItems = document.querySelectorAll('.tracker-item');
+  trackerItems.forEach(item => {
+    item.addEventListener('click', () => renderCourseworkDetail(item.dataset.course));
+    item.addEventListener('mouseenter', () => {
+      if (!isTouchDevice) renderCourseworkDetail(item.dataset.course);
+    });
+    item.addEventListener('focus', () => renderCourseworkDetail(item.dataset.course));
+  });
+
+  const courseworkCard = document.querySelector('.folder-card[data-track-target]');
+  if (courseworkCard) {
+    const targetId = courseworkCard.dataset.trackTarget;
+    const target = document.getElementById(targetId);
+    courseworkCard.addEventListener('click', () => {
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+    courseworkCard.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        courseworkCard.click();
+      }
+    });
+  }
 });
 
 /* =========================================================
@@ -181,11 +364,10 @@ navLinks.forEach(link => {
    ========================================================= */
 const typingRoles = [
   'Research Enthusiast',
-  'Frontend Developer',
+  'Software Developer',
   'Problem Solver',
   'Lifelong Learner',
-  'Data Science Student',
-  'Open Source Contributor'
+  'CSE Student'
 ];
 
 let roleIndex = 0;
@@ -388,124 +570,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && modalOverlay.style.display === 'flex') closeModal();
 });
 
-/* =========================================================
-   12. TESTIMONIAL SLIDER (Real-time Reactive Drag)
-   ========================================================= */
-const track = document.getElementById('testimonialTrack');
-const slides = track ? track.querySelectorAll('.testimonial-slide') : [];
-const dotsContainer = document.getElementById('testimonialDots');
-let currentSlide = 0;
-let autoSlideTimer;
-let isDragging = false;
-let startPos = 0;
-let currentTranslate = 0;
-let prevTranslate = 0;
-let animationID;
 
-if (slides.length > 0) {
-  // Create dots
-  slides.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'testimonial-dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', `Go to testimonial ${i + 1}`);
-    dot.addEventListener('click', () => {
-      currentSlide = i;
-      updateSliderPosition();
-    });
-    dotsContainer.appendChild(dot);
-
-    // Add touch and mouse drag events
-    const slide = slides[i];
-    slide.addEventListener('mousedown', touchStart(i));
-    slide.addEventListener('touchstart', touchStart(i), { passive: true });
-    slide.addEventListener('mouseup', touchEnd);
-    slide.addEventListener('touchend', touchEnd);
-    slide.addEventListener('mousemove', touchMove);
-    slide.addEventListener('touchmove', touchMove, { passive: true });
-    slide.addEventListener('mouseleave', () => { if (isDragging) touchEnd(); });
-  });
-
-  function touchStart(index) {
-    return function (event) {
-      isDragging = true;
-      startPos = getPositionX(event);
-      animationID = requestAnimationFrame(animation);
-      track.style.transition = 'none'; // remove transition for real-time dragging
-      track.style.cursor = 'grabbing';
-      clearInterval(autoSlideTimer);
-    }
-  }
-
-  function touchEnd() {
-    isDragging = false;
-    cancelAnimationFrame(animationID);
-    track.style.cursor = 'grab';
-
-    const movedBy = currentTranslate - prevTranslate;
-
-    // Threshold to switch slides
-    if (movedBy < -100 && currentSlide < slides.length - 1) currentSlide += 1;
-    if (movedBy > 100 && currentSlide > 0) currentSlide -= 1;
-
-    updateSliderPosition();
-  }
-
-  function touchMove(event) {
-    if (isDragging) {
-      const currentPosition = getPositionX(event);
-      currentTranslate = prevTranslate + currentPosition - startPos;
-    }
-  }
-
-  function getPositionX(event) {
-    return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
-  }
-
-  function animation() {
-    setSliderPosition();
-    if (isDragging) requestAnimationFrame(animation);
-  }
-
-  function setSliderPosition() {
-    track.style.transform = `translateX(${currentTranslate}px)`;
-  }
-
-  function updateSliderPosition() {
-    track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
-    const slideWidth = slides[0].clientWidth;
-    currentTranslate = currentSlide * -slideWidth;
-    prevTranslate = currentTranslate;
-    setSliderPosition();
-
-    document.querySelectorAll('.testimonial-dot').forEach((dot, i) => {
-      dot.classList.toggle('active', i === currentSlide);
-    });
-    resetAutoSlide();
-  }
-
-  window.addEventListener('resize', debounce(updateSliderPosition, 150));
-
-  function resetAutoSlide() {
-    clearInterval(autoSlideTimer);
-    autoSlideTimer = setInterval(() => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      updateSliderPosition();
-    }, 6000);
-  }
-
-  document.getElementById('prevTestimonial').addEventListener('click', () => {
-    currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
-    updateSliderPosition();
-  });
-  document.getElementById('nextTestimonial').addEventListener('click', () => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    updateSliderPosition();
-  });
-
-  // Init position
-  track.style.cursor = 'grab';
-  updateSliderPosition();
-}
 
 /* =========================================================
    13. BibTeX COPY BUTTONS
@@ -946,6 +1011,8 @@ if (!prefersReducedMotion && !isTouchDevice) {
 const dcCards = document.querySelectorAll('.dc-card');
 const docFrame = document.getElementById('documentFrame');
 const viewerLoading = document.getElementById('viewerLoading');
+const requestOverlay = document.getElementById('requestOverlay');
+const tabTitle = document.getElementById('dcViewerTabTitle');
 
 if (dcCards.length > 0 && docFrame) {
   dcCards.forEach(card => {
@@ -956,28 +1023,63 @@ if (dcCards.length > 0 && docFrame) {
       card.classList.add('active');
 
       const docType = card.dataset.doc;
-      let docUrl = '';
 
-      // Update these URLs to actual documents when available
-      if (docType === 'cv') docUrl = 'Tirtho Mondal.pdf';
-      else if (docType === 'resume') docUrl = 'RenderCV_sb2nov_Theme.pdf';
-      else if (docType === 'transcript') docUrl = 'RenderCV_sb2nov_Theme.pdf';
-
-      if (docUrl) {
+      if (docType === 'cv') {
+        // Hide overlay, update title, load CV
+        if (requestOverlay) requestOverlay.style.display = 'none';
+        if (tabTitle) {
+          tabTitle.innerHTML = `
+            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 8px;">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+            </svg>
+            Tirtho_Mondal_CV.pdf
+          `;
+        }
+        docFrame.style.display = 'block';
         viewerLoading.style.opacity = '1';
         viewerLoading.style.visibility = 'visible';
         docFrame.classList.remove('loaded');
-        docFrame.src = docUrl;
+        docFrame.src = 'Tirtho Mondal.pdf';
+      } else {
+        // Show unavailable overlay, hide iframe
+        docFrame.style.display = 'none';
+        viewerLoading.style.opacity = '0';
+        viewerLoading.style.visibility = 'hidden';
+        if (requestOverlay) {
+          requestOverlay.style.display = 'flex';
+          const overlayTitle = requestOverlay.querySelector('h3');
+          const overlayDesc = requestOverlay.querySelector('p');
+          if (docType === 'resume') {
+            if (overlayTitle) overlayTitle.textContent = 'Industry Resume';
+            if (overlayDesc) overlayDesc.textContent = 'This document is available upon request for verification purposes.';
+          } else if (docType === 'transcript') {
+            if (overlayTitle) overlayTitle.textContent = 'Academic Transcript';
+            if (overlayDesc) overlayDesc.textContent = 'Official transcripts from Khulna University of Engineering & Technology are available upon request.';
+          }
+        }
+        if (tabTitle) {
+          const docName = docType === 'resume' ? 'Industry_Resume.pdf' : 'KUET_Transcript.pdf';
+          tabTitle.innerHTML = `
+            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" style="margin-right: 8px;">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+            </svg>
+            ${docName} (Request Access)
+          `;
+        }
       }
     });
   });
 
   docFrame.addEventListener('load', () => {
-    viewerLoading.style.opacity = '0';
-    setTimeout(() => {
-      viewerLoading.style.visibility = 'hidden';
-    }, 500);
-    docFrame.classList.add('loaded');
+    if (docFrame.style.display !== 'none') {
+      viewerLoading.style.opacity = '0';
+      setTimeout(() => {
+        viewerLoading.style.visibility = 'hidden';
+      }, 500);
+      docFrame.classList.add('loaded');
+    }
   });
 }
 

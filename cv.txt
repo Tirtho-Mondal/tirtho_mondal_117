@@ -1,0 +1,275 @@
+\documentclass[12pt,letterpaper]{article}
+
+% ──────────────────────────────────────────────────────────────────────────────
+% Packages
+% ──────────────────────────────────────────────────────────────────────────────
+\usepackage[
+    top=1.cm,
+    bottom=1.cm,
+    left=1.0cm,
+    right=1.0cm
+]{geometry}
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{paracol}
+\usepackage{changepage}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fontawesome5}
+\usepackage[
+    hidelinks,
+    pdfauthor={Tirtho Mondal},
+    pdftitle={Tirtho Mondal CV}
+]{hyperref}
+
+\usepackage{iftex}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[utf8]{inputenc}
+\fi
+
+% ──────────────────────────────────────────────────────────────────────────────
+% Formatting
+% ──────────────────────────────────────────────────────────────────────────────
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setcounter{secnumdepth}{0}
+\setlength{\columnsep}{0.25cm}
+
+\definecolor{muted}{RGB}{70,70,70}
+
+\titleformat{\section}
+{\bfseries\normalsize\uppercase}
+{}{0pt}{}
+[\vspace{0.5pt}\titlerule]
+
+\titlespacing{\section}{0pt}{0.12cm}{0.06cm}
+
+\renewcommand\labelitemi{$\bullet$}
+
+\newenvironment{highlights}{
+\begin{itemize}[
+    topsep=0pt,
+    itemsep=0pt,
+    parsep=0pt,
+    leftmargin=0.35cm
+]
+}{
+\end{itemize}
+}
+
+\newenvironment{onecolentry}{
+\begin{adjustwidth}{0cm}{0cm}
+}{
+\end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+\onecolentry
+\def\secondColumn{#2}
+\setcolumnwidth{\fill,3.2cm}
+\begin{paracol}{2}
+}{
+\switchcolumn\raggedleft\secondColumn
+\end{paracol}
+\endonecolentry
+}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\begin{document}
+% ──────────────────────────────────────────────────────────────────────────────
+
+% Header
+\begin{center}
+
+{\Large\bfseries Tirtho Mondal}
+
+\vspace{0.05cm}
+
+{\footnotesize
+\href{https://www.google.com/maps/search/?api=1&query=Kapilmuni,+Khulna,+Bangladesh}
+{\faMapMarker*\ Kapilmuni, Khulna, Bangladesh}
+\quad
+\href{mailto:tirthomondal.2001@gmail.com}
+{\faEnvelope\ tirthomondal.2001@gmail.com}
+\quad
+\href{tel:+8801571421684}
+{\faPhone\ +8801571421684}
+}
+
+\vspace{0.03cm}
+
+{\footnotesize
+\href{https://www.linkedin.com/in/tirtho-mondal-319a863ba/}
+{\faLinkedin\ LinkedIn}
+\quad
+\href{https://github.com/Tirtho-Mondal}
+{\faGithub\ GitHub}
+\quad
+\href{https://scholar.google.com/citations?user=XfMDZ18AAAAJ&hl=en&authuser=2}
+{\faGraduationCap\ Scholar}
+\quad
+\href{https://orcid.org/0009-0003-3314-9100}
+{\faIdBadge\ ORCID}
+\quad
+\href{https://tirtho-mondal.github.io/tirtho_mondal_117/}
+{\faGlobe\ Website}
+}
+
+\end{center}
+
+\vspace{-0.15cm}
+
+% Education
+\section{Education}
+
+\begin{twocolentry}{2022 -- Present}
+\textbf{B.Sc. in Computer Science and Engineering}\\
+Khulna University of Engineering \& Technology (KUET)\\
+\textcolor{muted}{$4^{\text{th}}$ Year, $2^{\text{nd}}$ Semester \quad CGPA: 3.72 / 4.00}
+\end{twocolentry}
+
+\vspace{0.02cm}
+
+\begin{twocolentry}{2018 -- 2020}
+\textbf{Higher Secondary Certificate (H.S.C.) in Science}\\
+Kapilmuni College\\
+\textcolor{muted}{Board of Intermediate \& Secondary Education, Jashore \quad GPA: 5.00 / 5.00}
+\end{twocolentry}
+
+% Research Interests
+\section{Research Interests}
+
+Optimization Theory \textbf{·}
+Game Theory \textbf{·}
+Computer Vision \textbf{·}
+Natural Language Processing \textbf{.}
+Machine Learning \textbf{·}
+Artificial Intelligence \textbf{·}
+
+% Publications
+\section{Publications}
+
+\textbf{Real Time Assistive Navigation for the Visually Impaired: A Scalable Approach for Indoor and Outdoor Mobility}\\
+Dabbrata Das, Argho Deb Das, Farhan Sadaf, Azhar Uddin, \textbf{Tirtho Mondal}\\
+\textit{arXiv preprint}, arXiv:2504.20976 (2025)
+\href{https://arxiv.org/abs/2504.20976}
+{\faExternalLink*}
+
+% Projects
+\section{Projects}
+
+\begin{twocolentry}{Python · Flutter}
+\textbf{Smart Navigation for the Visually Impaired}
+\href{https://github.com/Tirtho-Mondal/Navigation-Systems-for-the-Visually-Impaired}
+{\faGithub}
+\end{twocolentry}
+
+\begin{highlights}
+\item Real time assistive navigation combining computer vision and sensor fusion for safe, independent mobility.
+\item Implemented multimodal guidance using audio and haptic feedback for indoor and outdoor environments.
+\end{highlights}
+
+\vspace{-0.08cm}
+
+\begin{twocolentry}{Laravel · PHP · MySQL}
+\textbf{TutorFinder}
+\href{https://github.com/Tirtho-Mondal/TutorFinder.git}
+{\faGithub}
+\end{twocolentry}
+
+\begin{highlights}
+\item Web platform connecting students with qualified tutors, featuring intelligent matching and scheduling.
+\end{highlights}
+
+\vspace{-0.08cm}
+
+\begin{twocolentry}{Android · Java}
+\textbf{HouseHold Services}
+\href{https://github.com/azhar2007112/HouseHold_Services}
+{\faGithub}
+\end{twocolentry}
+
+\begin{highlights}
+\item Android application for booking and managing household services with real time status tracking.
+\end{highlights}
+
+\vspace{-0.08cm}
+
+\begin{twocolentry}{JavaFX}
+\textbf{CSE Family}
+\href{https://github.com/Tirtho-Mondal/CSE-Family/tree/master}
+{\faGithub}
+\end{twocolentry}
+
+\begin{highlights}
+\item Desktop platform for CSE students to share resources, discuss topics, and connect.
+\end{highlights}
+
+\vspace{-0.08cm}
+
+\begin{twocolentry}{C++}
+\textbf{MobiCash}
+\href{https://github.com/Tirtho-Mondal/MobiCash}
+{\faGithub}
+\end{twocolentry}
+
+\begin{highlights}
+\item Mobile banking simulation supporting cash in, cash out, recharge, and balance management using OOP.
+\end{highlights}
+
+\vspace{-0.08cm}
+
+\begin{twocolentry}{SQL}
+\textbf{Laundry Shop Management}
+\href{https://github.com/Tirtho-Mondal/Laundry-Shop-Management.git}
+{\faGithub}
+\end{twocolentry}
+
+\begin{highlights}
+\item Relational database system designed to streamline laundry shop operations and customer tracking.
+\end{highlights}
+
+% Skills
+\section{Technical Skills}
+
+\textbf{Languages:}
+C, C++, Python, JavaScript, PHP, SQL, HTML/CSS, Java, Dart
+
+\textbf{Frameworks:}
+Laravel, Android SDK, Flutter
+
+\textbf{Tools:}
+Git/GitHub, VS Code, IntelliJ IDEA, Android Studio, Jupyter Notebook, LaTeX
+
+\textbf{Research Tools:}
+NumPy, Pandas, OpenCV, Sensor Fusion
+
+\textbf{Concepts:}
+Machine Learning, Deep Learning, Computer Vision, NLP, REST APIs, OOP, Design Patterns
+
+\textbf{Productivity:}
+MS Word, Excel, PowerPoint
+
+% Awards
+\section{Honours \& Awards}
+
+\begin{highlights}
+\item \textbf{Dean's List}: Academic Years 2021--2022 and 2022--2023, Department of CSE, KUET
+\end{highlights}
+
+% Languages
+\section{Languages}
+
+\textbf{Bengali}: Native
+\quad
+\textbf{English}: Fluent 
+
+% Statement
+% \section{Personal Statement}
+
+% Self motivated final year CSE undergraduate with strong interest in research at the intersection of Machine Learning, Optimization, and Game Theory. Seeking research opportunities, graduate programs, or software engineering roles where I can apply and advance my skills in AI driven systems.
+
+\end{document}
