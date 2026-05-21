@@ -273,3 +273,99 @@ MS Word, Excel, PowerPoint
 % Self motivated final year CSE undergraduate with strong interest in research at the intersection of Machine Learning, Optimization, and Game Theory. Seeking research opportunities, graduate programs, or software engineering roles where I can apply and advance my skills in AI driven systems.
 
 \end{document}
+
+
+Programming & Software Development
+Structured Programming
+Object Oriented Programming
+Advanced Programming
+Web Programming
+System Development Project
+Software Engineering and Information Systems
+Technical Writing and Seminar
+Algorithms & Theory
+Discrete Mathematics
+Data Structures and Algorithms
+Algorithm Analysis and Design
+Theory of Computation
+Compiler Design
+Numerical Methods
+Applied Statistics and Queuing Theory
+Data Mining (ongoing)
+Computer Systems & Architecture
+Introduction to Computer Systems
+Computer Architecture
+Operating Systems
+Microprocessors and Microcontrollers
+Embedded Systems (ongoing)
+Digital System Design (ongoing)
+Networking & Communication
+Data Communication
+Computer Networks
+Mobile Computing
+Database & Information Systems
+Database Systems
+Artificial Intelligence & Data Science
+Artificial Intelligence
+Machine Learning
+Image Processing and Computer Vision
+Natural Language Processing (ongoing)
+Hardware & Electronics Related
+Digital Logic Design
+Digital Electronics
+Analog Electronics
+Peripherals and Interfacing
+Graphics & Vision
+Computer Graphics (ongoing)
+Image Processing and Computer Vision
+Mathematics & Foundations Supporting CSE
+Differential and Integral Calculus
+Coordinate Geometry and Differential Equations
+Fourier Analysis and Linear Algebra
+Complex Variable, Vector Analysis and Statistics
+Labs & Practical Courses
+
+You also completed many practical/lab-based core courses:
+
+Structured Programming Laboratory
+OOP Laboratory
+DSA Laboratory
+Database Laboratory
+Operating Systems Laboratory
+Compiler Design Laboratory
+AI Laboratory
+Machine Learning Laboratory
+Computer Networks Laboratory
+Image Processing Laboratory
+Digital Logic Design Laboratory
+Microprocessor Laboratory
+Mobile Computing Laboratory
+etc.
+Strongest Areas Based on Grades
+
+You performed especially well in:
+
+Algorithms & Theory
+Computer Architecture
+Database Systems
+Software Engineering
+Networks & Data Communication
+Compiler Design
+Digital Electronics
+Image Processing & Vision
+Current Academic Profile
+
+You have covered almost all major undergraduate CS domains:
+
+Programming
+Systems
+Algorithms
+AI/ML
+Networks
+Databases
+Software Engineering
+Embedded Systems
+Graphics/Vision
+
+
+Thesis Topic --“Multi-Agent Game Theory Based Flexible Job Shop Optimization”
