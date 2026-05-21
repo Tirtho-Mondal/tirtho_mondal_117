@@ -959,7 +959,7 @@ if (dcCards.length > 0 && docFrame) {
       let docUrl = '';
 
       // Update these URLs to actual documents when available
-      if (docType === 'cv') docUrl = 'RenderCV_sb2nov_Theme.pdf';
+      if (docType === 'cv') docUrl = 'Tirtho Mondal.pdf';
       else if (docType === 'resume') docUrl = 'RenderCV_sb2nov_Theme.pdf';
       else if (docType === 'transcript') docUrl = 'RenderCV_sb2nov_Theme.pdf';
 
