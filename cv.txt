@@ -1,27 +1,16 @@
-\documentclass[12pt,letterpaper]{article}
+\documentclass[10pt,letterpaper]{article}
 
-% ──────────────────────────────────────────────────────────────────────────────
+% ─────────────────────────────────────────────
 % Packages
-% ──────────────────────────────────────────────────────────────────────────────
-\usepackage[
-    top=1.cm,
-    bottom=1.cm,
-    left=1.0cm,
-    right=1.0cm
-]{geometry}
-
+% ─────────────────────────────────────────────
+\usepackage[top=0.9cm, bottom=0.55cm, left=0.7cm, right=0.7cm]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
-\usepackage{paracol}
-\usepackage{changepage}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{fontawesome5}
-\usepackage[
-    hidelinks,
-    pdfauthor={Tirtho Mondal},
-    pdftitle={Tirtho Mondal CV}
-]{hyperref}
-
+\usepackage{tabularx}
+\usepackage{changepage}
+\usepackage[hidelinks, pdfauthor={Tirtho Mondal}, pdftitle={Tirtho Mondal CV}]{hyperref}
 \usepackage{iftex}
 
 \ifPDFTeX
@@ -30,247 +19,349 @@
     \usepackage[utf8]{inputenc}
 \fi
 
-% ──────────────────────────────────────────────────────────────────────────────
+% ─────────────────────────────────────────────
+% Colors
+% ─────────────────────────────────────────────
+\definecolor{sectioncolor}{RGB}{0,51,102}   % Single navy blue for all sections
+\definecolor{darkgray}{RGB}{70,70,70}
+
+% ─────────────────────────────────────────────
 % Formatting
-% ──────────────────────────────────────────────────────────────────────────────
+% ─────────────────────────────────────────────
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setcounter{secnumdepth}{0}
-\setlength{\columnsep}{0.25cm}
 
-\definecolor{muted}{RGB}{70,70,70}
-
+% Unified section style — single color
 \titleformat{\section}
-{\bfseries\normalsize\uppercase}
-{}{0pt}{}
-[\vspace{0.5pt}\titlerule]
+  {\large\bfseries\color{sectioncolor}}{}{0pt}{}
+  [\vspace{1pt}{\color{sectioncolor}\titlerule}]
+\titlespacing{\section}{0pt}{4pt}{3pt}
 
-\titlespacing{\section}{0pt}{0.12cm}{0.06cm}
-
-\renewcommand\labelitemi{$\bullet$}
-
-\newenvironment{highlights}{
-\begin{itemize}[
-    topsep=0pt,
-    itemsep=0pt,
-    parsep=0pt,
-    leftmargin=0.35cm
-]
-}{
-\end{itemize}
+% Bullet environment
+\renewcommand\labelitemi{\textbullet}
+\newenvironment{highlights}{%
+  \begin{itemize}[topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=0.4cm]%
+}{%
+  \end{itemize}%
 }
 
-\newenvironment{onecolentry}{
-\begin{adjustwidth}{0cm}{0cm}
-}{
-\end{adjustwidth}
-}
-
-\newenvironment{twocolentry}[2][]{
-\onecolentry
-\def\secondColumn{#2}
-\setcolumnwidth{\fill,3.2cm}
-\begin{paracol}{2}
-}{
-\switchcolumn\raggedleft\secondColumn
-\end{paracol}
-\endonecolentry
-}
-
-% ──────────────────────────────────────────────────────────────────────────────
+% ─────────────────────────────────────────────
 \begin{document}
-% ──────────────────────────────────────────────────────────────────────────────
 
-% Header
+% ─────────────────────────────────────────────
+% HEADER
+% ─────────────────────────────────────────────
 \begin{center}
+  {\LARGE\bfseries\color{sectioncolor} Tirtho Mondal}
 
-{\Large\bfseries Tirtho Mondal}
+  \vspace{2pt}
 
-\vspace{0.05cm}
+  {\small
+    \href{https://www.google.com/maps/search/?api=1&query=Kapilmuni,+Khulna,+Bangladesh}
+      {\color{black}\faMapMarker*\ Kapilmuni, Khulna, Bangladesh}
+    \enspace\textbar\enspace
+    \href{mailto:tirthomondal.2001@gmail.com}
+      {\color{black}\faEnvelope\ tirthomondal.2001@gmail.com}
+    \enspace\textbar\enspace
+    \href{tel:+8801571421684}
+      {\color{black}\faPhone\ +8801571421684}
+  }
 
-{\footnotesize
-\href{https://www.google.com/maps/search/?api=1&query=Kapilmuni,+Khulna,+Bangladesh}
-{\faMapMarker*\ Kapilmuni, Khulna, Bangladesh}
-\quad
-\href{mailto:tirthomondal.2001@gmail.com}
-{\faEnvelope\ tirthomondal.2001@gmail.com}
-\quad
-\href{tel:+8801571421684}
-{\faPhone\ +8801571421684}
-}
+  \vspace{1pt}
 
-\vspace{0.03cm}
-
-{\footnotesize
-\href{https://www.linkedin.com/in/tirtho-mondal-319a863ba/}
-{\faLinkedin\ LinkedIn}
-\quad
-\href{https://github.com/Tirtho-Mondal}
-{\faGithub\ GitHub}
-\quad
-\href{https://scholar.google.com/citations?user=XfMDZ18AAAAJ&hl=en&authuser=2}
-{\faGraduationCap\ Scholar}
-\quad
-\href{https://orcid.org/0009-0003-3314-9100}
-{\faIdBadge\ ORCID}
-\quad
-\href{https://tirtho-mondal.github.io/tirtho_mondal_117/}
-{\faGlobe\ Website}
-}
-
+  {\small
+    \href{https://www.linkedin.com/in/tirtho-mondal-319a863ba/}
+      {\color{black}\faLinkedin\ LinkedIn}
+    \enspace\textbar\enspace
+    \href{https://github.com/Tirtho-Mondal}
+      {\color{black}\faGithub\ GitHub}
+    \enspace\textbar\enspace
+    \href{https://scholar.google.com/citations?user=XfMDZ18AAAAJ&hl=en&authuser=2}
+      {\color{black}\faGraduationCap\ Scholar}
+    \enspace\textbar\enspace
+    \href{https://orcid.org/0009-0003-3314-9100}
+      {\color{black}\faIdBadge\ ORCID}
+    \enspace\textbar\enspace
+    \href{https://tirtho-mondal.github.io/tirtho_mondal_117/}
+      {\color{black}\faGlobe\ Website}
+  }
 \end{center}
 
-\vspace{-0.15cm}
+\vspace{-2pt}
 
-% Education
+% ─────────────────────────────────────────────
+% CAREER OBJECTIVE
+% ─────────────────────────────────────────────
+\section{Career Objective}
+
+My goal is to contribute to higher education through effective teaching, student mentorship, and continuous learning in the field of Computer Science and Engineering. I aim to help students build strong academic and practical skills for successful careers while also contributing to research, innovation, and academic development.
+% To leverage a strong foundation in Computer Science and Engineering to build scalable software solutions and innovative applications. Eager to contribute robust programming skills and a problem-solving mindset to a dynamic development team while driving impactful technical projects.
+
+% ─────────────────────────────────────────────
+% EDUCATION
+% ─────────────────────────────────────────────
+% \section{Education}
+
+% \begin{tabularx}{\textwidth}{X r}
+%   \textbf{{Khulna University of Engineering \& Technology (\href{http://www.kuet.ac.bd/}{KUET})}} &
+%     \textcolor{darkgray}{2022 -- 2026} \\
+%   B.Sc.\ in Computer Science and Engineering &
+%     \textcolor{darkgray}{CGPA: \textbf{3.72} / 4.00} \\[3pt]
+%   \textbf{Kapilmuni College} &
+%     \textcolor{darkgray}{2018 -- 2020} \\
+%   Higher Secondary Certificate (H.S.C.) in Science &
+%     \textcolor{darkgray}{GPA: 5.00 / 5.00} \\\\[1pt]
+%   % \textcolor{darkgray}{Board of Intermediate \& Secondary Education, Jashore} & \\[2pt]
+%   \textbf{Kapilmuni Sahachari Vidya Mandir} &
+%     \textcolor{darkgray}{2016 -- 2018} \\
+%   Secondary School Certificate (S.S.C.) in Science &
+%     \textcolor{darkgray}{GPA: 5.00 / 5.00} \\
+%   % \textcolor{darkgray}{Board of Intermediate \& Secondary Education, Jashore} & \\
+% \end{tabularx}
+
 \section{Education}
 
-\begin{twocolentry}{2022 -- Present}
-\textbf{B.Sc. in Computer Science and Engineering}\\
-Khulna University of Engineering \& Technology (KUET)\\
-\textcolor{muted}{$4^{\text{th}}$ Year, $2^{\text{nd}}$ Semester \quad CGPA: 3.72 / 4.00}
-\end{twocolentry}
+\begin{tabularx}{\textwidth}{X r}
+  \textbf{{Khulna University of Engineering \& Technology (\href{http://www.kuet.ac.bd/}{KUET})}} &
+    \textcolor{darkgray}{2022 -- 2026} \\
+  B.Sc.\ in Computer Science and Engineering &
+    \textcolor{darkgray}{CGPA: \textbf{3.72} / 4.00} \\[6pt]
 
-\vspace{0.02cm}
+  \textbf{Kapilmuni College} &
+    \textcolor{darkgray}{2018 -- 2020} \\
+  Higher Secondary Certificate (H.S.C.) in Science &
+    \textcolor{darkgray}{GPA: 5.00 / 5.00} \\[6pt]
 
-\begin{twocolentry}{2018 -- 2020}
-\textbf{Higher Secondary Certificate (H.S.C.) in Science}\\
-Kapilmuni College\\
-\textcolor{muted}{Board of Intermediate \& Secondary Education, Jashore \quad GPA: 5.00 / 5.00}
-\end{twocolentry}
+  % \textcolor{darkgray}{Board of Intermediate \& Secondary Education, Jashore} & \\[2pt]
 
-% Research Interests
+  \textbf{Kapilmuni Sahachari Vidya Mandir} &
+    \textcolor{darkgray}{2016 -- 2018} \\
+  Secondary School Certificate (S.S.C.) in Science &
+    \textcolor{darkgray}{GPA: 5.00 / 5.00} \\
+    
+  % \textcolor{darkgray}{Board of Intermediate \& Secondary Education, Jashore} & \\
+
+\end{tabularx}
+% ─────────────────────────────────────────────
+% RESEARCH INTERESTS
+% ─────────────────────────────────────────────
 \section{Research Interests}
 
-Optimization Theory \textbf{·}
-Game Theory \textbf{·}
-Computer Vision \textbf{·}
-Natural Language Processing \textbf{.}
-Machine Learning \textbf{·}
-Artificial Intelligence \textbf{·}
+\noindent
+Optimization Theory \textbar\
+Game Theory \textbar\
+Computer Vision \textbar\
+Natural Language Processing \textbar\
+Machine Learning \textbar\
+Artificial Intelligence
 
-% Publications
+% ─────────────────────────────────────────────
+% PUBLICATIONS
+% ─────────────────────────────────────────────
 \section{Publications}
 
-\textbf{Real Time Assistive Navigation for the Visually Impaired: A Scalable Approach for Indoor and Outdoor Mobility}\\
-Dabbrata Das, Argho Deb Das, Farhan Sadaf, Azhar Uddin, \textbf{Tirtho Mondal}\\
-\textit{arXiv preprint}, arXiv:2504.20976 (2025)
-\href{https://arxiv.org/abs/2504.20976}
-{\faExternalLink*}
+% \noindent\textbf{Real Time Assistive Navigation for the Visually Impaired: A Scalable Approach for Indoor and Outdoor Mobility}\\
+% Dabbrata Das, Argho Deb Das, Farhan Sadaf, Azhar Uddin, \textbf{Tirtho Mondal}
+% \textit{arXiv preprint}, arXiv:2504.20976 (2025)\quad
+% \href{https://arxiv.org/abs/2504.20976}{\color{sectioncolor}\faExternalLink*}
 
-% Projects
+\begin{enumerate}
+    \renewcommand{\labelenumi}{[\theenumi]}
+    
+    \item D. Das, A. D. Das, F. Sadaf, A. Uddin, and \textbf{T. Mondal}, 
+    ``Real-Time Assistive Navigation for the Visually Impaired: A Scalable Approach for Indoor and Outdoor Mobility,'' 
+    \href{https://arxiv.org/abs/2504.20976}{\textit{arXiv preprint arXiv:2504.20976}}, 2025 \quad
+    \href{https://arxiv.org/abs/2504.20976}{\color{sectioncolor}\faExternalLink*}
+
+    % \item Second publication here...
+    % \item Third publication here...
+
+\end{enumerate}
+% ─────────────────────────────────────────────
+% PROJECTS
+% ─────────────────────────────────────────────
+% \section{Projects}
+
+% \textbf{3D Cafeteria Simulation}
+% \hfill
+% {\small\textcolor{darkgray}{C++ \textbar\ OpenGL \textbar\ GLFW \textbar\ GLM}}
+% \href{https://github.com/Tirtho-Mondal/3D_Cafeteria}
+%   {\color{sectioncolor}\faGithub}
+% \begin{highlights}
+%   \item Built a realistic interactive 3D cafeteria environment with indoor and outdoor scenes using OpenGL 3.3.
+%   \item Implemented texture mapping, Phong/Gouraud shading, Bézier curve modeling, fractal trees, and animated characters with sine-wave-based walking motion and falling leaves.
+% \end{highlights}
+
+% \vspace{2pt}
+
+% \textbf{Smart Navigation for the Visually Impaired}
+% \hfill
+% {\small\textcolor{darkgray}{Python \textbar\ Flutter}}
+% \href{https://github.com/Tirtho-Mondal/Navigation-Systems-for-the-Visually-Impaired}
+%   {\color{sectioncolor}\faGithub}
+% \begin{highlights}
+%   \item Developed an assistive navigation system using computer vision and sensor fusion for indoor and outdoor mobility.
+%   \item Integrated audio and haptic feedback to provide real-time guidance for visually impaired users.
+% \end{highlights}
+
+% \vspace{2pt}
+
+% \textbf{TutorFinder}
+% \hfill
+% {\small\textcolor{darkgray}{Laravel \textbar\ PHP \textbar\ MySQL}}
+% \href{https://github.com/Tirtho-Mondal/TutorFinder.git}
+%   {\color{sectioncolor}\faGithub}
+% \begin{highlights}
+%   \item Built a web platform connecting students with tutors through profile-based matching and scheduling features.
+% \end{highlights}
+
+% \vspace{2pt}
+
+% \textbf{HouseHold Services}
+% \hfill
+% {\small\textcolor{darkgray}{Android \textbar\ Java}}
+% \href{https://github.com/azhar2007112/HouseHold_Services}
+%   {\color{sectioncolor}\faGithub}
+% \begin{highlights}
+%   \item Designed an Android application for booking, tracking, and managing household service requests.
+% \end{highlights}
+
+% \vspace{2pt}
+
+% \textbf{CSE Family}
+% \hfill
+% {\small\textcolor{darkgray}{JavaFX}}
+% \href{https://github.com/Tirtho-Mondal/CSE-Family/tree/master}
+%   {\color{sectioncolor}\faGithub}
+% \begin{highlights}
+%   \item Created a desktop application for CSE students to share academic resources, discussions, and updates.
+% \end{highlights}
+
+% \vspace{2pt}
+
+% \textbf{MobiCash}
+% \hfill
+% {\small\textcolor{darkgray}{C++}}
+% \href{https://github.com/Tirtho-Mondal/MobiCash}
+%   {\color{sectioncolor}\faGithub}
+% \begin{highlights}
+%   \item Implemented a mobile banking simulation supporting transactions, recharge, balance checking, and user management.
+% \end{highlights}
+
+% \vspace{2pt}
+
+% \textbf{Laundry Shop Management}
+% \hfill
+% {\small\textcolor{darkgray}{SQL}}
+% \href{https://github.com/Tirtho-Mondal/Laundry-Shop-Management.git}
+%   {\color{sectioncolor}\faGithub}
+% \begin{highlights}
+%   \item Designed a relational database system to manage customers, orders, payments, and laundry shop operations.
+% \end{highlights}
+
+% % ─────────────────────────────────────────────
 \section{Projects}
 
-\begin{twocolentry}{Python · Flutter}
-\textbf{Smart Navigation for the Visually Impaired}
-\href{https://github.com/Tirtho-Mondal/Navigation-Systems-for-the-Visually-Impaired}
-{\faGithub}
-\end{twocolentry}
+\textbf{\href{https://github.com/Tirtho-Mondal/3D_Cafeteria}{3D Cafeteria Simulation}} \ \small\href{https://github.com/Tirtho-Mondal/3D_Cafeteria}{{\color{sectioncolor}\faGithub}}
+\hfill
+{\small\textcolor{darkgray}{C++ \textbar\ OpenGL 3.3 \textbar\ GLFW \textbar\ GLM}}
+\begin{adjustwidth}{12pt}{0pt}
+Developed an interactive 3D cafeteria environment utilizing texture mapping, Phong/Gouraud shading, Bézier curves, and animated characters driven by sine-wave walking motions.
+\end{adjustwidth}
 
-\begin{highlights}
-\item Real time assistive navigation combining computer vision and sensor fusion for safe, independent mobility.
-\item Implemented multimodal guidance using audio and haptic feedback for indoor and outdoor environments.
-\end{highlights}
+\vspace{5pt}
 
-\vspace{-0.08cm}
+\textbf{\href{https://github.com/Tirtho-Mondal/Navigation-Systems-for-the-Visually-Impaired}{Smart Navigation for the Visually Impaired}} \ \small\href{https://github.com/Tirtho-Mondal/Navigation-Systems-for-the-Visually-Impaired}{{\color{sectioncolor}\faGithub}}
+\hfill
+{\small\textcolor{darkgray}{Python \textbar\ Flutter}}
+\begin{adjustwidth}{12pt}{0pt}
+Built an assistive navigation system utilizing computer vision and sensor fusion for indoor/outdoor mobility, integrating real-time audio and haptic feedback mechanisms.
+\end{adjustwidth}
 
-\begin{twocolentry}{Laravel · PHP · MySQL}
-\textbf{TutorFinder}
-\href{https://github.com/Tirtho-Mondal/TutorFinder.git}
-{\faGithub}
-\end{twocolentry}
+\vspace{5pt}
 
-\begin{highlights}
-\item Web platform connecting students with qualified tutors, featuring intelligent matching and scheduling.
-\end{highlights}
+\textbf{\href{https://github.com/Tirtho-Mondal/Adaptive-UDP}{Adaptive UDP Congestion Control}} \ \small\href{https://github.com/Tirtho-Mondal/Adaptive-UDP}{{\color{sectioncolor}\faGithub}}
+\hfill
+{\small\textcolor{darkgray}{C++ \textbar\ OMNeT++ \textbar\ Genetic Algorithm \textbar\ UDP}}
+\begin{adjustwidth}{12pt}{0pt}
+Implemented a GA-based adaptive UDP packet-size control mechanism that uses real-time congestion feedback to reduce packet loss, improve throughput stability, and support efficient network simulation.
+\end{adjustwidth}
 
-\vspace{-0.08cm}
+\vspace{5pt}
 
-\begin{twocolentry}{Android · Java}
-\textbf{HouseHold Services}
-\href{https://github.com/azhar2007112/HouseHold_Services}
-{\faGithub}
-\end{twocolentry}
+\textbf{\href{https://github.com/Tirtho-Mondal/TutorFinder.git}{TutorFinder}} \ \small\href{https://github.com/Tirtho-Mondal/TutorFinder.git}{{\color{sectioncolor}\faGithub}}
+\hfill
+{\small\textcolor{darkgray}{Laravel \textbar\ PHP \textbar\ MySQL}}
+\begin{adjustwidth}{12pt}{0pt}
+Designed a web platform that connects students with local tutors through comprehensive profile-based matching algorithms and integrated scheduling features.
+\end{adjustwidth}
 
-\begin{highlights}
-\item Android application for booking and managing household services with real time status tracking.
-\end{highlights}
+\vspace{5pt}
 
-\vspace{-0.08cm}
+\textbf{\href{https://github.com/azhar2007112/HouseHold_Services}{HouseHold Services}} \ \small\href{https://github.com/azhar2007112/HouseHold_Services}{{\color{sectioncolor}\faGithub}}
+\hfill
+{\small\textcolor{darkgray}{Android \textbar\ Java}}
+\begin{adjustwidth}{12pt}{0pt}
+Created an Android application focused on local service delivery, allowing users to seamlessly book, track, and manage household service requests in real time.
+\end{adjustwidth}
 
-\begin{twocolentry}{JavaFX}
-\textbf{CSE Family}
-\href{https://github.com/Tirtho-Mondal/CSE-Family/tree/master}
-{\faGithub}
-\end{twocolentry}
+\vspace{5pt}
 
-\begin{highlights}
-\item Desktop platform for CSE students to share resources, discuss topics, and connect.
-\end{highlights}
+\textbf{\href{https://github.com/Tirtho-Mondal/CSE-Family/tree/master}{CSE Family}} \ \small\href{https://github.com/Tirtho-Mondal/CSE-Family/tree/master}{{\color{sectioncolor}\faGithub}}
+\hfill
+{\small\textcolor{darkgray}{JavaFX}}
+\begin{adjustwidth}{12pt}{0pt}
+Formed a desktop application tailored for the student community to centralize academic resource sharing, peer-to-peer discussions, and department updates.
+\end{adjustwidth}
 
-\vspace{-0.08cm}
+\vspace{5pt}
 
-\begin{twocolentry}{C++}
-\textbf{MobiCash}
-\href{https://github.com/Tirtho-Mondal/MobiCash}
-{\faGithub}
-\end{twocolentry}
+\textbf{\href{https://github.com/Tirtho-Mondal/MobiCash}{MobiCash}} \ \small\href{https://github.com/Tirtho-Mondal/MobiCash}{{\color{sectioncolor}\faGithub}}
+\hfill
+{\small\textcolor{darkgray}{C++}}
+\begin{adjustwidth}{12pt}{0pt}
+Implemented a mobile banking simulation handling core financial workflows, including secure transactions, mobile recharges, and user account management.
+\end{adjustwidth}
 
-\begin{highlights}
-\item Mobile banking simulation supporting cash in, cash out, recharge, and balance management using OOP.
-\end{highlights}
+\vspace{5pt}
 
-\vspace{-0.08cm}
+\textbf{\href{https://github.com/Tirtho-Mondal/Laundry-Shop-Management.git}{Laundry Shop Management}} \ \small\href{https://github.com/Tirtho-Mondal/Laundry-Shop-Management.git}{{\color{sectioncolor}\faGithub}}
+\hfill
+{\small\textcolor{darkgray}{SQL}}
+\begin{adjustwidth}{12pt}{0pt}
+Engineered a relational database system designed to systematically manage customer profiles, order workflows, payment processing, and overall shop operations.
+\end{adjustwidth}
 
-\begin{twocolentry}{SQL}
-\textbf{Laundry Shop Management}
-\href{https://github.com/Tirtho-Mondal/Laundry-Shop-Management.git}
-{\faGithub}
-\end{twocolentry}
-
-\begin{highlights}
-\item Relational database system designed to streamline laundry shop operations and customer tracking.
-\end{highlights}
-
-% Skills
+% TECHNICAL SKILLS
+% ─────────────────────────────────────────────
 \section{Technical Skills}
 
-\textbf{Languages:}
-C, C++, Python, JavaScript, PHP, SQL, HTML/CSS, Java, Dart
+\noindent
+\begin{tabularx}{\textwidth}{@{}l X}
+  \textbf{Languages}    & C, C++, Python, JavaScript, PHP, SQL, HTML/CSS, Java, Dart \\[1pt]
+  \textbf{Frameworks}   & Laravel, Android SDK, Flutter \\[1pt]
+  \textbf{Tools}        & Git/GitHub, VS Code, IntelliJ IDEA, Android Studio, Jupyter Notebook, \LaTeX \\[1pt]
+  \textbf{Research}     & NumPy, Pandas, OpenCV, Sensor Fusion \\[1pt]
+  \textbf{Concepts}     & Machine Learning, Deep Learning, Computer Vision, NLP, REST APIs, OOP, Design Patterns \\[1pt]
+  \textbf{Productivity} & MS Word, Excel, PowerPoint \\
+\end{tabularx}
 
-\textbf{Frameworks:}
-Laravel, Android SDK, Flutter
-
-\textbf{Tools:}
-Git/GitHub, VS Code, IntelliJ IDEA, Android Studio, Jupyter Notebook, LaTeX
-
-\textbf{Research Tools:}
-NumPy, Pandas, OpenCV, Sensor Fusion
-
-\textbf{Concepts:}
-Machine Learning, Deep Learning, Computer Vision, NLP, REST APIs, OOP, Design Patterns
-
-\textbf{Productivity:}
-MS Word, Excel, PowerPoint
-
-% Awards
+% ─────────────────────────────────────────────
+% HONOURS & AWARDS
+% ─────────────────────────────────────────────
 \section{Honours \& Awards}
 
 \begin{highlights}
-\item \textbf{Dean's List}: Academic Years 2021--2022 and 2022--2023, Department of CSE, KUET
+  \item \textbf{Dean's List}: Academic Years 2021--2022 and 2022--2023, Department of CSE, KUET
 \end{highlights}
 
-% Languages
+% ─────────────────────────────────────────────
+% LANGUAGES
+% ─────────────────────────────────────────────
 \section{Languages}
 
-\textbf{Bengali}: Native
-\quad
-\textbf{English}: Fluent 
-
-% Statement
-% \section{Personal Statement}
-
-% Self motivated final year CSE undergraduate with strong interest in research at the intersection of Machine Learning, Optimization, and Game Theory. Seeking research opportunities, graduate programs, or software engineering roles where I can apply and advance my skills in AI driven systems.
+\noindent\textbf{Bengali}: Native \quad\textbar\quad \textbf{English}: Fluent
 
 \end{document}
 

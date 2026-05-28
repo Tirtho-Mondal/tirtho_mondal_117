@@ -79,12 +79,61 @@ const projectData = [
     tech: ["SQL", "MySQL", "Relational Database Design"],
     github: "https://github.com/Tirtho-Mondal/Laundry-Shop-Management.git",
     demo: null
+  },
+  {
+    title: "3D Cafeteria Simulation",
+    category: "Graphics Simulation",
+    problem: "Creating an immersive graphics simulation requires realistic lighting, texture mapping, and scene animation for a campus environment.",
+    description: "Built an interactive OpenGL-powered cafeteria simulation with textured 3D models, dynamic lighting, and animated scene elements to showcase graphics programming skills.",
+    outcome: "Delivered a polished simulation that highlights proficiency in computer graphics, scene rendering, and real-time animation techniques.",
+    tech: ["C++", "OpenGL", "Graphics", "Simulation"],
+    github: "https://github.com/Tirtho-Mondal/3D_Cafeteria",
+    demo: null
+  },
+  {
+    title: "Adaptive UDP Congestion Control",
+    category: "Network Systems",
+    problem: "UDP network simulations need intelligent packet-size adaptation to minimize loss during congestion while maintaining consistent throughput across variable network conditions.",
+    description: "Developed a genetic algorithm-based adaptive mechanism for UDP packet sizing that analyzes real-time congestion feedback and dynamically adjusts transmission parameters. Implemented in OMNeT++ for comprehensive network simulation.",
+    outcome: "Successfully demonstrated significant improvements in packet delivery ratio and throughput stability compared to fixed packet-size protocols under various congestion levels.",
+    tech: ["C++", "OMNeT++", "Genetic Algorithm", "UDP", "Network Simulation"],
+    github: "https://github.com/Tirtho-Mondal/Adaptive-UDP",
+    demo: null
   }
 ];
 
 window.addEventListener('load', () => {
   // Trigger reveal for elements in viewport on load
   observeReveal();
+<<<<<<< HEAD
+=======
+  renderCourseworkDetail('programming');
+  initResearchPublicationInteractions();
+
+  const trackerItems = document.querySelectorAll('.tracker-item');
+  trackerItems.forEach(item => {
+    item.addEventListener('click', () => renderCourseworkDetail(item.dataset.course));
+    item.addEventListener('mouseenter', () => {
+      if (!isTouchDevice) renderCourseworkDetail(item.dataset.course);
+    });
+    item.addEventListener('focus', () => renderCourseworkDetail(item.dataset.course));
+  });
+
+  const courseworkCard = document.querySelector('.folder-card[data-track-target]');
+  if (courseworkCard) {
+    const targetId = courseworkCard.dataset.trackTarget;
+    const target = document.getElementById(targetId);
+    courseworkCard.addEventListener('click', () => {
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+    courseworkCard.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        courseworkCard.click();
+      }
+    });
+  }
+>>>>>>> c345a11 ( new vesion)
 });
 
 /* =========================================================
@@ -248,6 +297,24 @@ function observeReveal() {
     // Fallback
     revealEls.forEach(el => el.classList.add('visible'));
   }
+}
+
+function initResearchPublicationInteractions() {
+  const researchCards = document.querySelectorAll('.research-card');
+  researchCards.forEach(card => {
+    card.addEventListener('mouseenter', () => card.classList.add('research-card--focus'));
+    card.addEventListener('mouseleave', () => card.classList.remove('research-card--focus'));
+    card.addEventListener('focus', () => card.classList.add('research-card--focus'));
+    card.addEventListener('blur', () => card.classList.remove('research-card--focus'));
+  });
+
+  const publicationCards = document.querySelectorAll('.pub-card');
+  publicationCards.forEach(card => {
+    card.addEventListener('mouseenter', () => card.classList.add('pub-card--active'));
+    card.addEventListener('mouseleave', () => card.classList.remove('pub-card--active'));
+    card.addEventListener('focusin', () => card.classList.add('pub-card--active'));
+    card.addEventListener('focusout', () => card.classList.remove('pub-card--active'));
+  });
 }
 
 /* =========================================================
