@@ -105,35 +105,7 @@ const projectData = [
 window.addEventListener('load', () => {
   // Trigger reveal for elements in viewport on load
   observeReveal();
-<<<<<<< HEAD
-=======
-  renderCourseworkDetail('programming');
   initResearchPublicationInteractions();
-
-  const trackerItems = document.querySelectorAll('.tracker-item');
-  trackerItems.forEach(item => {
-    item.addEventListener('click', () => renderCourseworkDetail(item.dataset.course));
-    item.addEventListener('mouseenter', () => {
-      if (!isTouchDevice) renderCourseworkDetail(item.dataset.course);
-    });
-    item.addEventListener('focus', () => renderCourseworkDetail(item.dataset.course));
-  });
-
-  const courseworkCard = document.querySelector('.folder-card[data-track-target]');
-  if (courseworkCard) {
-    const targetId = courseworkCard.dataset.trackTarget;
-    const target = document.getElementById(targetId);
-    courseworkCard.addEventListener('click', () => {
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    });
-    courseworkCard.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        courseworkCard.click();
-      }
-    });
-  }
->>>>>>> c345a11 ( new vesion)
 });
 
 /* =========================================================
