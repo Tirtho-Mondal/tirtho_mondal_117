@@ -587,23 +587,6 @@ if (copyEmailBtn && emailDisplay) {
 }
 
 /* =========================================================
-   15. LIVE LOCAL TIME WIDGET
-   ========================================================= */
-const timeDisplay = document.getElementById('localTime');
-const dateDisplay = document.getElementById('localDate');
-
-function updateTime() {
-  const now = new Date();
-  const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-  const date = now.toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' });
-  if (timeDisplay) timeDisplay.textContent = time;
-  if (dateDisplay) dateDisplay.textContent = date;
-}
-
-updateTime();
-setInterval(updateTime, 1000);
-
-/* =========================================================
    16. FAQ ACCORDION (PROFESSIONAL VERSION)
    ========================================================= */
 const faqCards = document.querySelectorAll('.faq-card');
