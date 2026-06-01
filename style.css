@@ -2594,6 +2594,10 @@ select {
   user-select: none;
 }
 
+.dic-tree-folder[open] summary {
+  color: var(--accent-gold);
+}
+
 .dic-tree-folder summary::-webkit-details-marker {
   display: none;
 }
