@@ -28,7 +28,8 @@ const projectData = [
     outcome: "Published as an arXiv preprint. The prototype successfully demonstrated high accuracy in obstacle detection and low latency in generating tactile warnings.",
     tech: ["Python", "Flutter", "OpenCV", "Sensor Fusion", "Deep Learning"],
     github: "https://github.com/Tirtho-Mondal/Navigation-Systems-for-the-Visually-Impaired",
-    demo: "https://arxiv.org/abs/2504.20976"
+    demo: "https://arxiv.org/abs/2504.20976",
+    videoId: "VIDEO_ID_NAVIGATION"
   },
   {
     title: "TutorFinder",
@@ -38,7 +39,8 @@ const projectData = [
     outcome: "Fully functional platform with optimized database querying, reducing search times and streamlining tutoring coordination.",
     tech: ["Laravel", "PHP", "MySQL", "JavaScript", "HTML/CSS"],
     github: "https://github.com/Tirtho-Mondal/TutorFinder.git",
-    demo: null
+    demo: null,
+    videoId: "VIDEO_ID_TUTORFINDER"
   },
   {
     title: "HouseHold Services",
@@ -48,7 +50,8 @@ const projectData = [
     outcome: "Completed as part of a software project coursework, demonstrating strong understanding of mobile app development lifecycles and offline database management.",
     tech: ["Android SDK", "Java", "SQLite", "Git", "XML"],
     github: "https://github.com/azhar2007112/HouseHold_Services",
-    demo: null
+    demo: null,
+    videoId: "VIDEO_ID_HOUSEHOLD"
   },
   {
     title: "CSE Family",
@@ -58,7 +61,8 @@ const projectData = [
     outcome: "Successfully completed class project that serves as a desktop-native hub for collaborative student resources.",
     tech: ["JavaFX", "Java", "CSS", "OOP Layouts"],
     github: "https://github.com/Tirtho-Mondal/CSE-Family/tree/master",
-    demo: null
+    demo: null,
+    videoId: "VIDEO_ID_CSE_FAMILY"
   },
   {
     title: "MobiCash",
@@ -68,7 +72,8 @@ const projectData = [
     outcome: "Created a bug-free, terminal-based simulation showing robust handling of edge cases in banking workflows.",
     tech: ["C++", "OOP Paradigms", "Systems Simulation"],
     github: "https://github.com/Tirtho-Mondal/MobiCash",
-    demo: null
+    demo: null,
+    videoId: "VIDEO_ID_MOBICASH"
   },
   {
     title: "Laundry Shop Management",
@@ -78,7 +83,8 @@ const projectData = [
     outcome: "Demonstrated database design proficiency by establishing an optimized database schema that prevents redundant records and calculates invoices dynamically.",
     tech: ["SQL", "MySQL", "Relational Database Design"],
     github: "https://github.com/Tirtho-Mondal/Laundry-Shop-Management.git",
-    demo: null
+    demo: null,
+    videoId: "VIDEO_ID_LAUNDRY"
   },
   {
     title: "3D Cafeteria Simulation",
@@ -88,7 +94,8 @@ const projectData = [
     outcome: "Delivered a polished simulation that highlights proficiency in computer graphics, scene rendering, and real-time animation techniques.",
     tech: ["C++", "OpenGL", "Graphics", "Simulation"],
     github: "https://github.com/Tirtho-Mondal/3D_Cafeteria",
-    demo: null
+    demo: null,
+    videoId: "VIDEO_ID_CAFETERIA"
   },
   {
     title: "Adaptive UDP Congestion Control",
@@ -98,7 +105,8 @@ const projectData = [
     outcome: "Successfully demonstrated significant improvements in packet delivery ratio and throughput stability compared to fixed packet-size protocols under various congestion levels.",
     tech: ["C++", "OMNeT++", "Genetic Algorithm", "UDP", "Network Simulation"],
     github: "https://github.com/Tirtho-Mondal/Adaptive-UDP",
-    demo: null
+    demo: null,
+    videoId: "VIDEO_ID_ADAPTIVE_UDP"
   }
 ];
 
@@ -348,6 +356,26 @@ skillBars.forEach(bar => skillObserver.observe(bar));
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 
+projectCards.forEach(card => {
+  const detailBtn = card.querySelector('.project-detail-btn');
+  const idx = parseInt(card.dataset.project);
+  const project = projectData[idx];
+  if (!detailBtn || !project) return;
+
+  const actions = document.createElement('div');
+  actions.className = 'project-card__actions';
+
+  const videoBtn = document.createElement('button');
+  videoBtn.type = 'button';
+  videoBtn.className = 'btn btn--sm project-video-btn';
+  videoBtn.dataset.project = String(idx);
+  videoBtn.innerHTML = '<span aria-hidden="true">▶</span> Video Demo';
+
+  detailBtn.parentNode.insertBefore(actions, detailBtn);
+  actions.appendChild(detailBtn);
+  actions.appendChild(videoBtn);
+});
+
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     // Update active button
@@ -382,13 +410,33 @@ const modalOverlay = document.getElementById('modalOverlay');
 const modalContent = document.getElementById('modalContent');
 const modalClose = document.getElementById('modalClose');
 
+function getYouTubeId(videoValue) {
+  if (!videoValue) return '';
+  const value = String(videoValue).trim();
+  const match = value.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+  return match ? match[1] : value;
+}
+
+function getYouTubeEmbedUrl(videoValue) {
+  const videoId = getYouTubeId(videoValue);
+  return `https://www.youtube.com/embed/${encodeURIComponent(videoId)}?autoplay=1&mute=1&rel=0&modestbranding=1&playsinline=1`;
+}
+
+function openModal(content, modifierClass = '') {
+  modalContent.innerHTML = content;
+  modalOverlay.className = `modal-overlay ${modifierClass}`.trim();
+  modalOverlay.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  modalClose.focus();
+}
+
 document.querySelectorAll('.project-detail-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const idx = parseInt(btn.dataset.project);
     const proj = projectData[idx];
     if (!proj) return;
 
-    modalContent.innerHTML = `
+    openModal(`
       <span class="modal-tag">${proj.category}</span>
       <h2>${proj.title}</h2>
       <h4>Problem Statement</h4>
@@ -403,16 +451,47 @@ document.querySelectorAll('.project-detail-btn').forEach(btn => {
         ${proj.github ? `<a href="${proj.github}" class="btn btn--primary">⌥ GitHub</a>` : ''}
         ${proj.demo ? `<a href="${proj.demo}"   class="btn btn--secondary">${proj.demo === 'Preprint' ? '📄 Preprint' : proj.demo === 'Report' ? '📄 Report' : '▶ Live Demo'}</a>` : ''}
       </div>
-    `;
+    `);
+  });
+});
 
-    modalOverlay.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-    modalClose.focus();
+document.querySelectorAll('.project-video-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const idx = parseInt(btn.dataset.project);
+    const proj = projectData[idx];
+    if (!proj) return;
+
+    const isPlaceholder = !proj.videoId || proj.videoId.startsWith('VIDEO_ID_');
+    const embedUrl = isPlaceholder ? '' : getYouTubeEmbedUrl(proj.videoId);
+
+    openModal(`
+      <span class="modal-tag">${proj.category}</span>
+      <h2>${proj.title} Demo</h2>
+      <div class="video-demo">
+        ${embedUrl ? `
+          <iframe
+            src="${embedUrl}"
+            title="${proj.title} video demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        ` : `
+          <div class="video-demo__empty">
+            <strong>Video demo link needed</strong>
+            <p>Add this project's YouTube video ID in <code>projectData</code> as <code>videoId</code>. The modal is ready and will autoplay once a real ID is provided.</p>
+          </div>
+        `}
+      </div>
+      <div class="modal-actions video-demo__actions">
+        ${proj.github ? `<a href="${proj.github}" target="_blank" rel="noopener" class="btn btn--outline">GitHub</a>` : ''}
+      </div>
+    `, 'modal-overlay--video');
   });
 });
 
 function closeModal() {
   modalOverlay.style.display = 'none';
+  modalOverlay.className = 'modal-overlay';
+  modalContent.innerHTML = '';
   document.body.style.overflow = '';
 }
 
@@ -937,6 +1016,115 @@ if (dcCards.length > 0 && docFrame) {
       docFrame.classList.add('loaded');
     }
   });
+}
+
+/* =========================================================
+   15. DOCUMENT INTELLIGENCE DASHBOARD
+   ========================================================= */
+const dicDashboard = document.querySelector('[data-dic-dashboard]');
+
+if (dicDashboard) {
+  const dicSearch = document.getElementById('dicSearch');
+  const dicFilters = document.querySelectorAll('.dic-filter');
+  const dicItems = document.querySelectorAll('[data-dic-item]');
+  const dicModules = document.querySelectorAll('[data-dic-module]');
+  const dicEmpty = document.getElementById('dicEmpty');
+  const dicPanelTitle = document.getElementById('dicPanelTitle');
+  const dicPanelSummary = document.getElementById('dicPanelSummary');
+  const dicPanelDocs = document.getElementById('dicPanelDocs');
+  const dicPanelTags = document.getElementById('dicPanelTags');
+  const dicStatusText = document.getElementById('dicStatusText');
+  const dicStatusIcon = document.getElementById('dicStatusIcon');
+  let activeFilter = 'all';
+
+  function getItemSearchText(item) {
+    return [
+      item.dataset.title,
+      item.dataset.summary,
+      item.dataset.documents,
+      item.dataset.tags,
+      item.dataset.status,
+      item.dataset.category
+    ].join(' ').toLowerCase();
+  }
+
+  function updateDicPanel(item) {
+    if (!item) return;
+
+    dicItems.forEach(card => card.classList.remove('active'));
+    item.classList.add('active');
+
+    const status = item.dataset.status || 'Verified';
+    const statusMap = {
+      Verified: 'OK',
+      Archived: 'ARC',
+      Recent: 'NEW'
+    };
+
+    if (dicPanelTitle) dicPanelTitle.textContent = item.dataset.title || 'Document Record';
+    if (dicPanelSummary) dicPanelSummary.textContent = item.dataset.summary || '';
+    if (dicStatusText) dicStatusText.textContent = status;
+    if (dicStatusIcon) dicStatusIcon.textContent = statusMap[status] || 'OK';
+
+    if (dicPanelDocs) {
+      dicPanelDocs.innerHTML = '';
+      (item.dataset.documents || '').split('|').filter(Boolean).forEach(doc => {
+        const li = document.createElement('li');
+        li.textContent = doc;
+        dicPanelDocs.appendChild(li);
+      });
+    }
+
+    if (dicPanelTags) {
+      dicPanelTags.innerHTML = '';
+      (item.dataset.tags || '').split(',').filter(Boolean).forEach(tag => {
+        const chip = document.createElement('span');
+        chip.textContent = tag.trim();
+        dicPanelTags.appendChild(chip);
+      });
+    }
+  }
+
+  function filterDicItems() {
+    const query = (dicSearch?.value || '').trim().toLowerCase();
+    let visibleCount = 0;
+
+    dicItems.forEach(item => {
+      const categoryMatches = activeFilter === 'all' || item.dataset.category === activeFilter;
+      const searchMatches = !query || getItemSearchText(item).includes(query);
+      const show = categoryMatches && searchMatches;
+      item.hidden = !show;
+      if (show) visibleCount += 1;
+    });
+
+    dicModules.forEach(module => {
+      const hasVisibleItems = module.querySelectorAll('[data-dic-item]:not([hidden])').length > 0;
+      module.hidden = !hasVisibleItems;
+    });
+
+    if (dicEmpty) dicEmpty.hidden = visibleCount > 0;
+
+    const activeItem = document.querySelector('[data-dic-item].active:not([hidden])');
+    const firstVisible = document.querySelector('[data-dic-item]:not([hidden])');
+    if (!activeItem && firstVisible) updateDicPanel(firstVisible);
+  }
+
+  dicItems.forEach(item => {
+    item.addEventListener('click', () => updateDicPanel(item));
+  });
+
+  dicFilters.forEach(button => {
+    button.addEventListener('click', () => {
+      dicFilters.forEach(filter => filter.classList.remove('active'));
+      button.classList.add('active');
+      activeFilter = button.dataset.dicFilter || 'all';
+      filterDicItems();
+    });
+  });
+
+  if (dicSearch) {
+    dicSearch.addEventListener('input', debounce(filterDicItems, 120));
+  }
 }
 
 /* =========================================================

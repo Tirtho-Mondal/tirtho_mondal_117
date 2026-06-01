@@ -49,11 +49,11 @@
           <li><a href="#about" class="nav__link">About</a></li>
           <li><a href="#education" class="nav__link">Education</a></li>
           <li><a href="#research" class="nav__link">Research</a></li>
+          <li><a href="#publications" class="nav__link">Publications</a></li>
           <li><a href="#skills" class="nav__link">Skills</a></li>
           <li><a href="#projects" class="nav__link">Projects</a></li>
-          <li><a href="#publications" class="nav__link">Publications</a></li>
           <li><a href="#achievements" class="nav__link">Achievements</a></li>
-          <li><a href="#cv" class="nav__link">CV</a></li>
+          <li><a href="#cv" class="nav__link">DIC</a></li>
           <!-- <li><a href="#contact" class="nav__link">Contact</a></li> -->
         </ul>
       </nav>
@@ -315,6 +315,46 @@
       </div>
     </section>
 
+    <!-- ===== PUBLICATIONS SECTION ===== -->
+    <section class="section section--alt" id="publications" aria-labelledby="pubHeading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Scholarly Contributions</span>
+          <h2 class="section__title" id="pubHeading">Publications</h2>
+          <div class="section__divider"></div>
+          <p class="section__subtitle">A collection of my research papers, technical articles, and scholarly contributions in AI, accessibility, and computer vision.</p>
+        </div>
+
+        <div class="publication-list">
+          <article class="pub-card reveal">
+            <div class="pub-card__content">
+              <div class="pub-card__meta">
+                <span class="pub-type">Preprint</span>
+                <span>2025</span>
+              </div>
+              <h3 class="pub-title">Real Time Assistive Navigation for the Visually Impaired</h3>
+              <p class="pub-venue">arXiv:2504.20976 | April 2025</p>
+              <p class="pub-authors"><span>Authors:</span> Dabbrata Das, Argho Deb Das, Farhan Sadaf, Azhar Uddin, and <strong>Tirtho Mondal</strong></p>
+              <p class="pub-description">A research-based publication focused on developing an intelligent navigation system using computer vision, sensor fusion, and multimodal feedback for visually impaired users.</p>
+              <details class="pub-abstract">
+                <summary>Abstract</summary>
+                <p>Navigating unfamiliar environments remains one of the most persistent and critical challenges for people who are blind or have limited vision (BLV). Existing assistive tools often rely on online services or APIs, making them costly, internet-dependent, and less reliable in real-time use. To address these limitations, we propose PathFinder, a novel mapless mobile phone-based navigation system that operates fully offline. Our method processes monocular depth images and applies an efficient pathfinding algorithm to identify the longest, clearest obstacle-free route, ensuring optimal navigation with low computational cost. Comparative evaluations show that PathFinder reduces mean absolute error (MAE), speeds decision-making, and achieves real-time responsiveness indoors and outdoors. A usability study with 15 BLV participants confirmed its practicality, where 73% learned to operate it in under a minute, and 80% praised its accuracy, responsiveness, and convenience. Despite challenges in complex indoor layouts and low light, PathFinder offers a low-cost, scalable, reliable alternative.</p>
+              </details>
+              <div class="pub-tags" aria-label="Publication tags">
+                <span>Computer Vision</span>
+                <span>AI</span>
+                <span>Accessibility</span>
+              </div>
+              <div class="pub-actions">
+                <a href="https://arxiv.org/abs/2504.20976" target="_blank" rel="noopener" class="btn btn--primary btn--sm">View Paper</a>
+                <a href="https://arxiv.org/abs/2504.20976" target="_blank" rel="noopener" class="btn btn--outline btn--sm">arXiv Link</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== SKILLS SECTION ===== -->
     <section class="section section--alt" id="skills" aria-labelledby="skillsHeading">
       <div class="container">
@@ -406,27 +446,27 @@
               <h3 class="dash-card__title">Ecosystem &amp; Frameworks</h3>
             </div>
             <div class="dash-stack-grid">
-              <div class="stack-item">
+              <div class="stack-item reveal">
                 <span class="stack-item__name">Laravel</span>
                 <span class="stack-item__tag">Backend</span>
               </div>
-              <div class="stack-item">
+              <div class="stack-item reveal">
                 <span class="stack-item__name">Android SDK</span>
                 <span class="stack-item__tag">Mobile</span>
               </div>
-              <div class="stack-item">
+              <div class="stack-item reveal">
                 <span class="stack-item__name">Flutter</span>
                 <span class="stack-item__tag">Mobile</span>
               </div>
-              <div class="stack-item">
+              <div class="stack-item reveal">
                 <span class="stack-item__name">REST APIs</span>
                 <span class="stack-item__tag">Integration</span>
               </div>
-              <div class="stack-item">
+              <div class="stack-item reveal">
                 <span class="stack-item__name">OOP</span>
                 <span class="stack-item__tag">Paradigm</span>
               </div>
-              <div class="stack-item">
+              <div class="stack-item reveal">
                 <span class="stack-item__name">Design Patterns</span>
                 <span class="stack-item__tag">Architecture</span>
               </div>
@@ -644,57 +684,6 @@
       </div>
     </section>
 
-    <!-- ===== PUBLICATIONS SECTION ===== -->
-    <section class="section section--alt" id="publications" aria-labelledby="pubHeading">
-      <div class="container">
-        <div class="section__header reveal">
-          <span class="section__tag">Scholarly Contributions</span>
-          <h2 class="section__title" id="pubHeading">Research <span class="text-accent">&amp; Publications</span></h2>
-          <div class="section__divider"></div>
-          <p class="section__subtitle">Peer-reviewed and preprint research focusing on computer vision, accessibility, and AI for social impact.</p>
-        </div>
-
-        <div class="publication-summary reveal">
-          <p>One focused publication reflecting my work on accessible navigation for visually impaired users, with a strong interest in AI and computer vision applications.</p>
-        </div>
-
-        <div class="publication-list">
-          <article class="pub-card pub-card--featured reveal">
-            <div class="pub-card__accent"></div>
-            <div class="pub-card__content">
-              <div class="pub-card__header">
-                <div class="pub-card__type-badge">
-                  <span class="pub-type pub-type--preprint">Preprint</span>
-                  <span class="pub-status-badge pub-status-badge--active"><span class="status-dot"></span>Featured</span>
-                </div>
-              </div>
-              <h3 class="pub-title">Real Time Assistive Navigation for the Visually Impaired</h3>
-              <div class="pub-meta">
-                <div class="pub-authors"><span class="pub-meta-label">Co-authors:</span><span>Dabbrata Das, Argho Deb Das, Farhan Sadaf, Azhar Uddin, and Tirtho Mondal</span></div>
-                <div class="pub-venue"><span class="pub-meta-label">Venue:</span><span>arXiv:2504.20976, April 2025</span></div>
-              </div>
-              <div class="pub-keywords">
-                <span class="keyword-label">Keywords</span>
-                <div class="keyword-tags">
-                  <span class="keyword-tag">Accessible Navigation</span>
-                  <span class="keyword-tag">Computer Vision</span>
-                  <span class="keyword-tag">Sensor Fusion</span>
-                  <span class="keyword-tag">AI Ethics</span>
-                </div>
-              </div>
-              <div class="pub-abstract">
-                <strong>Abstract</strong>
-                <p>This research proposes a real-time assistive navigation system for visually impaired users, combining object detection, sensor fusion, and multimodal feedback to improve safety and independence.</p>
-              </div>
-              <div class="pub-actions">
-                <a href="https://arxiv.org/abs/2504.20976" target="_blank" class="btn btn--primary">View on arXiv</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <!-- ===== ACHIEVEMENTS & CERTIFICATIONS (PRESTIGE MILESTONE MATRIX) ===== -->
     <section class="section achievements-section" id="achievements" aria-labelledby="achieveHeading">
       <div class="container">
@@ -810,132 +799,172 @@
           <div class="section__divider"></div>
         </div>
 
-        <div class="document-center reveal">
-          <!-- Left: Document Selector -->
-          <div class="dc-sidebar">
-            <div class="dc-card dc-card--featured active" data-doc="cv">
-              <div class="dc-card__glow"></div>
-              <div class="dc-card__badge">Primary</div>
-              <div class="dc-card__icon-wrapper">
-                <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                  <line x1="16" y1="13" x2="8" y2="13"></line>
-                  <line x1="16" y1="17" x2="8" y2="17"></line>
-                  <polyline points="10 9 9 9 8 9"></polyline>
-                </svg>
-              </div>
-              <div class="dc-card__info">
-                <h3>Academic Curriculum Vitae</h3>
-                <div class="dc-card__meta">
-                  <span>v1.0</span>
-                  <span class="dot"></span>
-                  <span>160 KB</span>
-                </div>
-              </div>
-              <div class="dc-card__actions">
-                <a href="Tirtho Mondal.pdf" target="_blank" class="dc-action-btn" title="Download PDF">
-                  <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                  </svg>
-                </a>
-              </div>
+        <div class="document-center dic-dashboard reveal" data-dic-dashboard>
+          <div class="dic-topbar">
+            <div>
+              <p class="dic-kicker">Credential OS</p>
+              <h3>Document Intelligence Center</h3>
             </div>
-
-            <div class="dc-card" data-doc="resume">
-              <div class="dc-card__icon-wrapper">
-                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-              </div>
-              <div class="dc-card__info">
-                <h3>Industry Resume</h3>
-                <div class="dc-card__meta">Available on Request</div>
-              </div>
-            </div>
-
-            <div class="dc-card" data-doc="transcript">
-              <div class="dc-card__icon-wrapper">
-                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
-                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                </svg>
-              </div>
-              <div class="dc-card__info">
-                <h3>Academic Transcript</h3>
-                <div class="dc-card__meta">Available on Request</div>
-              </div>
-            </div>
-
-            <!-- Identity Card -->
-            <div class="dc-identity-card">
-              <div class="dc-identity__header">
-                <span class="dc-identity__label">Digital Identity</span>
-                <div class="dc-identity__status"><span class="dot pulse"></span> Online</div>
-              </div>
-              <div class="dc-identity__body">
-                <div class="dc-qr-box">
-                  <svg viewBox="0 0 100 100" class="dc-qr-svg">
-                    <rect width="100" height="100" fill="transparent" />
-                    <path d="M10 10h30v30h-30z M60 10h30v30h-30z M10 60h30v30h-30z" fill="currentColor"
-                      fill-opacity="0.1" />
-                    <path d="M15 15h20v20h-20z M65 15h20v20h-20z M15 65h20v20h-20z" fill="var(--accent-gold)" />
-                    <rect x="45" y="45" width="10" height="10" fill="var(--navy)" />
-                  </svg>
-                  <div class="dc-qr-scanline"></div>
-                </div>
-                <div class="dc-identity__text">
-                  <strong>Tirtho Mondal</strong>
-                  <p>CSE Student &amp; Researcher</p>
-                </div>
-              </div>
-            </div>
+            <label class="dic-search" for="dicSearch">
+              <span aria-hidden="true">Search</span>
+              <input id="dicSearch" type="search" placeholder="Search documents, awards, leadership..." />
+            </label>
           </div>
 
-          <!-- Right: Interactive Reader -->
-          <div class="dc-viewer">
-            <div class="dc-viewer__header">
-              <div class="dc-viewer__controls">
-                <span class="dc-dot red"></span>
-                <span class="dc-dot yellow"></span>
-                <span class="dc-dot green"></span>
-              </div>
-              <div class="dc-viewer__tab" id="dcViewerTabTitle">
-                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"
-                  style="margin-right: 8px;">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                </svg>
-                Tirtho_Mondal_CV.pdf
-              </div>
-              <div class="dc-viewer__actions">
-                <!-- Actions removed for a cleaner digital-first experience -->
-              </div>
-            </div>
-            <div class="dc-viewer__body" style="position: relative;">
-              <!-- Immersive Overlay -->
-              <div class="dc-viewer__loading" id="viewerLoading">
-                <div class="dc-spinner"></div>
-                <p>Establishing Secure Stream...</p>
-              </div>
-              <!-- Available on Request Overlay -->
-              <div id="requestOverlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #0f2444; display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; z-index: 5;">
-                <svg viewBox="0 0 24 24" width="64" height="64" stroke="var(--accent-gold)" stroke-width="1.5" fill="none" style="margin-bottom: 20px;">
-                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                </svg>
-                <h3 style="color: var(--white); margin-bottom: 10px; font-size: 1.4rem;">Confidential Document</h3>
-                <p style="color: var(--grey-300); max-width: 320px; margin-bottom: 24px; font-size: 0.95rem; line-height: 1.5;">This document is available upon request for verification purposes.</p>
-                <a href="mailto:tirthomondal.2001@gmail.com?subject=Request for Document" class="btn btn--primary">Request Access</a>
-              </div>
-              <iframe src="Tirtho Mondal.pdf" id="documentFrame" class="dc-iframe"
-                title="CV Document Viewer"></iframe>
-            </div>
+          <div class="dic-filters" role="group" aria-label="Document filters">
+            <button class="dic-filter active" type="button" data-dic-filter="all">All</button>
+            <button class="dic-filter" type="button" data-dic-filter="academic">Academic</button>
+            <button class="dic-filter" type="button" data-dic-filter="awards">Awards</button>
+            <button class="dic-filter" type="button" data-dic-filter="leadership">Leadership</button>
           </div>
+
+          <div class="dic-layout">
+            <div class="dic-main">
+              <section class="dic-module" data-dic-module="academic" aria-labelledby="dicAcademicHeading">
+                <div class="dic-module__header">
+                  <div>
+                    <span class="dic-module__eyebrow">Academic Module</span>
+                    <h4 id="dicAcademicHeading">Document Vault</h4>
+                  </div>
+                  <span class="dic-count">5 folders</span>
+                </div>
+                <div class="dic-folder-grid">
+                  <button class="dic-folder active" type="button" data-dic-item data-category="academic"
+                    data-title="KUET Folder"
+                    data-summary="B.Sc. in Computer Science and Engineering credential archive for KUET."
+                    data-documents="Certificate|Grade Sheet"
+                    data-tags="Academic,Certificate,Verified,KUET" data-status="Verified">
+                    <span class="dic-folder__icon">KU</span>
+                    <span class="dic-folder__title">KUET Folder</span>
+                    <span class="dic-folder__preview">Certificate, Grade Sheet</span>
+                  </button>
+                  <button class="dic-folder" type="button" data-dic-item data-category="academic"
+                    data-title="HSC Folder" data-summary="Higher Secondary Certificate record from Kapilmuni College."
+                    data-documents="Certificate|Transcript|Registration Card"
+                    data-tags="Academic,Certificate,Transcript,Verified" data-status="Verified">
+                    <span class="dic-folder__icon">HS</span>
+                    <span class="dic-folder__title">HSC Folder</span>
+                    <span class="dic-folder__preview">Certificate, Transcript, Registration Card</span>
+                  </button>
+                  <button class="dic-folder" type="button" data-dic-item data-category="academic"
+                    data-title="SSC Folder" data-summary="Secondary School Certificate record and transcript archive."
+                    data-documents="Certificate|Transcript|Registration Card"
+                    data-tags="Academic,Certificate,Transcript,Archived" data-status="Archived">
+                    <span class="dic-folder__icon">SS</span>
+                    <span class="dic-folder__title">SSC Folder</span>
+                    <span class="dic-folder__preview">Certificate, Transcript, Registration Card</span>
+                  </button>
+                  <button class="dic-folder" type="button" data-dic-item data-category="academic"
+                    data-title="JSC Folder" data-summary="Junior School Certificate document set."
+                    data-documents="Certificate|Transcript|Registration Card"
+                    data-tags="Academic,Certificate,Transcript,Archived" data-status="Archived">
+                    <span class="dic-folder__icon">JS</span>
+                    <span class="dic-folder__title">JSC Folder</span>
+                    <span class="dic-folder__preview">Certificate, Transcript, Registration Card</span>
+                  </button>
+                  <button class="dic-folder" type="button" data-dic-item data-category="academic"
+                    data-title="PSC Folder" data-summary="Primary School Certificate record."
+                    data-documents="Certificate" data-tags="Academic,Certificate,Archived" data-status="Archived">
+                    <span class="dic-folder__icon">PS</span>
+                    <span class="dic-folder__title">PSC Folder</span>
+                    <span class="dic-folder__preview">Certificate</span>
+                  </button>
+                </div>
+              </section>
+
+              <section class="dic-module" data-dic-module="awards" aria-labelledby="dicAwardsHeading">
+                <div class="dic-module__header">
+                  <div>
+                    <span class="dic-module__eyebrow">Awards Module</span>
+                    <h4 id="dicAwardsHeading">Achievement Cards</h4>
+                  </div>
+                  <span class="dic-count">2 verified</span>
+                </div>
+                <div class="dic-awards-grid">
+                  <button class="dic-award" type="button" data-dic-item data-category="awards"
+                    data-title="Dean's List" data-summary="Academic distinction from the Department of CSE, KUET."
+                    data-documents="Year: 2021-2022|Year: 2022-2023|Department: CSE, KUET"
+                    data-tags="Awards,Verified,Academic,KUET" data-status="Verified">
+                    <span class="dic-award__badge">DL</span>
+                    <span class="dic-award__label">Dean's List</span>
+                    <span class="dic-award__meta">2021-2022, 2022-2023</span>
+                    <span class="dic-verified">Verified Achievement</span>
+                  </button>
+                  <button class="dic-award" type="button" data-dic-item data-category="awards"
+                    data-title="KUET Technical Scholarship"
+                    data-summary="Technical scholarship recognition connected with KUET academic performance."
+                    data-documents="Scholarship Badge|Verification Note|Academic Merit Record"
+                    data-tags="Awards,Verified,Scholarship,KUET" data-status="Verified">
+                    <span class="dic-award__badge">TS</span>
+                    <span class="dic-award__label">KUET Technical Scholarship</span>
+                    <span class="dic-award__meta">Badge style highlight</span>
+                    <span class="dic-verified">Verified Achievement</span>
+                  </button>
+                </div>
+              </section>
+
+              <section class="dic-module" data-dic-module="leadership" aria-labelledby="dicLeadershipHeading">
+                <div class="dic-module__header">
+                  <div>
+                    <span class="dic-module__eyebrow">Leadership Module</span>
+                    <h4 id="dicLeadershipHeading">Timeline &amp; Roles</h4>
+                  </div>
+                  <span class="dic-count">2 roles</span>
+                </div>
+                <div class="dic-timeline">
+                  <button class="dic-role" type="button" data-dic-item data-category="leadership"
+                    data-title="Junior Executive - BitFest 2025"
+                    data-summary="Supported event operations and coordination for BitFest 2025, Department of CSE, KUET."
+                    data-documents="Event: BitFest 2025|Department: CSE, KUET|Role: Junior Executive"
+                    data-tags="Leadership,Recent,KUET,Event" data-status="Recent">
+                    <span class="dic-role__dot"></span>
+                    <span>
+                      <strong>Junior Executive</strong>
+                      <small>BitFest 2025, Dept. of CSE, KUET</small>
+                    </span>
+                  </button>
+                  <button class="dic-role" type="button" data-dic-item data-category="leadership"
+                    data-title="Class Representative - CSE Batch 20"
+                    data-summary="Represented CSE Batch 20 and coordinated academic communication from Sep 2024 to Feb 2025."
+                    data-documents="Duration: Sep 2024 - Feb 2025|Batch: CSE Batch 20|Role: Class Representative"
+                    data-tags="Leadership,Verified,Academic" data-status="Verified">
+                    <span class="dic-role__dot"></span>
+                    <span>
+                      <strong>Class Representative</strong>
+                      <small>CSE Batch 20, Sep 2024 - Feb 2025</small>
+                    </span>
+                  </button>
+                </div>
+              </section>
+            </div>
+
+            <aside class="dic-panel" aria-live="polite">
+              <div class="dic-panel__status">
+                <span id="dicStatusIcon">OK</span>
+                <span id="dicStatusText">Verified</span>
+              </div>
+              <h4 id="dicPanelTitle">KUET Folder</h4>
+              <p id="dicPanelSummary">B.Sc. in Computer Science and Engineering credential archive for KUET.</p>
+              <div class="dic-panel__block">
+                <span>Inside Panel</span>
+                <ul id="dicPanelDocs">
+                  <li>Certificate</li>
+                  <li>Grade Sheet</li>
+                </ul>
+              </div>
+              <div class="dic-panel__block">
+                <span>Tags</span>
+                <div class="dic-tags" id="dicPanelTags">
+                  <span>Academic</span>
+                  <span>Certificate</span>
+                  <span>Verified</span>
+                  <span>KUET</span>
+                </div>
+              </div>
+              <a class="dic-cv-link" href="Tirtho Mondal.pdf" target="_blank">Open CV record</a>
+            </aside>
+          </div>
+          <p class="dic-empty" id="dicEmpty" hidden>No matching records found.</p>
         </div>
       </div>
     </section>
