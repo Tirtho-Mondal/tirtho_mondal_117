@@ -1805,6 +1805,61 @@ select {
   border: 1px solid var(--border);
 }
 
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.leadership-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.leadership-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.leadership-card__date {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(184, 151, 46, 0.12);
+  color: var(--accent-gold);
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.leadership-card h3 {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+  color: var(--navy);
+}
+
+[data-theme="dark"] .leadership-card h3 {
+  color: var(--text);
+}
+
+.leadership-card__org {
+  font-size: 0.92rem;
+  color: var(--text-soft);
+  margin-bottom: 12px;
+}
+
+.leadership-card p {
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
 /* ─── DOCUMENT INTELLIGENCE CENTER (PRESTIGE GLASS HUB) ─── */
 .section--document-center {
   padding: 140px 0;
@@ -6808,22 +6863,49 @@ body.menu-open {
 #projects .project-card__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
   margin-top: auto;
-  padding-top: 8px;
+  padding-top: 16px;
 }
 
-#projects .project-card__actions .btn {
-  min-height: 36px;
+#projects .project-card__actions .btn,
+#projects .project-card__actions .project-detail-btn--enhanced {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 0 18px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition), border-color var(--transition), color var(--transition);
 }
 
-#projects .project-video-btn {
-  background: rgba(184, 151, 46, 0.1);
+#projects .project-card__actions .project-detail-btn--enhanced {
+  background: var(--navy);
+  border: 1.5px solid var(--navy);
+  color: #fff;
+}
+
+#projects .project-card__actions .project-detail-btn--enhanced:hover {
+  background: var(--accent-mid);
+  border-color: var(--accent-mid);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+#projects .project-card__actions .project-video-btn {
+  background: rgba(184, 151, 46, 0.12);
   border: 1.5px solid rgba(184, 151, 46, 0.28);
   color: var(--gold);
 }
 
-#projects .project-video-btn:hover {
+#projects .project-card__actions .project-video-btn:hover {
   background: var(--accent-gold);
   border-color: var(--accent-gold);
   color: #fff;
@@ -6831,15 +6913,27 @@ body.menu-open {
   box-shadow: var(--shadow-md);
 }
 
-#projects .project-video-btn span {
+#projects .project-card__actions .project-video-btn span {
   font-size: 0.72rem;
   line-height: 1;
 }
 
-[data-theme="dark"] #projects .project-video-btn {
+[data-theme="dark"] #projects .project-card__actions .project-video-btn {
   background: rgba(212, 172, 69, 0.12);
   border-color: rgba(212, 172, 69, 0.38);
   color: #f0cf6b;
+}
+
+@media (max-width: 640px) {
+  #projects .project-card__actions {
+    justify-content: stretch;
+  }
+
+  #projects .project-card__actions .btn,
+  #projects .project-card__actions .project-detail-btn--enhanced {
+    flex: 1 1 100%;
+    width: 100%;
+  }
 }
 
 [data-theme="dark"] #projects .project-video-btn:hover {

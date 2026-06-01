@@ -52,6 +52,7 @@
           <li><a href="#publications" class="nav__link">Publications</a></li>
           <li><a href="#skills" class="nav__link">Skills</a></li>
           <li><a href="#projects" class="nav__link">Projects</a></li>
+          <li><a href="#leadership" class="nav__link">Leadership</a></li>
           <li><a href="#achievements" class="nav__link">Achievements</a></li>
           <li><a href="#cv" class="nav__link">DIC</a></li>
           <!-- <li><a href="#contact" class="nav__link">Contact</a></li> -->
@@ -104,6 +105,7 @@
             <a href="#projects" class="btn btn--secondary">🔬 View Projects</a>
             <a href="mailto:tirthomondal.2001@gmail.com" class="btn btn--outline">✉ Contact Me</a>
           </div>
+
         </div>
         <div class="hero__visual">
           <div class="profile-card">
@@ -496,8 +498,26 @@
             </div>
           </div>
 
+          <div class="dash-card reveal" id="skill-productivity">
+            <div class="dash-card__header">
+              <div class="dash-icon-box">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 6v6l4 2"></path>
+                  <circle cx="12" cy="12" r="8"></circle>
+                </svg>
+              </div>
+              <h3 class="dash-card__title">Productivity & Documentation</h3>
+            </div>
+            <div class="dash-tool-tags">
+              <span>MS Word</span>
+              <span>Excel</span>
+              <span>PowerPoint</span>
+            </div>
+          </div>
+
           <!-- Core Knowledge -->
-          <div class="dash-card reveal" id="skill-knowledge">
+          <!-- <div class="dash-card reveal" id="skill-knowledge">
             <div class="dash-card__header">
               <div class="dash-icon-box">
                 <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
@@ -514,7 +534,7 @@
               <li><span>•</span> Operating Systems</li>
               <li><span>•</span> Computer Networks</li>
             </ul>
-          </div>
+          </div> -->
 
           <!-- Research Tools & Concepts -->
           <div class="dash-card reveal" id="skill-traits">
@@ -557,6 +577,7 @@
           <button class="filter-btn" data-filter="research">Research &amp; ML</button>
           <button class="filter-btn" data-filter="web">Web &amp; App Dev</button>
           <button class="filter-btn" data-filter="data">Database &amp; Systems</button>
+          <button class="filter-btn" data-filter="hardware">Hardware &amp; AI</button>
         </div>
         <!-- Projects Grid -->
         <div class="projects-grid" id="projectsGrid">
@@ -651,6 +672,36 @@
             <button class="btn btn--sm project-detail-btn" data-project="6">View Details →</button>
           </div>
 
+          <div class="project-card reveal" data-category="hardware" data-project="8">
+            <div class="project-card__header">
+              <span class="project-tag">Hardware &amp; AI</span>
+              <div class="project-card__links">
+                <a href="https://github.com/Tirtho-Mondal/FPGA-Based-Automatic-Washing-Machine-Controller.git" target="_blank" aria-label="GitHub" class="project-link">⌥ GitHub</a>
+              </div>
+            </div>
+            <h3 class="project-card__title">FPGA-Based Automatic Washing Machine</h3>
+            <p class="project-card__desc">Verilog-based FSM controller for a Basys 3 FPGA washing machine, featuring cycle automation, timers, and safety interlocks.</p>
+            <div class="project-tech">
+              <span>Verilog HDL</span><span>FPGA</span><span>FSM</span><span>Digital Logic</span>
+            </div>
+            <button class="btn btn--sm project-detail-btn" data-project="8">View Details →</button>
+          </div>
+
+          <div class="project-card reveal" data-category="research" data-project="9">
+            <div class="project-card__header">
+              <span class="project-tag">Research &amp; ML</span>
+              <div class="project-card__links">
+                <a href="https://github.com/souravdebnath109/Ai.git" target="_blank" aria-label="GitHub" class="project-link">⌥ GitHub</a>
+              </div>
+            </div>
+            <h3 class="project-card__title">Intelligent Bus Racing Simulation</h3>
+            <p class="project-card__desc">AI-driven racing simulation using BFS/DFS pathfinding, Minimax strategy, and fuzzy logic speed control for adaptive bus agents.</p>
+            <div class="project-tech">
+              <span>Python</span><span>Pygame</span><span>AI</span><span>Pathfinding</span>
+            </div>
+            <button class="btn btn--sm project-detail-btn" data-project="9">View Details →</button>
+          </div>
+
           <div class="project-card reveal" data-category="data" data-project="5">
             <div class="project-card__header">
               <span class="project-tag">Database Management</span>
@@ -680,6 +731,41 @@
             </div>
             <button class="btn btn--sm project-detail-btn" data-project="7">View Details →</button>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LEADERSHIP & ACTIVITIES SECTION ===== -->
+    <section class="section section--alt leadership-section" id="leadership" aria-labelledby="leadershipHeading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Campus Engagement</span>
+          <h2 class="section__title" id="leadershipHeading">Leadership &amp; Activities</h2>
+          <div class="section__divider"></div>
+          <p class="section__subtitle">Roles that strengthened my coordination, communication, and student-community involvement.</p>
+        </div>
+
+        <div class="leadership-grid">
+          <article class="leadership-card reveal">
+            <span class="leadership-card__date">2025</span>
+            <h3>Junior Executive</h3>
+            <p class="leadership-card__org">BitFest 2025, Dept. of CSE, KUET</p>
+            <p>Supported event coordination, team communication, and operational activities for a department-level technology festival.</p>
+          </article>
+
+          <article class="leadership-card reveal">
+            <span class="leadership-card__date">Sep 2024 - Feb 2025</span>
+            <h3>Class Representative</h3>
+            <p class="leadership-card__org">CSE Batch 20, Dept. of CSE, KUET</p>
+            <p>Represented classmates in academic communication and helped coordinate information flow between students and faculty.</p>
+          </article>
+
+          <article class="leadership-card reveal">
+            <span class="leadership-card__date">Member</span>
+            <h3>SGIPC, KUET</h3>
+            <p class="leadership-card__org">Student and institutional engagement</p>
+            <p>Participated in student-community activities and collaborative campus initiatives through SGIPC involvement.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -775,6 +861,24 @@
             </div>
           </div>
 
+          <div class="achieve-matrix-card reveal">
+            <div class="achieve-matrix-card__top">
+              <div class="achieve-matrix-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </div>
+              <span class="achieve-matrix-tag">Scholarship Recipient</span>
+            </div>
+            <div class="achieve-matrix-card__body">
+              <h3>KUET Technical Scholarship</h3>
+              <p>Awarded for academic merit and technical excellence in the Department of Computer Science and Engineering.</p>
+              <div class="achieve-matrix-footer">
+                <span class="achieve-matrix-date">KUET Departmental Scholarship</span>
+              </div>
+            </div>
+          </div>
 
         </div>
 

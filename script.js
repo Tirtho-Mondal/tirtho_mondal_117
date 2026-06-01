@@ -72,8 +72,8 @@ const projectData = [
     outcome: "Created a bug-free, terminal-based simulation showing robust handling of edge cases in banking workflows.",
     tech: ["C++", "OOP Paradigms", "Systems Simulation"],
     github: "https://github.com/Tirtho-Mondal/MobiCash",
-    demo: null,
-    videoId: "VIDEO_ID_MOBICASH"
+    demo: "https://youtu.be/rMoXmBDAlz0?si=1W39E8BGkh6bgzVn",
+    videoId: "rMoXmBDAlz0"
   },
   {
     title: "Laundry Shop Management",
@@ -94,8 +94,8 @@ const projectData = [
     outcome: "Delivered a polished simulation that highlights proficiency in computer graphics, scene rendering, and real-time animation techniques.",
     tech: ["C++", "OpenGL", "Graphics", "Simulation"],
     github: "https://github.com/Tirtho-Mondal/3D_Cafeteria",
-    demo: null,
-    videoId: "VIDEO_ID_CAFETERIA"
+    demo: "https://youtu.be/Wd2I3ZZhzAI?si=of9__xYApaOvIg0f",
+    videoId: "Wd2I3ZZhzAI"
   },
   {
     title: "Adaptive UDP Congestion Control",
@@ -107,6 +107,28 @@ const projectData = [
     github: "https://github.com/Tirtho-Mondal/Adaptive-UDP",
     demo: null,
     videoId: "VIDEO_ID_ADAPTIVE_UDP"
+  },
+  {
+    title: "FPGA-Based Automatic Washing Machine",
+    category: "Hardware & AI",
+    problem: "Traditional washing machine control systems need better automation, timing accuracy, and safety on low-cost FPGA boards.",
+    description: "Designed a Verilog-based Moore FSM controller for an automatic washing machine on the Basys 3 FPGA. Implemented cycle control, timer management, rinse/soap stages, and safety interlocks to prevent motor overloads.",
+    outcome: "Demonstrated an end-to-end FSM design with a reliable automatic cycle, showing stable operations and clear state transitions on hardware.",
+    tech: ["Verilog HDL", "FPGA", "Digital Logic", "FSM"],
+    github: "https://github.com/Tirtho-Mondal/FPGA-Based-Automatic-Washing-Machine-Controller.git",
+    demo: null,
+    videoId: "VIDEO_ID_FPGA_WASHER"
+  },
+  {
+    title: "Intelligent Bus Racing Simulation",
+    category: "Research & ML",
+    problem: "Traffic-routing and autonomous pathfinding remain challenging in multi-agent simulation environments.",
+    description: "Built a Python-based racing simulation with intelligent bus agents using BFS/DFS pathfinding, Minimax decision-making, and fuzzy logic speed control. Designed the system to adapt to changing lane conditions and opponent behavior.",
+    outcome: "Validated the simulation with improved route selection and competitive performance against baseline AI agents.",
+    tech: ["Python", "Pygame", "AI", "Pathfinding", "Fuzzy Logic"],
+    github: "https://github.com/souravdebnath109/Ai.git",
+    demo: null,
+    videoId: "VIDEO_ID_BUS_RACING"
   }
 ];
 
@@ -364,6 +386,10 @@ projectCards.forEach(card => {
 
   const actions = document.createElement('div');
   actions.className = 'project-card__actions';
+
+  detailBtn.type = 'button';
+  detailBtn.classList.add('project-detail-btn--enhanced');
+  detailBtn.innerHTML = '<span aria-hidden="true">ℹ</span> View Details';
 
   const videoBtn = document.createElement('button');
   videoBtn.type = 'button';
