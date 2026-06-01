@@ -1058,6 +1058,13 @@ if (dicDashboard) {
   const dicPreviewTitle = document.getElementById('dicPreviewTitle');
   const dicPreviewType = document.getElementById('dicPreviewType');
   const dicOpenPdf = document.getElementById('dicOpenPdf');
+  const dicPreviewStatus = document.getElementById('dicPreviewStatus');
+  const cvRoot = document.querySelector('[data-cv-root]');
+  const cvItem = document.querySelector('[data-dic-item][data-branch="cv"]');
+  const academicRoot = document.querySelector('[data-academic-root]');
+  const academicSecureItems = document.querySelectorAll('[data-secure="academic"]');
+  const academicPassword = 'Academic2026';
+  let academicUnlocked = false;
 
   function getItemSearchText(item) {
     return [
@@ -1070,17 +1077,33 @@ if (dicDashboard) {
   function openDicDocument(item) {
     if (!item) return;
 
+    if (item.dataset.secure === 'academic' && !academicUnlocked) {
+      if (!promptAcademicPassword()) return;
+    }
+
     dicItems.forEach(card => card.classList.remove('active'));
     item.classList.add('active');
 
     const title = item.dataset.title || 'Document';
     const type = item.dataset.type || 'PDF';
-    const pdf = item.dataset.pdf || 'Tirtho Mondal.pdf';
+    const pdf = item.dataset.pdf || '';
 
     if (dicPreviewTitle) dicPreviewTitle.textContent = title;
     if (dicPreviewType) dicPreviewType.textContent = type;
-    if (dicOpenPdf) dicOpenPdf.href = pdf;
-    if (dicPdfFrame && dicPdfFrame.getAttribute('src') !== pdf) dicPdfFrame.src = pdf;
+    if (dicOpenPdf) {
+      dicOpenPdf.href = pdf;
+      dicOpenPdf.hidden = !pdf;
+    }
+
+    if (dicPreviewStatus) dicPreviewStatus.hidden = true;
+    if (dicPdfFrame) {
+      if (pdf) {
+        dicPdfFrame.hidden = false;
+        if (dicPdfFrame.getAttribute('src') !== pdf) dicPdfFrame.src = pdf;
+      } else {
+        dicPdfFrame.hidden = true;
+      }
+    }
   }
 
   function filterDicItems() {
@@ -1088,26 +1111,72 @@ if (dicDashboard) {
     let visibleCount = 0;
 
     dicItems.forEach(item => {
-      const show = !query || getItemSearchText(item).includes(query);
+      const isRestricted = item.dataset.secure === 'academic' && !academicUnlocked;
+      const show = !isRestricted && (!query || getItemSearchText(item).includes(query));
       item.hidden = !show;
       if (show) visibleCount += 1;
     });
 
     dicFolders.forEach(folder => {
       const hasVisibleItems = folder.querySelectorAll('[data-dic-item]:not([hidden])').length > 0;
-      folder.hidden = !hasVisibleItems;
+      const hasLockedSecureChildren = !academicUnlocked && !query && folder.querySelector('[data-secure="academic"]');
+      const hasPlaceholder = !query && folder.querySelector('.dic-folder-placeholder');
+      folder.hidden = !(hasVisibleItems || hasLockedSecureChildren || hasPlaceholder);
       if (query && hasVisibleItems) folder.open = true;
     });
 
     if (dicEmpty) dicEmpty.hidden = visibleCount > 0;
 
+    if (visibleCount === 0 && dicPreviewStatus) {
+      dicPreviewStatus.hidden = false;
+      if (dicPdfFrame) dicPdfFrame.hidden = true;
+      if (dicOpenPdf) dicOpenPdf.hidden = true;
+    }
+
     const activeItem = document.querySelector('[data-dic-item].active:not([hidden])');
     const firstVisible = document.querySelector('[data-dic-item]:not([hidden])');
-    if (!activeItem && firstVisible) openDicDocument(firstVisible);
+    if (!activeItem && firstVisible && (!firstVisible.dataset.secure || academicUnlocked)) {
+      openDicDocument(firstVisible);
+    }
+  }
+
+  function promptAcademicPassword() {
+    const password = window.prompt('Enter the Academic folder password:');
+    if (password === academicPassword) {
+      academicUnlocked = true;
+      if (academicRoot) academicRoot.open = true;
+      if (dicPreviewStatus) dicPreviewStatus.hidden = true;
+      filterDicItems();
+      return true;
+    }
+    if (password !== null) {
+      window.alert('Incorrect password. Academic documents remain locked.');
+    }
+    return false;
+  }
+
+  function initializeAcademicAccess() {
+    filterDicItems();
+    if (cvRoot) cvRoot.open = true;
+    if (cvItem && !cvItem.hidden) openDicDocument(cvItem);
+  }
+
+  if (academicRoot) {
+    const academicSummary = academicRoot.querySelector('summary');
+    if (academicSummary) {
+      academicSummary.addEventListener('click', event => {
+        if (!academicUnlocked) {
+          event.preventDefault();
+          promptAcademicPassword();
+        }
+      });
+    }
   }
 
   dicItems.forEach(item => {
-    item.addEventListener('mouseenter', () => openDicDocument(item));
+    item.addEventListener('mouseenter', () => {
+      if (!item.dataset.secure || academicUnlocked) openDicDocument(item);
+    });
     item.addEventListener('focus', () => openDicDocument(item));
     item.addEventListener('click', () => openDicDocument(item));
   });
@@ -1115,6 +1184,8 @@ if (dicDashboard) {
   if (dicSearch) {
     dicSearch.addEventListener('input', debounce(filterDicItems, 120));
   }
+
+  initializeAcademicAccess();
 }
 
 /* =========================================================

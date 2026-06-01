@@ -7689,3 +7689,1030 @@ body.menu-open {
  
  
  
+ 
+ /* ════════════════════════════════════════════════════════════════════════════════
+   COMPREHENSIVE MOBILE-FIRST RESPONSIVE ENHANCEMENTS
+   Full device responsiveness from 320px to 2560px+
+   Focus on mobile UX: Touch targets, Typography, Spacing, Navigation
+   ════════════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────────── 
+   ULTRA-SMALL PHONES (320px - 374px)
+   ─────────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 374px) {
+  .container {
+    width: 95%;
+    padding: 0;
+  }
+
+  /* Hero Section Ultra-Mobile */
+  .hero__name {
+    font-size: clamp(1.25rem, 6vw, 1.75rem);
+    line-height: 1.2;
+  }
+
+  .hero__title {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  .hero__intro {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .availability-badge {
+    font-size: 0.65rem;
+    padding: 4px 8px;
+  }
+
+  /* Navbar on ultra-small */
+  .navbar__logo .logo__name {
+    display: none;
+  }
+
+  .navbar__logo .logo__monogram {
+    font-size: 1.2rem;
+  }
+
+  /* Button sizing for tiny screens */
+  .btn {
+    font-size: 0.8rem;
+    padding: 9px 14px;
+    min-height: 40px;
+  }
+
+  /* Section titles */
+  .section__title {
+    font-size: clamp(1.3rem, 5vw, 1.8rem);
+  }
+
+  .section__tag {
+    font-size: 0.65rem;
+  }
+
+  /* Timeline adjustments */
+  .timeline::before {
+    left: 6px;
+  }
+
+  .timeline__marker {
+    width: 10px;
+    height: 10px;
+  }
+
+  /* Skills dashboard */
+  .skills-dashboard {
+    gap: 12px;
+  }
+
+  .dash-card {
+    padding: 16px;
+  }
+
+  .dash-card__title {
+    font-size: 0.95rem;
+  }
+
+  /* Project cards */
+  .project-card {
+    padding: 16px;
+  }
+
+  .project-card__title {
+    font-size: 1rem;
+  }
+
+  .project-tech span {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+
+  #projects .project-card__actions .btn {
+    font-size: 0.78rem;
+    padding: 0 12px;
+  }
+
+  /* Achievement cards */
+  .achieve-matrix-card {
+    padding: 16px;
+  }
+
+  .achieve-matrix-card h3 {
+    font-size: 1rem;
+  }
+
+  /* Footer */
+  .footer__label {
+    font-size: 0.9rem;
+  }
+
+  .footer__list li {
+    font-size: 0.85rem;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────── 
+   SMALL PHONES (375px - 479px)
+   ─────────────────────────────────────────────────────────────────────────────── */
+@media (min-width: 375px) and (max-width: 479px) {
+  .container {
+    width: 94%;
+  }
+
+  /* Hero optimizations */
+  .hero__name {
+    font-size: clamp(1.4rem, 7vw, 2rem);
+  }
+
+  .hero__title {
+    font-size: 0.9rem;
+  }
+
+  .hero__cta {
+    gap: 8px;
+  }
+
+  .hero__cta .btn {
+    padding: 11px 18px;
+    font-size: 0.86rem;
+  }
+
+  /* Section spacing */
+  .section {
+    padding: clamp(48px, 8vw, 64px) 0;
+  }
+
+  /* Skill cards */
+  .dash-languages {
+    gap: 14px;
+  }
+
+  .dash-lang__usage {
+    font-size: 0.75rem;
+  }
+
+  /* Projects */
+  .project-card__desc {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .filter-bar {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .filter-btn {
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────── 
+   MEDIUM PHONES (480px - 599px)
+   ─────────────────────────────────────────────────────────────────────────────── */
+@media (min-width: 480px) and (max-width: 599px) {
+  .container {
+    width: 93%;
+  }
+
+  .hero__name {
+    font-size: clamp(1.5rem, 8vw, 2.2rem);
+  }
+
+  .hero__cta {
+    flex-direction: column;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .hero__cta .btn {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  /* Skills better spacing */
+  .skills-dashboard {
+    gap: 16px;
+  }
+
+  .dash-card {
+    padding: 20px;
+  }
+
+  /* Projects side-by-side possibility */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .project-card {
+    padding: 18px;
+  }
+
+  /* Achievement cards */
+  .achieve-matrix-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .achieve-matrix-card {
+    padding: 20px;
+  }
+
+  /* Tab/modal improvements */
+  .modal {
+    padding: 24px;
+    border-radius: 16px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────── 
+   LARGE PHONES / SMALL TABLETS (600px - 767px)
+   ─────────────────────────────────────────────────────────────────────────────── */
+@media (min-width: 600px) and (max-width: 767px) {
+  .container {
+    width: 92%;
+  }
+
+  .hero__inner {
+    gap: 24px;
+  }
+
+  .hero__cta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .hero__cta .btn {
+    flex: 0 1 calc(50% - 6px);
+    min-height: 46px;
+  }
+
+  /* Skills - start showing 2-column on larger phone screens */
+  .skills-dashboard {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Projects - still single column for comfort */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
+  .project-card__desc {
+    flex-grow: 1;
+  }
+
+  /* Achievements */
+  .achieve-matrix-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Tab content */
+  .dc-simple__layout {
+    flex-direction: column;
+  }
+
+  .dic-folder-panel {
+    width: 100%;
+  }
+
+  .dic-preview {
+    width: 100%;
+    min-height: 400px;
+  }
+
+  /* Typography improvements */
+  .section__title {
+    font-size: clamp(1.6rem, 6vw, 2.1rem);
+  }
+
+  /* Better touch targets */
+  .btn {
+    min-height: 46px;
+    padding: 12px 20px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────── 
+   MOBILE NAVIGATION & INTERACTION ENHANCEMENTS
+   ─────────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Hamburger Menu Improvements */
+  .hamburger {
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger__line {
+    width: 28px;
+    height: 2.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Mobile menu styling */
+  .navbar__nav {
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav__link {
+    padding: 14px 0;
+    font-size: 1rem;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Touch-friendly spacing */
+  .nav__list {
+    gap: 4px;
+  }
+
+  /* Theme toggle sizing */
+  .theme-toggle {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Navbar layout for mobile */
+  .navbar__inner {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .navbar__actions {
+    gap: 8px;
+  }
+
+  /* Logo sizing on mobile */
+  .navbar__logo .logo__monogram {
+    font-size: 1.3rem;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────── 
+   TOUCH DEVICE OPTIMIZATIONS (All touch devices)
+   ─────────────────────────────────────────────────────────────────────────────── */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects that don't translate to touch */
+  .navbar__nav {
+    padding: 0;
+  }
+
+  .nav__link {
+    padding: 16px 0;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+
+  .nav__link:active {
+    background: rgba(184, 151, 46, 0.1);
+  }
+
+  /* Ensure all clickable elements are 44x44px minimum */
+  .btn,
+  button,
+  a[href],
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 16px;
+  }
+
+  /* Better project card touch targets */
+  #projects .project-card__actions .btn {
+    min-height: 48px;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+
+  /* Increase spacing around interactive elements */
+  .project-link {
+    padding: 8px 12px;
+    margin: 4px 0;
+  }
+
+  /* Better link targeting */
+  .filter-btn {
+    min-height: 44px;
+    padding: 10px 16px;
+  }
+
+  /* Enhanced spacing for form-like elements */
+  .dic-doc {
+    padding: 14px 12px;
+    min-height: 48px;
+  }
+
+  /* Disable zoom on input focus for iOS */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  /* Better focus states for keyboard nav */
+  .nav__link:focus,
+  .btn:focus,
+  button:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────── 
+   MOBILE MODAL RESPONSIVE SIZING
+   ─────────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 12px;
+  }
+
+  .modal {
+    max-width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  }
+
+  .modal__close {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    top: 12px;
+    right: 12px;
+  }
+
+  .modal__content {
+    max-width: 100%;
+  }
+
+  /* Video modal responsive */
+  .modal-overlay--video .modal {
+    padding: 16px;
+  }
+
+  .video-demo {
+    border-radius: 8px;
+  }
+
+  .video-demo iframe {
+    aspect-ratio: 16 / 9;
+    min-height: 200px;
+  }
+
+  /* Detail modal responsive */
+  .modal h3,
+  .modal h2 {
+    font-size: clamp(1.1rem, 5vw, 1.5rem);
+  }
+
+  .modal p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal {
+    padding: 16px;
+  }
+
+  .modal__close {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+
+  .video-demo__empty {
+    min-height: 240px;
+    padding: 20px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────── 
+   SKILLS DASHBOARD MOBILE OPTIMIZATION
+   ─────────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .skills-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .dash-card {
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .dash-card__header {
+    margin-bottom: 16px;
+  }
+
+  .dash-card__title {
+    font-size: 1.1rem;
+    margin-left: 12px;
+  }
+
+  .dash-icon-box {
+    width: 36px;
+    height: 36px;
+  }
+
+  .dash-icon-box svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .dash-languages {
+    gap: 12px;
+  }
+
+  .dash-lang {
+    gap: 8px;
+  }
+
+  .dash-lang__meta {
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .dash-lang__name {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .dash-lang__level {
+    font-size: 0.8rem;
+    padding: 3px 8px;
+  }
+
+  .dash-progress-track {
+    height: 6px;
+    border-radius: 3px;
+  }
+
+  .dash-lang__usage {
+    font-size: 0.8rem;
+    margin-top: 4px;
+  }
+
+  .dash-stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .stack-item {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  .dash-tool-tags {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .dash-tool-tags span {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .dash-traits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .trait-chip {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────── 
+   PROJECT CARD MOBILE OPTIMIZATION
+   ─────────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .project-card {
+    padding: 18px;
+    gap: 14px;
+  }
+
+  .project-card__title {
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+
+  .project-card__desc {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .project-tech {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .project-tech span {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    min-height: 26px;
+    display: flex;
+    align-items: center;
+  }
+
+  .project-card__header {
+    gap: 12px;
+  }
+
+  .project-card__links {
+    gap: 8px;
+  }
+
+  .project-link {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  #projects .project-card__actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #projects .project-card__actions .btn,
+  #projects .project-card__actions .project-detail-btn--enhanced {
+    width: 100%;
+    font-size: 0.9rem;
+    min-height: 44px;
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    padding: 14px;
+  }
+
+  .project-card__title {
+    font-size: 1rem;
+  }
+
+  .project-card__desc {
+    font-size: 0.88rem;
+  }
+
+  #projects .project-card__actions .btn {
+    font-size: 0.85rem;
+    min-height: 42px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────── 
+   DOCUMENT CENTER (DIC) MOBILE OPTIMIZATION
+   ─────────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .dic-simple__layout {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .dic-folder-panel {
+    width: 100%;
+  }
+
+  .dic-preview {
+    width: 100%;
+    min-height: 350px;
+  }
+
+  .dic-folder-title {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .dic-tree-folder summary {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .dic-doc {
+    padding: 12px;
+    font-size: 0.9rem;
+    min-height: 44px;
+  }
+
+  .dic-preview__bar {
+    padding: 12px;
+    gap: 10px;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .dic-preview__bar > div {
+    flex: 1 1 100%;
+  }
+
+  #dicOpenPdf {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  #dicPdfFrame {
+    border-radius: 8px;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dic-simple__header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #dicSearch {
+    width: 100%;
+  }
+
+  .dic-preview {
+    min-height: 280px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────── 
+   FOOTER MOBILE OPTIMIZATION
+   ─────────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .footer__inner {
+    flex-direction: column;
+    gap: 28px;
+    padding: 36px 0;
+  }
+
+  .footer__brand {
+    text-align: center;
+  }
+
+  .footer__logo {
+    justify-content: center;
+  }
+
+  .footer__col {
+    text-align: center;
+  }
+
+  .footer__list {
+    justify-content: center;
+  }
+
+  .footer__action {
+    text-align: center;
+  }
+
+  .footer__cta-btn {
+    width: 100%;
+    max-width: 280px;
+    min-height: 46px;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer__legal {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 32px 0;
+  }
+
+  .footer__inner {
+    gap: 20px;
+  }
+
+  .footer__label {
+    font-size: 0.95rem;
+  }
+
+  .footer__list li a {
+    font-size: 0.88rem;
+  }
+
+  .footer__copyright p {
+    font-size: 0.8rem;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────── 
+   LAYOUT & SPACING IMPROVEMENTS FOR MOBILE
+   ─────────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Remove padding/margins that don't work well on mobile */
+  body {
+    overflow-x: hidden;
+  }
+
+  .section {
+    padding: clamp(40px, 10vw, 60px) 0;
+  }
+
+  .about__grid {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .about__values {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .value-item {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .timeline {
+    gap: 16px;
+  }
+
+  .info-card {
+    padding: 16px;
+  }
+
+  .info-list li {
+    padding: 8px 0;
+    gap: 8px;
+  }
+
+  .info-label {
+    font-size: 0.8rem;
+  }
+
+  .info-value {
+    font-size: 0.9rem;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .why-card {
+    padding: 20px;
+  }
+
+  .why-card__num {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .leadership-card {
+    padding: 16px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────── 
+   TYPOGRAPHY RESPONSIVE SCALING
+   ─────────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  h1 {
+    font-size: clamp(1.4rem, 6vw, 2.2rem);
+  }
+
+  h2 {
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+  }
+
+  h3 {
+    font-size: clamp(1rem, 4vw, 1.4rem);
+  }
+
+  h4 {
+    font-size: clamp(0.95rem, 3.5vw, 1.2rem);
+  }
+
+  p {
+    font-size: clamp(0.88rem, 2vw, 1rem);
+    line-height: 1.6;
+  }
+
+  .section__tag {
+    font-size: clamp(0.65rem, 2vw, 0.8rem);
+  }
+
+  /* Ensure readable text on very small screens */
+  body {
+    font-size: clamp(14px, 2vw, 16px);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────── 
+   SCROLL & OVERFLOW HANDLING
+   ─────────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Prevent horizontal scrolling */
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  /* Ensure images don't overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Fix table overflow */
+  table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+
+  /* Fix code block overflow */
+  pre,
+  code {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────── 
+   PRINT MEDIA - Optimized for printing on mobile
+   ─────────────────────────────────────────────────────────────────────────────── */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar,
+  .back-to-top,
+  .modal-overlay,
+  .theme-toggle {
+    display: none;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  a[href]:after {
+    content: "";
+  }
+}

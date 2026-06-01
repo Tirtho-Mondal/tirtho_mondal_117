@@ -926,103 +926,121 @@
               </div>
 
               <div class="dic-doc-list dic-tree" aria-label="All document PDF tree">
-                <details class="dic-tree-folder">
-                  <summary><span>Profile</span><small>1</small></summary>
-                  <button class="dic-doc active" type="button" data-dic-item data-title="Academic CV"
-                    data-type="Profile" data-pdf="All Doc/Academic/cv_tirtho_mondal.pdf">
+                <details class="dic-tree-folder" data-cv-root>
+                  <summary><span>CV</span><small>1</small></summary>
+                  <button class="dic-doc" type="button" data-dic-item data-branch="cv" data-title="Academic CV"
+                    data-type="CV" data-pdf="All Doc/Academic/cv_tirtho_mondal.pdf">
                     <span>Academic CV</span>
                     <small>PDF</small>
                   </button>
                 </details>
 
-                <details class="dic-tree-folder">
-                  <summary><span>KUET</span><small>1</small></summary>
-                  <button class="dic-doc" type="button" data-dic-item data-title="KUET Grade Sheet"
-                    data-type="KUET" data-pdf="All Doc/Academic/KUET/Grade sheet 7 sem.pdf">
-                    <span>Grade Sheet</span>
-                    <small>PDF</small>
-                  </button>
+                <details class="dic-tree-folder" data-academic-root>
+                  <summary><span>Academic</span><small>14</small></summary>
+
+                  <details class="dic-tree-folder">
+                    <summary><span>KUET</span><small>1</small></summary>
+                    <button class="dic-doc" type="button" data-dic-item data-secure="academic" data-title="KUET Grade Sheet"
+                      data-type="KUET" data-pdf="All Doc/Academic/KUET/Grade sheet 7 sem.pdf">
+                      <span>Grade Sheet</span>
+                      <small>PDF</small>
+                    </button>
+                  </details>
+
+                  <details class="dic-tree-folder">
+                    <summary><span>HSC</span><small>4</small></summary>
+                    <button class="dic-doc" type="button" data-dic-item data-secure="academic" data-title="HSC Certificate"
+                      data-type="HSC" data-pdf="All Doc/Academic/HSC/HSC Certificate.pdf">
+                      <span>Certificate</span>
+                      <small>PDF</small>
+                    </button>
+                    <button class="dic-doc" type="button" data-dic-item data-secure="academic" data-title="HSC Transcript"
+                      data-type="HSC" data-pdf="All Doc/Academic/HSC/HSC transcript .pdf">
+                      <span>Transcript</span>
+                      <small>PDF</small>
+                    </button>
+                    <button class="dic-doc" type="button" data-dic-item data-secure="academic" data-title="HSC Registration Card"
+                      data-type="HSC" data-pdf="All Doc/Academic/HSC/HSC Registration Card.pdf">
+                      <span>Registration Card</span>
+                      <small>PDF</small>
+                    </button>
+                    <button class="dic-doc" type="button" data-dic-item data-secure="academic" data-title="HSC Testimonial"
+                      data-type="HSC" data-pdf="All Doc/Academic/HSC/HSC Testimonial.pdf">
+                      <span>Testimonial</span>
+                      <small>PDF</small>
+                    </button>
+                  </details>
+
+                  <details class="dic-tree-folder">
+                    <summary><span>SSC</span><small>4</small></summary>
+                    <button class="dic-doc" type="button" data-dic-item data-secure="academic" data-title="SSC Certificate"
+                      data-type="SSC" data-pdf="All Doc/Academic/SSC/SSC certificate.pdf">
+                      <span>Certificate</span>
+                      <small>PDF</small>
+                    </button>
+                    <button class="dic-doc" type="button" data-dic-item data-secure="academic" data-title="SSC Transcript"
+                      data-type="SSC" data-pdf="All Doc/Academic/SSC/SSC Transcript .pdf">
+                      <span>Transcript</span>
+                      <small>PDF</small>
+                    </button>
+                    <button class="dic-doc" type="button" data-dic-item data-secure="academic" data-title="SSC Registration Card"
+                      data-type="SSC" data-pdf="All Doc/Academic/SSC/SSC Registration Card.pdf">
+                      <span>Registration Card</span>
+                      <small>PDF</small>
+                    </button>
+                    <button class="dic-doc" type="button" data-dic-item data-secure="academic" data-title="SSC Testimonial"
+                      data-type="SSC" data-pdf="All Doc/Academic/SSC/SSC Testimonial.pdf">
+                      <span>Testimonial</span>
+                      <small>PDF</small>
+                    </button>
+                  </details>
+
+                  <details class="dic-tree-folder">
+                    <summary><span>JSC</span><small>3</small></summary>
+                    <button class="dic-doc" type="button" data-dic-item data-secure="academic" data-title="JSC Certificate"
+                      data-type="JSC" data-pdf="All Doc/Academic/JSC/JSC Certificate.pdf">
+                      <span>Certificate</span>
+                      <small>PDF</small>
+                    </button>
+                    <button class="dic-doc" type="button" data-dic-item data-secure="academic" data-title="JSC Transcript"
+                      data-type="JSC" data-pdf="All Doc/Academic/JSC/JSC Transcript.pdf">
+                      <span>Transcript</span>
+                      <small>PDF</small>
+                    </button>
+                    <button class="dic-doc" type="button" data-dic-item data-secure="academic" data-title="JSC Registration Card"
+                      data-type="JSC" data-pdf="All Doc/Academic/JSC/JSC Registration Card .pdf">
+                      <span>Registration Card</span>
+                      <small>PDF</small>
+                    </button>
+                  </details>
+
+                  <details class="dic-tree-folder">
+                    <summary><span>PSC</span><small>1</small></summary>
+                    <button class="dic-doc" type="button" data-dic-item data-secure="academic" data-title="NID Record"
+                      data-type="PSC" data-pdf="All Doc/Academic/PSC/nid-3313712964 .pdf">
+                      <span>NID Record</span>
+                      <small>PDF</small>
+                    </button>
+                  </details>
+
+                  <details class="dic-tree-folder">
+                    <summary><span>Identity</span><small>1</small></summary>
+                    <button class="dic-doc" type="button" data-dic-item data-secure="academic" data-title="Birth Registration Certificate"
+                      data-type="Identity" data-pdf="All Doc/Academic/Birth Registration Certificate.pdf">
+                      <span>Birth Registration Certificate</span>
+                      <small>PDF</small>
+                    </button>
+                  </details>
                 </details>
 
                 <details class="dic-tree-folder">
-                  <summary><span>HSC</span><small>4</small></summary>
-                  <button class="dic-doc" type="button" data-dic-item data-title="HSC Certificate"
-                    data-type="HSC" data-pdf="All Doc/Academic/HSC/HSC Certificate.pdf">
-                    <span>Certificate</span>
-                    <small>PDF</small>
-                  </button>
-                  <button class="dic-doc" type="button" data-dic-item data-title="HSC Transcript"
-                    data-type="HSC" data-pdf="All Doc/Academic/HSC/HSC transcript .pdf">
-                    <span>Transcript</span>
-                    <small>PDF</small>
-                  </button>
-                  <button class="dic-doc" type="button" data-dic-item data-title="HSC Registration Card"
-                    data-type="HSC" data-pdf="All Doc/Academic/HSC/HSC Registration Card.pdf">
-                    <span>Registration Card</span>
-                    <small>PDF</small>
-                  </button>
-                  <button class="dic-doc" type="button" data-dic-item data-title="HSC Testimonial"
-                    data-type="HSC" data-pdf="All Doc/Academic/HSC/HSC Testimonial.pdf">
-                    <span>Testimonial</span>
-                    <small>PDF</small>
-                  </button>
+                  <summary><span>Awards</span><small>0</small></summary>
+                  <div class="dic-folder-placeholder">No award documents are available yet.</div>
                 </details>
 
                 <details class="dic-tree-folder">
-                  <summary><span>SSC</span><small>4</small></summary>
-                  <button class="dic-doc" type="button" data-dic-item data-title="SSC Certificate"
-                    data-type="SSC" data-pdf="All Doc/Academic/SSC/SSC certificate.pdf">
-                    <span>Certificate</span>
-                    <small>PDF</small>
-                  </button>
-                  <button class="dic-doc" type="button" data-dic-item data-title="SSC Transcript"
-                    data-type="SSC" data-pdf="All Doc/Academic/SSC/SSC Transcript .pdf">
-                    <span>Transcript</span>
-                    <small>PDF</small>
-                  </button>
-                  <button class="dic-doc" type="button" data-dic-item data-title="SSC Registration Card"
-                    data-type="SSC" data-pdf="All Doc/Academic/SSC/SSC Registration Card.pdf">
-                    <span>Registration Card</span>
-                    <small>PDF</small>
-                  </button>
-                  <button class="dic-doc" type="button" data-dic-item data-title="SSC Testimonial"
-                    data-type="SSC" data-pdf="All Doc/Academic/SSC/SSC Testimonial.pdf">
-                    <span>Testimonial</span>
-                    <small>PDF</small>
-                  </button>
-                </details>
-
-                <details class="dic-tree-folder">
-                  <summary><span>JSC</span><small>3</small></summary>
-                  <button class="dic-doc" type="button" data-dic-item data-title="JSC Certificate"
-                    data-type="JSC" data-pdf="All Doc/Academic/JSC/JSC Certificate.pdf">
-                    <span>Certificate</span>
-                    <small>PDF</small>
-                  </button>
-                  <button class="dic-doc" type="button" data-dic-item data-title="JSC Transcript"
-                    data-type="JSC" data-pdf="All Doc/Academic/JSC/JSC Transcript.pdf">
-                    <span>Transcript</span>
-                    <small>PDF</small>
-                  </button>
-                  <button class="dic-doc" type="button" data-dic-item data-title="JSC Registration Card"
-                    data-type="JSC" data-pdf="All Doc/Academic/JSC/JSC Registration Card .pdf">
-                    <span>Registration Card</span>
-                    <small>PDF</small>
-                  </button>
-                </details>
-
-                <details class="dic-tree-folder">
-                  <summary><span>Identity</span><small>2</small></summary>
-                  <button class="dic-doc" type="button" data-dic-item data-title="Birth Registration Certificate"
-                    data-type="Identity" data-pdf="All Doc/Academic/Birth Registration Certificate.pdf">
-                    <span>Birth Registration Certificate</span>
-                    <small>PDF</small>
-                  </button>
-                  <button class="dic-doc" type="button" data-dic-item data-title="NID Record"
-                    data-type="Identity" data-pdf="All Doc/Academic/PSC/nid-3313712964 .pdf">
-                    <span>NID Record</span>
-                    <small>PDF</small>
-                  </button>
+                  <summary><span>Leadership</span><small>0</small></summary>
+                  <div class="dic-folder-placeholder">No leadership documents are available yet.</div>
                 </details>
               </div>
               <p class="dic-empty" id="dicEmpty" hidden>No matching document found.</p>
@@ -1031,12 +1049,15 @@
             <aside class="dic-preview" aria-live="polite">
               <div class="dic-preview__bar">
                 <div>
-                  <span id="dicPreviewType">Profile</span>
-                  <h4 id="dicPreviewTitle">Academic CV</h4>
+                  <span id="dicPreviewType">Locked</span>
+                  <h4 id="dicPreviewTitle">Protected Academic Documents</h4>
                 </div>
-                <a id="dicOpenPdf" href="All Doc/Academic/cv_tirtho_mondal.pdf" target="_blank">Open PDF</a>
+                <a id="dicOpenPdf" href="" target="_blank" hidden>Open PDF</a>
               </div>
-              <iframe id="dicPdfFrame" src="All Doc/Academic/cv_tirtho_mondal.pdf" title="Document PDF preview"></iframe>
+              <div class="dic-preview__status" id="dicPreviewStatus">
+                Academic documents are encrypted and protected by password. Open the Academic folder to unlock.
+              </div>
+              <iframe id="dicPdfFrame" src="" title="Document PDF preview" hidden></iframe>
             </aside>
           </div>
         </div>
