@@ -1025,64 +1025,35 @@ const dicDashboard = document.querySelector('[data-dic-dashboard]');
 
 if (dicDashboard) {
   const dicSearch = document.getElementById('dicSearch');
-  const dicFilters = document.querySelectorAll('.dic-filter');
   const dicItems = document.querySelectorAll('[data-dic-item]');
-  const dicModules = document.querySelectorAll('[data-dic-module]');
   const dicEmpty = document.getElementById('dicEmpty');
-  const dicPanelTitle = document.getElementById('dicPanelTitle');
-  const dicPanelSummary = document.getElementById('dicPanelSummary');
-  const dicPanelDocs = document.getElementById('dicPanelDocs');
-  const dicPanelTags = document.getElementById('dicPanelTags');
-  const dicStatusText = document.getElementById('dicStatusText');
-  const dicStatusIcon = document.getElementById('dicStatusIcon');
-  let activeFilter = 'all';
+  const dicPdfFrame = document.getElementById('dicPdfFrame');
+  const dicPreviewTitle = document.getElementById('dicPreviewTitle');
+  const dicPreviewType = document.getElementById('dicPreviewType');
+  const dicOpenPdf = document.getElementById('dicOpenPdf');
 
   function getItemSearchText(item) {
     return [
       item.dataset.title,
-      item.dataset.summary,
-      item.dataset.documents,
-      item.dataset.tags,
-      item.dataset.status,
-      item.dataset.category
+      item.dataset.type,
+      item.dataset.pdf
     ].join(' ').toLowerCase();
   }
 
-  function updateDicPanel(item) {
+  function openDicDocument(item) {
     if (!item) return;
 
     dicItems.forEach(card => card.classList.remove('active'));
     item.classList.add('active');
 
-    const status = item.dataset.status || 'Verified';
-    const statusMap = {
-      Verified: 'OK',
-      Archived: 'ARC',
-      Recent: 'NEW'
-    };
+    const title = item.dataset.title || 'Document';
+    const type = item.dataset.type || 'PDF';
+    const pdf = item.dataset.pdf || 'Tirtho Mondal.pdf';
 
-    if (dicPanelTitle) dicPanelTitle.textContent = item.dataset.title || 'Document Record';
-    if (dicPanelSummary) dicPanelSummary.textContent = item.dataset.summary || '';
-    if (dicStatusText) dicStatusText.textContent = status;
-    if (dicStatusIcon) dicStatusIcon.textContent = statusMap[status] || 'OK';
-
-    if (dicPanelDocs) {
-      dicPanelDocs.innerHTML = '';
-      (item.dataset.documents || '').split('|').filter(Boolean).forEach(doc => {
-        const li = document.createElement('li');
-        li.textContent = doc;
-        dicPanelDocs.appendChild(li);
-      });
-    }
-
-    if (dicPanelTags) {
-      dicPanelTags.innerHTML = '';
-      (item.dataset.tags || '').split(',').filter(Boolean).forEach(tag => {
-        const chip = document.createElement('span');
-        chip.textContent = tag.trim();
-        dicPanelTags.appendChild(chip);
-      });
-    }
+    if (dicPreviewTitle) dicPreviewTitle.textContent = title;
+    if (dicPreviewType) dicPreviewType.textContent = type;
+    if (dicOpenPdf) dicOpenPdf.href = pdf;
+    if (dicPdfFrame && dicPdfFrame.getAttribute('src') !== pdf) dicPdfFrame.src = pdf;
   }
 
   function filterDicItems() {
@@ -1090,36 +1061,22 @@ if (dicDashboard) {
     let visibleCount = 0;
 
     dicItems.forEach(item => {
-      const categoryMatches = activeFilter === 'all' || item.dataset.category === activeFilter;
-      const searchMatches = !query || getItemSearchText(item).includes(query);
-      const show = categoryMatches && searchMatches;
+      const show = !query || getItemSearchText(item).includes(query);
       item.hidden = !show;
       if (show) visibleCount += 1;
-    });
-
-    dicModules.forEach(module => {
-      const hasVisibleItems = module.querySelectorAll('[data-dic-item]:not([hidden])').length > 0;
-      module.hidden = !hasVisibleItems;
     });
 
     if (dicEmpty) dicEmpty.hidden = visibleCount > 0;
 
     const activeItem = document.querySelector('[data-dic-item].active:not([hidden])');
     const firstVisible = document.querySelector('[data-dic-item]:not([hidden])');
-    if (!activeItem && firstVisible) updateDicPanel(firstVisible);
+    if (!activeItem && firstVisible) openDicDocument(firstVisible);
   }
 
   dicItems.forEach(item => {
-    item.addEventListener('click', () => updateDicPanel(item));
-  });
-
-  dicFilters.forEach(button => {
-    button.addEventListener('click', () => {
-      dicFilters.forEach(filter => filter.classList.remove('active'));
-      button.classList.add('active');
-      activeFilter = button.dataset.dicFilter || 'all';
-      filterDicItems();
-    });
+    item.addEventListener('mouseenter', () => openDicDocument(item));
+    item.addEventListener('focus', () => openDicDocument(item));
+    item.addEventListener('click', () => openDicDocument(item));
   });
 
   if (dicSearch) {

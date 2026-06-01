@@ -799,172 +799,119 @@
           <div class="section__divider"></div>
         </div>
 
-        <div class="document-center dic-dashboard reveal" data-dic-dashboard>
-          <div class="dic-topbar">
+        <div class="document-center dic-simple reveal" data-dic-dashboard>
+          <div class="dic-simple__header">
             <div>
-              <p class="dic-kicker">Credential OS</p>
-              <h3>Document Intelligence Center</h3>
+              <p class="dic-kicker">All Doc Folder</p>
+              <h3>All Documents</h3>
             </div>
             <label class="dic-search" for="dicSearch">
               <span aria-hidden="true">Search</span>
-              <input id="dicSearch" type="search" placeholder="Search documents, awards, leadership..." />
+              <input id="dicSearch" type="search" placeholder="Search document name..." />
             </label>
           </div>
 
-          <div class="dic-filters" role="group" aria-label="Document filters">
-            <button class="dic-filter active" type="button" data-dic-filter="all">All</button>
-            <button class="dic-filter" type="button" data-dic-filter="academic">Academic</button>
-            <button class="dic-filter" type="button" data-dic-filter="awards">Awards</button>
-            <button class="dic-filter" type="button" data-dic-filter="leadership">Leadership</button>
-          </div>
+          <div class="dic-simple__layout">
+            <div class="dic-folder-panel">
+              <div class="dic-folder-title">
+                <span>ALL</span>
+                <div>
+                  <h4>ALL Doc</h4>
+                  <p>Certificates, testimonials, awards, and leadership records</p>
+                </div>
+              </div>
 
-          <div class="dic-layout">
-            <div class="dic-main">
-              <section class="dic-module" data-dic-module="academic" aria-labelledby="dicAcademicHeading">
-                <div class="dic-module__header">
-                  <div>
-                    <span class="dic-module__eyebrow">Academic Module</span>
-                    <h4 id="dicAcademicHeading">Document Vault</h4>
-                  </div>
-                  <span class="dic-count">5 folders</span>
-                </div>
-                <div class="dic-folder-grid">
-                  <button class="dic-folder active" type="button" data-dic-item data-category="academic"
-                    data-title="KUET Folder"
-                    data-summary="B.Sc. in Computer Science and Engineering credential archive for KUET."
-                    data-documents="Certificate|Grade Sheet"
-                    data-tags="Academic,Certificate,Verified,KUET" data-status="Verified">
-                    <span class="dic-folder__icon">KU</span>
-                    <span class="dic-folder__title">KUET Folder</span>
-                    <span class="dic-folder__preview">Certificate, Grade Sheet</span>
-                  </button>
-                  <button class="dic-folder" type="button" data-dic-item data-category="academic"
-                    data-title="HSC Folder" data-summary="Higher Secondary Certificate record from Kapilmuni College."
-                    data-documents="Certificate|Transcript|Registration Card"
-                    data-tags="Academic,Certificate,Transcript,Verified" data-status="Verified">
-                    <span class="dic-folder__icon">HS</span>
-                    <span class="dic-folder__title">HSC Folder</span>
-                    <span class="dic-folder__preview">Certificate, Transcript, Registration Card</span>
-                  </button>
-                  <button class="dic-folder" type="button" data-dic-item data-category="academic"
-                    data-title="SSC Folder" data-summary="Secondary School Certificate record and transcript archive."
-                    data-documents="Certificate|Transcript|Registration Card"
-                    data-tags="Academic,Certificate,Transcript,Archived" data-status="Archived">
-                    <span class="dic-folder__icon">SS</span>
-                    <span class="dic-folder__title">SSC Folder</span>
-                    <span class="dic-folder__preview">Certificate, Transcript, Registration Card</span>
-                  </button>
-                  <button class="dic-folder" type="button" data-dic-item data-category="academic"
-                    data-title="JSC Folder" data-summary="Junior School Certificate document set."
-                    data-documents="Certificate|Transcript|Registration Card"
-                    data-tags="Academic,Certificate,Transcript,Archived" data-status="Archived">
-                    <span class="dic-folder__icon">JS</span>
-                    <span class="dic-folder__title">JSC Folder</span>
-                    <span class="dic-folder__preview">Certificate, Transcript, Registration Card</span>
-                  </button>
-                  <button class="dic-folder" type="button" data-dic-item data-category="academic"
-                    data-title="PSC Folder" data-summary="Primary School Certificate record."
-                    data-documents="Certificate" data-tags="Academic,Certificate,Archived" data-status="Archived">
-                    <span class="dic-folder__icon">PS</span>
-                    <span class="dic-folder__title">PSC Folder</span>
-                    <span class="dic-folder__preview">Certificate</span>
-                  </button>
-                </div>
-              </section>
-
-              <section class="dic-module" data-dic-module="awards" aria-labelledby="dicAwardsHeading">
-                <div class="dic-module__header">
-                  <div>
-                    <span class="dic-module__eyebrow">Awards Module</span>
-                    <h4 id="dicAwardsHeading">Achievement Cards</h4>
-                  </div>
-                  <span class="dic-count">2 verified</span>
-                </div>
-                <div class="dic-awards-grid">
-                  <button class="dic-award" type="button" data-dic-item data-category="awards"
-                    data-title="Dean's List" data-summary="Academic distinction from the Department of CSE, KUET."
-                    data-documents="Year: 2021-2022|Year: 2022-2023|Department: CSE, KUET"
-                    data-tags="Awards,Verified,Academic,KUET" data-status="Verified">
-                    <span class="dic-award__badge">DL</span>
-                    <span class="dic-award__label">Dean's List</span>
-                    <span class="dic-award__meta">2021-2022, 2022-2023</span>
-                    <span class="dic-verified">Verified Achievement</span>
-                  </button>
-                  <button class="dic-award" type="button" data-dic-item data-category="awards"
-                    data-title="KUET Technical Scholarship"
-                    data-summary="Technical scholarship recognition connected with KUET academic performance."
-                    data-documents="Scholarship Badge|Verification Note|Academic Merit Record"
-                    data-tags="Awards,Verified,Scholarship,KUET" data-status="Verified">
-                    <span class="dic-award__badge">TS</span>
-                    <span class="dic-award__label">KUET Technical Scholarship</span>
-                    <span class="dic-award__meta">Badge style highlight</span>
-                    <span class="dic-verified">Verified Achievement</span>
-                  </button>
-                </div>
-              </section>
-
-              <section class="dic-module" data-dic-module="leadership" aria-labelledby="dicLeadershipHeading">
-                <div class="dic-module__header">
-                  <div>
-                    <span class="dic-module__eyebrow">Leadership Module</span>
-                    <h4 id="dicLeadershipHeading">Timeline &amp; Roles</h4>
-                  </div>
-                  <span class="dic-count">2 roles</span>
-                </div>
-                <div class="dic-timeline">
-                  <button class="dic-role" type="button" data-dic-item data-category="leadership"
-                    data-title="Junior Executive - BitFest 2025"
-                    data-summary="Supported event operations and coordination for BitFest 2025, Department of CSE, KUET."
-                    data-documents="Event: BitFest 2025|Department: CSE, KUET|Role: Junior Executive"
-                    data-tags="Leadership,Recent,KUET,Event" data-status="Recent">
-                    <span class="dic-role__dot"></span>
-                    <span>
-                      <strong>Junior Executive</strong>
-                      <small>BitFest 2025, Dept. of CSE, KUET</small>
-                    </span>
-                  </button>
-                  <button class="dic-role" type="button" data-dic-item data-category="leadership"
-                    data-title="Class Representative - CSE Batch 20"
-                    data-summary="Represented CSE Batch 20 and coordinated academic communication from Sep 2024 to Feb 2025."
-                    data-documents="Duration: Sep 2024 - Feb 2025|Batch: CSE Batch 20|Role: Class Representative"
-                    data-tags="Leadership,Verified,Academic" data-status="Verified">
-                    <span class="dic-role__dot"></span>
-                    <span>
-                      <strong>Class Representative</strong>
-                      <small>CSE Batch 20, Sep 2024 - Feb 2025</small>
-                    </span>
-                  </button>
-                </div>
-              </section>
+              <div class="dic-doc-list" aria-label="All document PDF list">
+                <button class="dic-doc active" type="button" data-dic-item data-title="Academic CV"
+                  data-type="Profile" data-pdf="All Doc/Academic/cv_tirtho_mondal.pdf">
+                  <span>Academic CV</span>
+                  <small>PDF</small>
+                </button>
+                <button class="dic-doc" type="button" data-dic-item data-title="Birth Registration Certificate"
+                  data-type="Identity" data-pdf="All Doc/Academic/Birth Registration Certificate.pdf">
+                  <span>Birth Registration Certificate</span>
+                  <small>PDF</small>
+                </button>
+                <button class="dic-doc" type="button" data-dic-item data-title="KUET Grade Sheet"
+                  data-type="KUET" data-pdf="All Doc/Academic/KUET/Grade sheet 7 sem.pdf">
+                  <span>KUET Grade Sheet</span>
+                  <small>PDF</small>
+                </button>
+                <button class="dic-doc" type="button" data-dic-item data-title="HSC Certificate"
+                  data-type="HSC" data-pdf="All Doc/Academic/HSC/HSC Certificate.pdf">
+                  <span>HSC Certificate</span>
+                  <small>PDF</small>
+                </button>
+                <button class="dic-doc" type="button" data-dic-item data-title="HSC Transcript"
+                  data-type="HSC" data-pdf="All Doc/Academic/HSC/HSC transcript .pdf">
+                  <span>HSC Transcript</span>
+                  <small>PDF</small>
+                </button>
+                <button class="dic-doc" type="button" data-dic-item data-title="HSC Registration Card"
+                  data-type="HSC" data-pdf="All Doc/Academic/HSC/HSC Registration Card.pdf">
+                  <span>HSC Registration Card</span>
+                  <small>PDF</small>
+                </button>
+                <button class="dic-doc" type="button" data-dic-item data-title="HSC Testimonial"
+                  data-type="HSC" data-pdf="All Doc/Academic/HSC/HSC Testimonial.pdf">
+                  <span>HSC Testimonial</span>
+                  <small>PDF</small>
+                </button>
+                <button class="dic-doc" type="button" data-dic-item data-title="SSC Certificate"
+                  data-type="SSC" data-pdf="All Doc/Academic/SSC/SSC certificate.pdf">
+                  <span>SSC Certificate</span>
+                  <small>PDF</small>
+                </button>
+                <button class="dic-doc" type="button" data-dic-item data-title="SSC Transcript"
+                  data-type="SSC" data-pdf="All Doc/Academic/SSC/SSC Transcript .pdf">
+                  <span>SSC Transcript</span>
+                  <small>PDF</small>
+                </button>
+                <button class="dic-doc" type="button" data-dic-item data-title="SSC Registration Card"
+                  data-type="SSC" data-pdf="All Doc/Academic/SSC/SSC Registration Card.pdf">
+                  <span>SSC Registration Card</span>
+                  <small>PDF</small>
+                </button>
+                <button class="dic-doc" type="button" data-dic-item data-title="SSC Testimonial"
+                  data-type="SSC" data-pdf="All Doc/Academic/SSC/SSC Testimonial.pdf">
+                  <span>SSC Testimonial</span>
+                  <small>PDF</small>
+                </button>
+                <button class="dic-doc" type="button" data-dic-item data-title="JSC Certificate"
+                  data-type="JSC" data-pdf="All Doc/Academic/JSC/JSC Certificate.pdf">
+                  <span>JSC Certificate</span>
+                  <small>PDF</small>
+                </button>
+                <button class="dic-doc" type="button" data-dic-item data-title="JSC Transcript"
+                  data-type="JSC" data-pdf="All Doc/Academic/JSC/JSC Transcript.pdf">
+                  <span>JSC Transcript</span>
+                  <small>PDF</small>
+                </button>
+                <button class="dic-doc" type="button" data-dic-item data-title="JSC Registration Card"
+                  data-type="JSC" data-pdf="All Doc/Academic/JSC/JSC Registration Card .pdf">
+                  <span>JSC Registration Card</span>
+                  <small>PDF</small>
+                </button>
+                <button class="dic-doc" type="button" data-dic-item data-title="NID Record"
+                  data-type="Identity" data-pdf="All Doc/Academic/PSC/nid-3313712964 .pdf">
+                  <span>NID Record</span>
+                  <small>PDF</small>
+                </button>
+              </div>
+              <p class="dic-empty" id="dicEmpty" hidden>No matching document found.</p>
             </div>
 
-            <aside class="dic-panel" aria-live="polite">
-              <div class="dic-panel__status">
-                <span id="dicStatusIcon">OK</span>
-                <span id="dicStatusText">Verified</span>
-              </div>
-              <h4 id="dicPanelTitle">KUET Folder</h4>
-              <p id="dicPanelSummary">B.Sc. in Computer Science and Engineering credential archive for KUET.</p>
-              <div class="dic-panel__block">
-                <span>Inside Panel</span>
-                <ul id="dicPanelDocs">
-                  <li>Certificate</li>
-                  <li>Grade Sheet</li>
-                </ul>
-              </div>
-              <div class="dic-panel__block">
-                <span>Tags</span>
-                <div class="dic-tags" id="dicPanelTags">
-                  <span>Academic</span>
-                  <span>Certificate</span>
-                  <span>Verified</span>
-                  <span>KUET</span>
+            <aside class="dic-preview" aria-live="polite">
+              <div class="dic-preview__bar">
+                <div>
+                  <span id="dicPreviewType">Profile</span>
+                  <h4 id="dicPreviewTitle">Academic CV</h4>
                 </div>
+                <a id="dicOpenPdf" href="All Doc/Academic/cv_tirtho_mondal.pdf" target="_blank">Open PDF</a>
               </div>
-              <a class="dic-cv-link" href="Tirtho Mondal.pdf" target="_blank">Open CV record</a>
+              <iframe id="dicPdfFrame" src="All Doc/Academic/cv_tirtho_mondal.pdf" title="Document PDF preview"></iframe>
             </aside>
           </div>
-          <p class="dic-empty" id="dicEmpty" hidden>No matching records found.</p>
         </div>
       </div>
     </section>
