@@ -1026,6 +1026,7 @@ const dicDashboard = document.querySelector('[data-dic-dashboard]');
 if (dicDashboard) {
   const dicSearch = document.getElementById('dicSearch');
   const dicItems = document.querySelectorAll('[data-dic-item]');
+  const dicFolders = document.querySelectorAll('.dic-tree-folder');
   const dicEmpty = document.getElementById('dicEmpty');
   const dicPdfFrame = document.getElementById('dicPdfFrame');
   const dicPreviewTitle = document.getElementById('dicPreviewTitle');
@@ -1064,6 +1065,12 @@ if (dicDashboard) {
       const show = !query || getItemSearchText(item).includes(query);
       item.hidden = !show;
       if (show) visibleCount += 1;
+    });
+
+    dicFolders.forEach(folder => {
+      const hasVisibleItems = folder.querySelectorAll('[data-dic-item]:not([hidden])').length > 0;
+      folder.hidden = !hasVisibleItems;
+      if (query && hasVisibleItems) folder.open = true;
     });
 
     if (dicEmpty) dicEmpty.hidden = visibleCount > 0;
