@@ -41,7 +41,10 @@
     <div class="container navbar__inner">
       <a href="#home" class="navbar__logo" aria-label="Go to top">
         <span class="logo__monogram">TM</span>
-        <span class="logo__name">Tirtho Mondal</span>
+        <span class="logo__text">
+          <span class="logo__name">Tirtho Mondal</span>
+          <span class="logo__tagline">Academic Portfolio</span>
+        </span>
       </a>
       <nav class="navbar__nav" id="navMenu" role="navigation" aria-label="Main navigation">
         <ul class="nav__list">
@@ -404,31 +407,118 @@
           <p class="section__subtitle">A collection of my research papers, technical articles, and scholarly contributions in AI, accessibility, and computer vision.</p>
         </div>
 
-        <div class="publication-list">
-          <article class="pub-card reveal">
-            <div class="pub-card__content">
-              <div class="pub-card__meta">
-                <span class="pub-type">Preprint</span>
-                <span>2025</span>
+        <div class="pubx-list">
+          <article class="pubx-card reveal">
+            <div class="pubx-top">
+              <div class="pubx-main">
+                <div class="pubx-meta">
+                  <span class="pubx-status pubx-status--preprint">Preprint</span>
+                  <span class="pubx-meta__sub">arXiv · April 2025</span>
+                </div>
+
+                <h3 class="pubx-title">Real-Time Assistive Navigation for the Visually Impaired</h3>
+
+                <p class="pubx-authors">Dabbrata Das, Argho Deb Das, Farhan Sadaf, Azhar Uddin,
+                  <span class="pubx-me">Tirtho Mondal</span>
+                </p>
+
+                <div class="pubx-chips">
+                  <span class="pubx-chip">
+                    <svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2" fill="none"
+                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <polyline points="16 11 18 13 22 9"></polyline>
+                    </svg>Co-author
+                  </span>
+                  <span class="pubx-chip">
+                    <svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2" fill="none"
+                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>5 authors
+                  </span>
+                  <span class="pubx-chip pubx-chip--mono">arXiv:2504.20976</span>
+                </div>
               </div>
-              <h3 class="pub-title">Real Time Assistive Navigation for the Visually Impaired</h3>
-              <p class="pub-venue">arXiv:2504.20976 | April 2025</p>
-              <p class="pub-authors"><span>Authors:</span> Dabbrata Das, Argho Deb Das, Farhan Sadaf, Azhar Uddin, and <strong>Tirtho Mondal</strong></p>
-              <p class="pub-description">A research-based publication focused on developing an intelligent navigation system using computer vision, sensor fusion, and multimodal feedback for visually impaired users.</p>
-              <details class="pub-abstract">
-                <summary>Abstract</summary>
-                <p>Navigating unfamiliar environments remains one of the most persistent and critical challenges for people who are blind or have limited vision (BLV). Existing assistive tools often rely on online services or APIs, making them costly, internet-dependent, and less reliable in real-time use. To address these limitations, we propose PathFinder, a novel mapless mobile phone-based navigation system that operates fully offline. Our method processes monocular depth images and applies an efficient pathfinding algorithm to identify the longest, clearest obstacle-free route, ensuring optimal navigation with low computational cost. Comparative evaluations show that PathFinder reduces mean absolute error (MAE), speeds decision-making, and achieves real-time responsiveness indoors and outdoors. A usability study with 15 BLV participants confirmed its practicality, where 73% learned to operate it in under a minute, and 80% praised its accuracy, responsiveness, and convenience. Despite challenges in complex indoor layouts and low light, PathFinder offers a low-cost, scalable, reliable alternative.</p>
-              </details>
-              <div class="pub-tags" aria-label="Publication tags">
-                <span>Computer Vision</span>
-                <span>AI</span>
-                <span>Accessibility</span>
-              </div>
-              <div class="pub-actions">
-                <a href="https://arxiv.org/abs/2504.20976" target="_blank" rel="noopener" class="btn btn--primary btn--sm">View Paper</a>
-                <a href="https://arxiv.org/abs/2504.20976" target="_blank" rel="noopener" class="btn btn--outline btn--sm">arXiv Link</a>
+
+              <div class="pubx-thumb" aria-hidden="true">
+                <div class="pubx-thumb__frame">
+                  <div class="pubx-thumb__page">
+                    <span class="pubx-line pubx-line--title"></span>
+                    <span class="pubx-line pubx-line--sub"></span>
+                    <div class="pubx-line-group">
+                      <span class="pubx-line"></span>
+                      <span class="pubx-line"></span>
+                      <span class="pubx-line pubx-line--w85"></span>
+                      <span class="pubx-line"></span>
+                      <span class="pubx-line pubx-line--w60"></span>
+                    </div>
+                    <div class="pubx-thumb__fig"></div>
+                    <div class="pubx-line-group">
+                      <span class="pubx-line"></span>
+                      <span class="pubx-line pubx-line--w75"></span>
+                    </div>
+                  </div>
+                </div>
+                <span class="pubx-thumb__label">First Page</span>
               </div>
             </div>
+
+            <details class="pubx-abstract">
+              <summary>
+                <span>Abstract</span>
+                <svg class="pubx-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor"
+                  stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <p>Navigating unfamiliar environments remains one of the most persistent challenges for people who are blind or have low vision (BLV). Existing assistive tools often rely on online services or APIs, making them costly, internet-dependent, and less reliable in real time. We propose PathFinder, a novel mapless mobile-phone-based navigation system that operates fully offline. Our method processes monocular depth images and applies an efficient pathfinding algorithm to identify the longest, clearest obstacle-free route, ensuring optimal navigation with low computational cost. Comparative evaluations show that PathFinder reduces mean absolute error (MAE), speeds decision-making, and achieves real-time responsiveness indoors and outdoors. A usability study with 15 BLV participants confirmed its practicality: 73% learned to operate it in under a minute, and 80% praised its accuracy, responsiveness, and convenience.</p>
+            </details>
+
+            <div class="pubx-tags" aria-label="Publication tags">
+              <span>Computer Vision</span>
+              <span>AI</span>
+              <span>Accessibility</span>
+            </div>
+
+            <div class="pubx-actions">
+              <a href="https://arxiv.org/abs/2504.20976" target="_blank" rel="noopener" class="pubx-btn pubx-btn--primary">
+                <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>View Paper
+              </a>
+              <a href="https://arxiv.org/pdf/2504.20976" target="_blank" rel="noopener" class="pubx-btn pubx-btn--ghost">
+                <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>arXiv
+              </a>
+              <button type="button" class="pubx-btn pubx-btn--quiet" data-cite-target="bibtex-pathfinder">
+                <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                  <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                </svg>Cite
+              </button>
+            </div>
+
+            <script type="text/plain" id="bibtex-pathfinder" class="pubx-bibtex">@misc{das2025pathfinder,
+  title={Real-Time Assistive Navigation for the Visually Impaired},
+  author={Das, Dabbrata and Das, Argho Deb and Sadaf, Farhan and Uddin, Azhar and Mondal, Tirtho},
+  year={2025},
+  eprint={2504.20976},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV}
+}</script>
           </article>
         </div>
       </div>

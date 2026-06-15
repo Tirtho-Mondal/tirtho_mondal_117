@@ -420,6 +420,64 @@ if (eduTimeline) {
 }
 
 /* =========================================================
+   9c. PUBLICATION CITE (copy BibTeX → clipboard + toast)
+   ========================================================= */
+const citeButtons = document.querySelectorAll('[data-cite-target]');
+
+if (citeButtons.length) {
+  let pubToast;
+
+  const showToast = (message) => {
+    if (!pubToast) {
+      pubToast = document.createElement('div');
+      pubToast.className = 'pubx-toast';
+      document.body.appendChild(pubToast);
+    }
+    pubToast.innerHTML = `
+      <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none"
+        stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      ${message}`;
+    // force reflow so the transition replays
+    void pubToast.offsetWidth;
+    pubToast.classList.add('show');
+    clearTimeout(pubToast._timer);
+    pubToast._timer = setTimeout(() => pubToast.classList.remove('show'), 2200);
+  };
+
+  const copyText = async (text) => {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return;
+    }
+    // Fallback for non-secure contexts (e.g. file://)
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+  };
+
+  citeButtons.forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const source = document.getElementById(btn.dataset.citeTarget);
+      if (!source) return;
+      const bibtex = source.textContent.trim();
+      try {
+        await copyText(bibtex);
+        btn.classList.add('pubx-btn--copied');
+        showToast('BibTeX copied to clipboard');
+        setTimeout(() => btn.classList.remove('pubx-btn--copied'), 2000);
+      } catch (err) {
+        showToast('Copy failed — select manually');
+      }
+    });
+  });
+}
+
+/* =========================================================
    10. PROJECT FILTER
    ========================================================= */
 const filterBtns = document.querySelectorAll('.filter-btn');
