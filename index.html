@@ -240,75 +240,92 @@
           <h2 class="section__title" id="eduHeading">Education</h2>
           <div class="section__divider"></div>
         </div>
-        <div class="timeline">
-          <div class="timeline__item reveal">
-            <div class="timeline__marker"></div>
-            <div class="timeline__card">
-              <div class="timeline__header">
-                <div>
-                  <h3 class="timeline__degree">Bachelor of Science in Computer Science and Engineering</h3>
-                  <p class="timeline__institution"> Khulna University of Engineering &amp; Technology (KUET)</p>
-                  <p class="timeline__dept">Department of Computer Science and Engineering</p>
+        <div class="edu-timeline">
+          <article class="edu-item edu-item--current reveal">
+            <div class="edu-card">
+              <div class="edu-card__body">
+                <div class="edu-card__head">
+                  <span class="edu-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                      <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                    </svg>
+                  </span>
+                  <span class="edu-status">Currently studying</span>
                 </div>
-                <span class="timeline__date">2022 – 2026</span>
-              </div>
-              <div class="timeline__body">
-                <div class="edu-meta">
-                  <span class="edu-tag">CGPA: 3.72/4.00</span>
-                  <span class="edu-tag edu-tag--gold">Dean's List</span>
-                  <span class="edu-tag">Current Status: 4th Year - 2nd Semester</span>
+                <h3 class="edu-card__degree">Bachelor of Science in Computer Science &amp; Engineering</h3>
+                <p class="edu-card__inst">Khulna University of Engineering &amp; Technology (KUET)</p>
+                <p class="edu-card__dept">Department of Computer Science and Engineering</p>
+                <div class="edu-card__badges">
+                  <span class="edu-badge">Dean's List</span>
+                  <span class="edu-badge">4th Year · 2nd Semester</span>
                 </div>
-                <!-- <div class="coursework">
-                  <p class="coursework__label">Relevant Coursework</p>
-                  <div class="coursework__tags">
-                    <span>Data Structures & Algorithms</span>
-                    <span>Machine Learning</span>
-                    <span>Operating Systems</span>
-                    <span>Software Engineering</span>
-                    <span>Computer Architecture</span>
-                    <span>Statistics & Probability</span>
-                  </div>
-                </div> -->
               </div>
-            </div>
-          </div>
-          <div class="timeline__item reveal">
-            <div class="timeline__marker"></div>
-            <div class="timeline__card">
-              <div class="timeline__header">
-                <div>
-                  <h3 class="timeline__degree">Higher Secondary Certificate (HSC)</h3>
-                  <p class="timeline__institution"> Kapilmuni College</p>
-                  <p class="timeline__dept">Jashore Board | Science</p>
-                </div>
-                <span class="timeline__date">2018 – 2020</span>
-              </div>
-              <div class="timeline__body">
-                <div class="edu-meta">
-                  <span class="edu-tag">GPA: 5.00/5.00</span>
-                  <!-- <span class="edu-tag edu-tag--gold">Academic Excellence</span> -->
+              <div class="edu-card__aside">
+                <span class="edu-card__date">2022 – 2026</span>
+                <div class="edu-stat">
+                  <span class="edu-stat__value">3.72<small>/4.00</small></span>
+                  <span class="edu-stat__label">CGPA</span>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="timeline__item reveal">
-            <div class="timeline__marker"></div>
-            <div class="timeline__card">
-              <div class="timeline__header">
-                <div>
-                  <h3 class="timeline__degree">Secondary School Certificate (SSC)</h3>
-                  <p class="timeline__institution"> Kapilmuni Sahachari Vidya Mandir</p>
-                  <p class="timeline__dept">Jashore Board | Science</p>
+          </article>
+
+          <article class="edu-item reveal">
+            <div class="edu-card">
+              <div class="edu-card__body">
+                <div class="edu-card__head">
+                  <span class="edu-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    </svg>
+                  </span>
                 </div>
-                <span class="timeline__date">2016 – 2018</span>
+                <h3 class="edu-card__degree">Higher Secondary Certificate (HSC)</h3>
+                <p class="edu-card__inst">Kapilmuni College</p>
+                <p class="edu-card__dept">Jashore Board · Science</p>
               </div>
-              <div class="timeline__body">
-                <div class="edu-meta">
-                  <span class="edu-tag">GPA: 5.00/5.00</span>
+              <div class="edu-card__aside">
+                <span class="edu-card__date">2018 – 2020</span>
+                <div class="edu-stat">
+                  <span class="edu-stat__value">5.00<small>/5.00</small></span>
+                  <span class="edu-stat__label">GPA</span>
                 </div>
               </div>
             </div>
-          </div>
+          </article>
+
+          <article class="edu-item reveal">
+            <div class="edu-card">
+              <div class="edu-card__body">
+                <div class="edu-card__head">
+                  <span class="edu-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 21h18"></path>
+                      <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path>
+                      <path d="M9 21v-5h6v5"></path>
+                      <line x1="9" y1="8" x2="9" y2="8.01"></line>
+                      <line x1="15" y1="8" x2="15" y2="8.01"></line>
+                    </svg>
+                  </span>
+                </div>
+                <h3 class="edu-card__degree">Secondary School Certificate (SSC)</h3>
+                <p class="edu-card__inst">Kapilmuni Sahachari Vidya Mandir</p>
+                <p class="edu-card__dept">Jashore Board · Science</p>
+              </div>
+              <div class="edu-card__aside">
+                <span class="edu-card__date">2016 – 2018</span>
+                <div class="edu-stat">
+                  <span class="edu-stat__value">5.00<small>/5.00</small></span>
+                  <span class="edu-stat__label">GPA</span>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -780,24 +797,59 @@
 
         <div class="leadership-grid">
           <article class="leadership-card reveal">
+            <div class="leadership-card__top">
+              <span class="leadership-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </span>
+              <span class="leadership-card__index" aria-hidden="true">01</span>
+            </div>
             <span class="leadership-card__date">2025</span>
             <h3>Junior Executive</h3>
             <p class="leadership-card__org">BitFest 2025, Dept. of CSE, KUET</p>
-            <p>Supported event coordination, team communication, and operational activities for a department-level technology festival.</p>
+            <p class="leadership-card__desc">Supported event coordination, team communication, and operational activities for a department-level technology festival.</p>
           </article>
 
           <article class="leadership-card reveal">
+            <div class="leadership-card__top">
+              <span class="leadership-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </span>
+              <span class="leadership-card__index" aria-hidden="true">02</span>
+            </div>
             <span class="leadership-card__date">Sep 2024 - Feb 2025</span>
             <h3>Class Representative</h3>
             <p class="leadership-card__org">CSE Batch 20, Dept. of CSE, KUET</p>
-            <p>Represented classmates in academic communication and helped coordinate information flow between students and faculty.</p>
+            <p class="leadership-card__desc">Represented classmates in academic communication and helped coordinate information flow between students and faculty.</p>
           </article>
 
           <article class="leadership-card reveal">
+            <div class="leadership-card__top">
+              <span class="leadership-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="18" cy="5" r="3"></circle>
+                  <circle cx="6" cy="12" r="3"></circle>
+                  <circle cx="18" cy="19" r="3"></circle>
+                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                </svg>
+              </span>
+              <span class="leadership-card__index" aria-hidden="true">03</span>
+            </div>
             <span class="leadership-card__date">Member</span>
             <h3>SGIPC, KUET</h3>
-            <p class="leadership-card__org">Student and institutional engagement</p>
-            <p>Participated in student-community activities and collaborative campus initiatives through SGIPC involvement.</p>
+            <p class="leadership-card__org">Student &amp; institutional engagement</p>
+            <p class="leadership-card__desc">Participated in student-community activities and collaborative campus initiatives through SGIPC involvement.</p>
           </article>
         </div>
       </div>
