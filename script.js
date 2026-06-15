@@ -373,6 +373,53 @@ const skillObserver = new IntersectionObserver((entries) => {
 skillBars.forEach(bar => skillObserver.observe(bar));
 
 /* =========================================================
+   9b. EDUCATION TIMELINE (spine draw + GPA count-up)
+   ========================================================= */
+const eduTimeline = document.querySelector('.edu-timeline');
+
+if (eduTimeline) {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const animateEduStat = (el) => {
+    const target = parseFloat(el.dataset.target);
+    const decimals = parseInt(el.dataset.decimals, 10) || 0;
+
+    if (prefersReduced) {
+      el.textContent = target.toFixed(decimals);
+      return;
+    }
+
+    const duration = 1400;
+    const start = performance.now();
+    const update = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = (eased * target).toFixed(decimals);
+      if (progress < 1) requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+  };
+
+  if ('IntersectionObserver' in window) {
+    const eduObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          eduTimeline.classList.add('edu-active');
+          eduTimeline.querySelectorAll('.edu-stat__num').forEach(animateEduStat);
+          eduObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    eduObserver.observe(eduTimeline);
+  } else {
+    // Fallback: no observer support — show final state immediately
+    eduTimeline.classList.add('edu-active');
+    eduTimeline.querySelectorAll('.edu-stat__num').forEach(animateEduStat);
+  }
+}
+
+/* =========================================================
    10. PROJECT FILTER
    ========================================================= */
 const filterBtns = document.querySelectorAll('.filter-btn');
