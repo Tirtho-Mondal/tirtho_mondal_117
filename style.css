@@ -6360,7 +6360,8 @@ select {
   gap: 24px;
 }
 
-.footer__legal a {
+.footer__legal a,
+.footer__legal span {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.3);
   text-decoration: none;
